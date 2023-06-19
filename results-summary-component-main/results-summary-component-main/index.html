@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Results summary component</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: inherit;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      body {
+        box-sizing: border-box;
+        font-family: "Hanken Grotesk", sans-serif;
+        /* font-size: 1.8rem; */
+
+        /* position: relative; body el에는 default position relative가 설정됨, 중복하면 이상해짐*/
+      }
+
+      .result {
+        width: 70rem;
+        height: 45rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        display: flex;
+        font-size: 1.8rem;
+      }
+
+      .result__leftbox {
+        flex: 1;
+        background: linear-gradient(
+          to top,
+          hsl(241, 81%, 54%),
+          hsl(252, 100%, 67%)
+        );
+        border-radius: 2.5rem;
+        color: white;
+      }
+
+      .result__leftbox h3 {
+        text-align: center;
+        margin-top: 4rem;
+        /* color: white; */
+        opacity: 0.6;
+        font-weight: 500;
+        font-size: 2rem;
+      }
+
+      .result__number {
+        width: 17.8rem;
+        height: 17.8rem;
+        /* font-size: 5rem; */
+        /* color: white; */
+        background: linear-gradient(
+          to bottom,
+          hsla(256, 72%, 46%, 1),
+          hsla(241, 72%, 46%, 0)
+        );
+        border-radius: 50%;
+        /* text-align: center; */
+        margin: 3rem auto;
+
+        position: relative;
+      }
+
+      .result__number span:not(:last-child) {
+        font-size: 6.5rem;
+        font-weight: 700;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -65%);
+      }
+
+      .result__number span:last-child {
+        font-size: 1.5rem;
+        opacity: 0.4;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-53%, 110%);
+      }
+
+      .result__grade {
+        display: block;
+        text-align: center;
+        font-size: 3rem;
+        /* color: white; */
+        margin-top: -0.8rem;
+        margin-bottom: 1.3rem;
+      }
+
+      .result__detail {
+        font-size: 1.6rem;
+        text-align: center;
+        padding: 0.5rem 5rem;
+        opacity: 0.6;
+        /* letter-spacing: 0.1rem; */
+      }
+
+      .result__rightbox {
+        flex: 1.2;
+        margin-left: -4rem;
+        border-radius: 2.5rem;
+        box-shadow: 20px 32px 20px hsl(234, 85%, 45%, 0.05),
+          0px -0.5px 4px hsl(234, 85%, 45%, 0.05);
+        /* text-align: center; */
+
+        /* display: flex;
+              flex-direction: column;
+              gap: 2rem; */
+      }
+
+      .result__summaryBox {
+        /* width: 90%; */
+        margin-left: 8rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      .result__summaryBox h3 {
+        font-style: none;
+        font-size: 2.2rem;
+        font-weight: 900;
+        letter-spacing: -0.3px;
+        opacity: 0.7;
+
+        margin-top: 2.2rem;
+        /* margin-bottom: 0.5rem; */
+      }
+
+      .result__lists {
+        display: flex;
+        flex-direction: column;
+        gap: 1.7rem;
+        margin-bottom: 1.8rem;
+        width: 28rem;
+        list-style: none;
+      }
+
+      .result__list {
+        /* list-style: none; */
+        display: flex;
+        /* justify-content: space-between; */
+        align-items: center;
+
+        width: 100%;
+        height: 5rem;
+
+        border-radius: 1rem;
+        box-shadow: 0 1px 2px #eee;
+      }
+
+      .result__list img {
+        margin-left: 1.3rem;
+      }
+
+      .type1,
+      .type2,
+      .type3,
+      .type4 {
+        margin-left: 1rem;
+        margin-right: auto;
+      }
+
+      .type1 {
+        color: hsl(0, 100%, 67%);
+      }
+
+      .type2 {
+        color: hsl(39, 100%, 56%);
+      }
+
+      .type3 {
+        color: hsl(166, 100%, 37%);
+      }
+
+      .type4 {
+        color: hsl(234, 85%, 45%);
+      }
+
+      .listRed {
+        background-color: hsl(0, 100%, 67%, 0.1);
+      }
+
+      .listYellow {
+        background-color: hsl(39, 100%, 56%, 0.1);
+      }
+
+      .listGreen {
+        background-color: hsl(166, 100%, 37%, 0.1);
+      }
+
+      .listBlue {
+        background-color: hsl(234, 85%, 45%, 0.1);
+      }
+
+      .result__list b {
+        margin-right: 1rem;
+        opacity: 0.7;
+        font-weight: 700;
+      }
+
+      .result__list b ~ span {
+        opacity: 0.3;
+        margin-right: 1rem;
+        font-weight: 700;
+      }
+
+      /* .Btn {
+        height: 5rem;
+       } */
+
+      .Btn a {
+        display: block;
+        padding: 1.5rem 4rem;
+        margin-top: 2rem;
+        background-color: hsl(224, 30%, 27%);
+        border-radius: 50px;
+        text-decoration: none;
+        text-align: center;
+        color: white;
+        font-size: 1.7rem;
+      }
+
+      .Btn a:hover {
+        /* background: linear-gradient(
+          to top,
+          hsl(224, 30%, 27%),
+          hsla(256, 72%, 46%, 1)
+        ); */
+        background: linear-gradient(
+          to top,
+          hsl(241, 81%, 54%),
+          hsl(252, 100%, 67%)
+        );
+      }
+
+      /* 375px */
+      @media only screen and (max-width: 23.4em) {
+        /* html {
+          font-size: 55%;
+        } */
+        .result {
+          width: 37rem;
+          height: 23rem;
+          /* display: flex; */
+          flex-direction: column;
+        }
+
+        .result__leftbox {
+          width: 100%;
+          border-radius: 0 0 2.5rem 2.5rem;
+        }
+
+        .result__number {
+          width: 15rem;
+          height: 15rem;
+        }
+
+        .result__grade {
+          font-size: 2.3rem;
+
+          margin-top: -2.5rem;
+          margin-bottom: 0.3rem;
+        }
+
+        .result__detail {
+          font-size: 1.5rem;
+          margin-bottom: 3rem;
+        }
+
+        .result__rightbox {
+          flex: 1;
+          /* width: 35rem;
+          height: 23rem; */
+          border-radius: 0;
+          margin-left: 0;
+        }
+
+        .result__summaryBox {
+          margin-top: -3rem;
+          margin-left: 2.8rem;
+        }
+
+        .result__summaryBox h3 {
+          margin-top: 5rem;
+        }
+
+        .result__lists {
+          width: 31.3rem;
+        }
+
+        .Btn a {
+          margin-top: 1rem;
+        }
+      }
+
+      /* - Light red: hsl(0, 100%, 67%)
+      - Orangey yellow: hsl(39, 100%, 56%)
+      - Green teal: hsl(166, 100%, 37%)
+      - Cobalt blue: hsl(234, 85%, 45%) */
+    </style>
+  </head>
+  <body>
+    <div class="result">
+      <div class="result__leftbox">
+        <h3>Your Result</h3>
+        <div class="result__number">
+          <span>76</span>
+          <span>of 100</span>
+        </div>
+        <span class="result__grade">Great</span>
+        <p class="result__detail">
+          You scored higher than 65% of the people who have taken these tests.
+        </p>
+      </div>
+      <div class="result__rightbox">
+        <div class="result__summaryBox">
+          <h3>Summary</h3>
+          <!-- <div class="result__summaryItem"> -->
+          <ul class="result__lists">
+            <li class="result__list listRed">
+              <img
+                src="./assets/images/icon-reaction.svg"
+                alt="reaction icon"
+              />
+              <span class="type1">Reaction</span>
+              <b>80</b> <span>/ 100</span>
+            </li>
+            <li class="result__list listYellow">
+              <img src="./assets/images/icon-memory.svg" alt="memory icon" />
+              <span class="type2">Memory</span>
+              <b>92</b> <span>/ 100</span>
+            </li>
+            <li class="result__list listGreen">
+              <img src="./assets/images/icon-verbal.svg" alt="verbal icon" />
+              <span class="type3">Verbal</span>
+              <b>61</b> <span>/ 100</span>
+            </li>
+            <li class="result__list listBlue">
+              <img src="./assets/images/icon-visual.svg" alt="visual icon" />
+              <span class="type4">Visual</span>
+              <b>72</b> <span>/ 100</span>
+            </li>
+            <li class="Btn">
+              <a href="#">Continue</a>
+            </li>
+          </ul>
+          <!-- </div> -->
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
