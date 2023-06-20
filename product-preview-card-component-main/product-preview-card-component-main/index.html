@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Montserrat:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Product preview card component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        border: 0;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      body {
+        font-family: "Fraunces", serif;
+        font-family: "Montserrat", sans-serif;
+        background-color: hsl(30, 38%, 92%);
+      }
+
+      .card {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        width: 54rem;
+        height: 37rem;
+        /* max-width: 60rem;
+        max-height: 40rem; */
+
+        display: flex;
+      }
+
+      .card__imgBox {
+        width: 27rem;
+        height: 100%;
+        /* max-width: 30rem;
+        max-height: 40rem; */
+        border-radius: 1rem 0 0 1rem;
+        overflow: hidden;
+      }
+
+      .card__imgBox img {
+        width: 100%;
+        height: 100%;
+      }
+
+      .card__textBox {
+        box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+        background-color: white;
+        border-radius: 0 1rem 1rem 0;
+
+        width: 27rem;
+        height: 100%;
+        /* max-width: 27rem;
+        max-height: 40rem; */
+
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 2.7rem;
+      }
+
+      .card__itemCategory {
+        text-transform: uppercase;
+        font-size: 1rem;
+        font-weight: 700;
+        letter-spacing: 0.4rem;
+        opacity: 0.4;
+        /* margin-left: -0.1rem; */
+      }
+
+      .card__itemName {
+        font-family: "Fraunces", sans-serif;
+        font-weight: 700;
+        font-size: 2.8rem;
+        line-height: 2.8rem;
+        letter-spacing: -0.1rem;
+
+        width: 20rem;
+      }
+
+      .card__itemInfo {
+        font-size: 1.2rem;
+        /* font-weight: 700; */
+        line-height: 1.8rem;
+        opacity: 0.6;
+
+        width: 21rem;
+      }
+
+      .card__itemPrice {
+        display: flex;
+        align-items: center;
+        gap: 1.8rem;
+      }
+
+      .card__discountedPrice {
+        font-family: "Fraunces", sans-serif;
+        font-size: 2.7rem;
+        font-weight: 700;
+        color: hsl(158, 36%, 37%);
+      }
+
+      .card__originalPrice {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        text-decoration-line: line-through;
+        /* color: hsl(228, 12%, 48%); */
+        opacity: 0.5;
+      }
+
+      .card__btn {
+        width: 100%;
+        background-color: hsl(158, 36%, 37%);
+        padding: 1.1rem 2.2rem;
+        /* text-align: center; */
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+
+        border-radius: 0.6rem;
+        color: white;
+      }
+
+      .card__btn:hover {
+        background-color: hsl(158, 35%, 18%);
+      }
+
+      .card__btn span {
+        font-size: 1.1rem;
+        /* font-weight: 500; */
+      }
+
+      @media only screen and (max-width: 23.45em) {
+        /* html {
+          font-size: 62.5%;
+        } */
+        .card {
+          /* display: flex; */
+          flex-direction: column;
+          width: 90%;
+          height: 58rem;
+        }
+
+        .card__imgBox {
+          width: 100%;
+          height: 40%;
+          border-radius: 1rem 1rem 0 0;
+          /* height: 30rem; */
+        }
+
+        .card__textBox {
+          width: 100%;
+          height: 60%;
+          border-radius: 0 0 1rem 1rem;
+          box-shadow: none;
+          gap: 1.3rem;
+
+          /* display: block; */
+        }
+
+        .card__itemCategory {
+          font-size: 1.2rem;
+        }
+
+        .card__itemName {
+          width: 100%;
+          /* letter-spacing: 0.1px;s */
+          line-height: 3rem;
+          font-size: 3.2rem;
+          font-weight: 500;
+        }
+
+        .card__itemInfo {
+          width: 100%;
+          font-size: 1.35rem;
+          margin-top: 0.5rem;
+          line-height: 2.1rem;
+          opacity: 0.5;
+        }
+
+        .card__discountedPrice {
+          font-size: 3rem;
+        }
+
+        .card__originalPrice {
+          font-family: "Montserrat", sans-serif;
+          font-size: 1.3rem;
+          /* font-weight: 600; */
+          opacity: 0.5;
+        }
+
+        .card__btn {
+          padding: 1.4rem 2.2rem;
+        }
+
+        .card__btn span {
+          font-size: 1.3rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="card__imgBox">
+        <picture>
+          <source
+            media="(max-width: 23.45em)"
+            srcset="./images/image-product-mobile.jpg"
+          />
+          <source
+            media="(max-width: 90em)"
+            srcset="./images/image-product-desktop.jpg"
+          />
+          <img src="./images/image-product-desktop.jpg" />
+        </picture>
+        <!-- <img srcset="./images/image-product-desktop.jpg" /> -->
+      </div>
+      <div class="card__textBox">
+        <div class="card__itemCategory">Perfume</div>
+        <div class="card__itemName">Gabrielle Essence Eau De Parfum</div>
+
+        <p class="card__itemInfo">
+          A floral, solar and voluptuous interpretation composed by Olivier
+          Polge, Perfumer-Creator for the House of CHANEL.
+        </p>
+
+        <div class="card__itemPrice">
+          <span class="card__discountedPrice">$149.99 </span>
+          <span class="card__originalPrice">$169.99</span>
+        </div>
+        <div class="card__btn">
+          <img src="./images/icon-cart.svg" alt="Cart Icon" />
+          <span>Add to Cart</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
