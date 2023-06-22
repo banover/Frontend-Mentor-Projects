@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Interactive rating component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      :root {
+        --orange: hsl(25, 97%, 53%);
+        --White: hsl(0, 0%, 100%);
+        --LightGrey: hsl(217, 12%, 63%);
+        --MediumGrey: hsl(216, 12%, 54%);
+        --DarkBlue: hsl(213, 19%, 18%);
+        --VeryDarkBlue: hsl(216, 12%, 8%);
+        /* 배경  */
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        border: 0;
+      }
+
+      body {
+        font-size: 62.5%;
+        font-family: "Overpass", sans-serif;
+        /* background-color: var(--DarkBlue); */
+        background-color: black;
+        color: var(--White);
+      }
+
+      .rating {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: var(--DarkBlue);
+        opacity: 0.9;
+        width: 22rem;
+        height: 22rem;
+        display: flex;
+        flex-direction: column;
+        padding: 1.6rem;
+        border-radius: 1.5rem;
+      }
+
+      .rating__icon {
+        width: 2.4rem;
+        height: 2.4rem;
+        border-radius: 50%;
+        background-color: hsl(216, 12%, 54%, 0.15);
+        position: relative;
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 0 1px rgba(0, 0, 0, 0.3);
+        margin-bottom: 1.8rem;
+      }
+
+      .rating__icon img {
+        display: block;
+        width: 14px;
+        height: 14px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-43%, -50%);
+      }
+
+      .rating__heading {
+        font-size: 1.5rem;
+        font-weight: 400;
+        margin-bottom: 0.6rem;
+      }
+
+      .rating__info {
+        font-size: 0.8rem;
+        opacity: 0.4;
+        line-height: 1.3rem;
+      }
+
+      .rating__numberBox {
+        width: 95%;
+        display: flex;
+        /* gap: 1.2rem;
+         */
+        justify-content: space-between;
+      }
+
+      .rating__numberBox input {
+        display: none;
+      }
+
+      .rating__numberBox label {
+        width: 2.6rem;
+        height: 2.6rem;
+        border-radius: 50%;
+        background-color: var(--DarkBlue);
+        position: relative;
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 0 1px rgba(0, 0, 0, 0.3);
+        background-color: hsl(216, 12%, 54%, 0.3);
+        opacity: 0.4;
+        padding: 0.8rem 0;
+        text-align: center;
+        font-size: 0.8rem;
+        margin: 1.5rem 0;
+        cursor: pointer;
+      }
+
+      .rating__numberBox label:hover {
+        background-color: var(--orange);
+        opacity: 1;
+      }
+
+      .rating__numberBox input:checked + label {
+        background-color: hsl(217, 12%, 63%);
+        opacity: 1;
+      }
+
+      .rating__btn {
+        background-color: var(--orange);
+        color: white;
+        padding: 0.8rem 1.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+        font-size: 0.75rem;
+        font-weight: 400;
+        border-radius: 10rem;
+        width: 95%;
+        cursor: pointer;
+      }
+
+      .rating__btn:hover {
+        background-color: var(--White);
+        color: var(--orange);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Rating state start -->
+    <div class="rating">
+      <div class="rating__icon">
+        <img src="./images/icon-star.svg" alt="Star Icon" />
+      </div>
+      <h3 class="rating__heading">How did we do?</h3>
+      <p class="rating__info">
+        Please let us know how we did with your support request. All feedback is
+        appreciated to help us improve our offering!
+      </p>
+      <div class="rating__numberBox">
+        <input id="rate1" type="radio" value="1" name="rateNumber" />
+        <label class="label" for="rate1">1</label>
+        <input id="rate2" type="radio" value="2" name="rateNumber" />
+        <label class="label" for="rate2">2</label>
+        <input id="rate3" type="radio" value="3" name="rateNumber" />
+        <label class="label" for="rate3">3</label>
+        <input id="rate4" type="radio" value="4" name="rateNumber" />
+        <label class="label" for="rate4">4</label>
+        <input id="rate5" type="radio" value="5" name="rateNumber" />
+        <label class="label" for="rate5">5</label>
+      </div>
+      <button class="rating__btn" type="submit">Submit</button>
+    </div>
+    <!-- 
+    Rating state end
+
+    Thank you state start
+
+    You selected
+    Add rating here
+    out of 5 Thank you! We appreciate you taking the time to give a rating. If
+    you ever need more support, don’t hesitate to get in touch! Thank you state
+    end -->
+  </body>
+</html>
