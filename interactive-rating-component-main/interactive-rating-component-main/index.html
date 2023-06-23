@@ -46,6 +46,66 @@
         color: var(--White);
       }
 
+      .thanks {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: var(--DarkBlue);
+        opacity: 0.9;
+        width: 22rem;
+        height: 22rem;
+        display: flex;
+        flex-direction: column;
+        border-radius: 1.5rem;
+        visibility: hidden;
+      }
+
+      .thanks__imgBox {
+        width: 9rem;
+        height: 6rem;
+        display: block;
+        margin-top: 2.5rem;
+        margin: 2.5rem auto 1.5rem auto;
+      }
+
+      .thanks__imgBox img {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .thanks__rateBox {
+        display: block;
+        background-color: hsl(216, 12%, 54%, 0.15);
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 0 1px rgba(0, 0, 0, 0.3);
+        border-radius: 5rem;
+        width: 10.8rem;
+        height: 1.8rem;
+        margin: 0 auto;
+
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: var(--orange);
+        padding: 0.45rem 0;
+        text-align: center;
+        opacity: 0.8;
+      }
+
+      .thanks__header {
+        font-size: 1.6rem;
+        text-align: center;
+        margin-top: 1.8rem;
+      }
+
+      .thanks__info {
+        font-size: 0.8rem;
+        color: var(--LightGrey);
+        text-align: center;
+        padding: 0.7rem 2rem;
+        line-height: 1.2rem;
+      }
+
       .rating {
         position: absolute;
         top: 50%;
@@ -59,6 +119,7 @@
         flex-direction: column;
         padding: 1.6rem;
         border-radius: 1.5rem;
+        /* display: none; */
       }
 
       .rating__icon {
@@ -96,8 +157,6 @@
       .rating__numberBox {
         width: 95%;
         display: flex;
-        /* gap: 1.2rem;
-         */
         justify-content: space-between;
       }
 
@@ -151,7 +210,6 @@
     </style>
   </head>
   <body>
-    <!-- Rating state start -->
     <div class="rating">
       <div class="rating__icon">
         <img src="./images/icon-star.svg" alt="Star Icon" />
@@ -161,29 +219,54 @@
         Please let us know how we did with your support request. All feedback is
         appreciated to help us improve our offering!
       </p>
-      <div class="rating__numberBox">
-        <input id="rate1" type="radio" value="1" name="rateNumber" />
-        <label class="label" for="rate1">1</label>
-        <input id="rate2" type="radio" value="2" name="rateNumber" />
-        <label class="label" for="rate2">2</label>
-        <input id="rate3" type="radio" value="3" name="rateNumber" />
-        <label class="label" for="rate3">3</label>
-        <input id="rate4" type="radio" value="4" name="rateNumber" />
-        <label class="label" for="rate4">4</label>
-        <input id="rate5" type="radio" value="5" name="rateNumber" />
-        <label class="label" for="rate5">5</label>
-      </div>
-      <button class="rating__btn" type="submit">Submit</button>
+      <form id="form">
+        <div class="rating__numberBox">
+          <input id="rate1" type="radio" value="1" name="rateNumber" />
+          <label class="label" for="rate1">1</label>
+          <input id="rate2" type="radio" value="2" name="rateNumber" />
+          <label class="label" for="rate2">2</label>
+          <input id="rate3" type="radio" value="3" name="rateNumber" />
+          <label class="label" for="rate3">3</label>
+          <input id="rate4" type="radio" value="4" name="rateNumber" />
+          <label class="label" for="rate4">4</label>
+          <input id="rate5" type="radio" value="5" name="rateNumber" />
+          <label class="label" for="rate5">5</label>
+        </div>
+        <button class="rating__btn" type="submit">Submit</button>
+      </form>
     </div>
-    <!-- 
-    Rating state end
 
-    Thank you state start
+    <div class="thanks">
+      <div class="thanks__imgBox">
+        <img src="./images/illustration-thank-you.svg" alt="Thank you img" />
+      </div>
+      <div class="thanks__rateBox">You selected 4 out of 5</div>
 
-    You selected
-    Add rating here
-    out of 5 Thank you! We appreciate you taking the time to give a rating. If
-    you ever need more support, don’t hesitate to get in touch! Thank you state
-    end -->
+      <span class="thanks__header">Thank you!</span>
+      <p class="thanks__info">
+        We appreciate you taking the time to give a rating. If you ever need
+        more support, don’t hesitate to get in touch!
+      </p>
+    </div>
+
+    <script>
+      const ratingCard = document.querySelector(".rating");
+      const thanksCard = document.querySelector(".thanks");
+      const form = document.getElementById("form");
+      const rateBox = document.querySelector(".thanks__rateBox");
+
+      function changDisplay(event) {
+        event.preventDefault();
+        const rateValue = document.querySelector(
+          'input[name="rateNumber"]:checked'
+        ).value;
+
+        ratingCard.style.visibility = "hidden";
+        thanksCard.style.visibility = "visible";
+        rateBox.textContent = `You selected ${rateValue} out of 5`;
+      }
+
+      form.addEventListener("submit", changDisplay);
+    </script>
   </body>
 </html>
