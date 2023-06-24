@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Frontend Mentor | NFT preview card component</title>
+    <style>
+      :root {
+        --softBlue: hsl(215, 51%, 70%);
+        --cyan: hsl(178, 100%, 50%);
+
+        --veryDarkBlueMain: hsl(217, 54%, 11%);
+        --veryDarkBlueCard: hsl(216, 50%, 16%);
+        --veryDarkBlueLine: hsl(215, 32%, 27%);
+        --white: hsl(0, 0%, 100%);
+      }
+
+      /* ### Primary
+      - Soft blue:
+      - Cyan:
+
+      ### Neutral
+
+      - Very dark blue (main BG):
+      - Very dark blue (card BG):
+      - Very dark blue (line):
+      - White:  */
+
+      *,
+      *::befor,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      body {
+        font-family: "Outfit", sans-serif;
+        color: var(--white);
+        background-color: var(--veryDarkBlueMain);
+      }
+
+      .nftCard {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        max-width: 30rem;
+        /* max-height: 120rem; */
+        padding: 2.5rem;
+        background-color: var(--veryDarkBlueCard);
+        border-radius: 10px;
+      }
+
+      .nftCard__imgBox {
+        max-width: 50rem;
+        max-height: 55rem;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 2rem;
+        position: relative;
+      }
+
+      .nftCard__imgBox img {
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+      }
+
+      .nftCard__imgBox img:hover {
+        filter: invert(99%) sepia(83%) saturate(1624%) hue-rotate(149deg)
+          brightness(92%) contrast(87%);
+      }
+
+      .hoverEffect {
+        width: 3rem;
+        height: 2rem;
+        background-color: transparent;
+        border: 6px solid white;
+        z-index: 999;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 100%;
+        visibility: hidden;
+      }
+
+      .hoverEffect::after {
+        box-sizing: border-box;
+        content: "";
+        width: 1.5rem;
+        height: 1.5rem;
+        background-color: white;
+        border: 1px solid transparent;
+        z-index: 99;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+      }
+
+      .nftCard__header h3 {
+        font-size: 2.3rem;
+        font-weight: 700;
+        margin-bottom: 1.3rem;
+        cursor: pointer;
+      }
+
+      .nftCard__header h3:hover {
+        color: var(--cyan);
+      }
+
+      .nftCard__header p {
+        font-size: 1.8rem;
+        font-weight: 400;
+        line-height: 2.6rem;
+        color: var(--softBlue);
+        opacity: 0.8;
+        margin-bottom: 1.5rem;
+      }
+
+      .nftCard__info {
+        display: flex;
+        justify-content: space-between;
+        /* align-items: center; */
+        margin-bottom: 1.6rem;
+      }
+
+      .nftCard__leftInfo,
+      .nftCard__rightInfo {
+        display: flex;
+        /* justify-content: center; */
+        align-items: center;
+        gap: 0.7rem;
+        font-size: 1.4rem;
+        font-weight: 400;
+      }
+
+      .nftCard__leftInfo {
+        color: var(--cyan);
+        opacity: 0.9;
+      }
+
+      .nftCard__rightInfo {
+        color: var(--softBlue);
+        opacity: 0.8;
+      }
+
+      .line {
+        width: 100%;
+        height: 0.1rem;
+        background-color: var(--veryDarkBlueLine);
+        margin-bottom: 1rem;
+      }
+
+      .nftCard__footer {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+      }
+
+      .nftCard__footer img {
+        width: 3.3rem;
+        height: 3.3rem;
+        border-radius: 50%;
+        border: 1px solid var(--white);
+      }
+
+      .nftCard__footer span:nth-child(2) {
+        font-size: 1.5rem;
+        color: var(--softBlue);
+        opacity: 0.8;
+      }
+
+      .nftCard__footer span:nth-child(3) {
+        margin-left: -1rem;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+
+      .nftCard__footer span:nth-child(3):hover {
+        color: var(--cyan);
+      }
+
+      @media only screen and (max-width: 23.45em) {
+        .nftCard {
+          width: 28rem;
+        }
+
+        .nftCard__header p {
+          font-size: 1.5rem;
+          line-height: 2.2rem;
+          margin-top: -0.3rem;
+        }
+
+        .nftCard__leftInfo {
+          font-size: 1.5rem;
+        }
+
+        .nftCard__rightInfo {
+          font-size: 1.5rem;
+        }
+
+        .line {
+          margin-top: -0.2rem;
+        }
+
+        .nftCard__footer {
+          margin-top: 1.6rem;
+        }
+
+        .nftCard__footer img {
+          width: 3rem;
+          height: 3rem;
+        }
+
+        .nftCard__footer span:nth-child(2) {
+          font-size: 1.55rem;
+          font-weight: 400;
+        }
+
+        .nftCard__footer span:nth-child(3) {
+          font-size: 1.55rem;
+          font-weight: 400;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nftCard">
+      <div class="nftCard__imgBox">
+        <img src="./images/image-equilibrium.jpg" alt="equilibrium nft" />
+        <div class="hoverEffect"></div>
+      </div>
+
+      <div class="nftCard__header">
+        <h3>Equilibrium #3429</h3>
+        <p>Our Equilibrium collection promotes balance and calm.</p>
+      </div>
+      <div class="nftCard__info">
+        <div class="nftCard__leftInfo">
+          <img src="./images/icon-ethereum.svg" />
+          <span>0.041 ETH</span>
+        </div>
+        <div class="nftCard__rightInfo">
+          <img src="./images/icon-clock.svg" />
+          <span>3 days left</span>
+        </div>
+      </div>
+      <div class="line"></div>
+      <div class="nftCard__footer">
+        <img src="./images/image-avatar.png" />
+        <span>Creation of</span> <span>Jules Wyvern</span>
+      </div>
+    </div>
+    <script>
+      const img = document.querySelector(".nftCard__imgBox");
+      const box = document.querySelector(".hoverEffect");
+
+      img.addEventListener("mouseenter", () => {
+        box.style.visibility = "visible";
+      });
+
+      img.addEventListener("mouseleave", () => {
+        box.style.visibility = "hidden";
+      });
+    </script>
+  </body>
+</html>
