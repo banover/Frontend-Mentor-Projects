@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Profile card component</title>
+
+    <style>
+      :root {
+        --darkCyan: hsl(185, 75%, 39%);
+        --veryDarkDesaturatedBlue: hsl(229, 23%, 23%);
+        --darkGrayishBlue: hsl(227, 10%, 46%);
+        --darkGray: hsl(0, 0%, 59%);
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      body {
+        font-family: "Kumbh Sans", sans-serif;
+      }
+
+      .background {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 160rem;
+        height: 70rem;
+        background: top -500px left -200px no-repeat
+            url(images/bg-pattern-top.svg),
+          right -180px top 340px no-repeat url(images/bg-pattern-bottom.svg);
+        background-color: var(--darkCyan);
+      }
+
+      .profile {
+        width: 35rem;
+        height: 37rem;
+        background-color: white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      .profile__upperBackground {
+        width: 100%;
+        height: 14rem;
+        background: url(images/bg-pattern-card.svg);
+      }
+
+      .profile__img {
+        width: 10rem;
+        height: 10rem;
+        position: absolute;
+        top: 38%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        border: 4px solid white;
+      }
+
+      .profile__infoBox {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .profile__introBox {
+        height: 7rem;
+        text-align: center;
+        margin-top: 6rem;
+        border-bottom: 2px solid rgb(0, 0, 0, 0.05);
+      }
+
+      .profile__name {
+        font-size: 1.8rem;
+        font-weight: 700;
+      }
+
+      .profile__age {
+        font-size: 1.8rem;
+        color: var(--darkGray);
+        margin-left: 0.6rem;
+      }
+
+      .profile__address {
+        font-size: 1.4rem;
+        color: var(--darkGray);
+        margin-top: 0.7rem;
+        margin-bottom: 2rem;
+      }
+
+      .profile__statsBox {
+        padding: 2.5rem 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-align: center;
+      }
+
+      .profile__statsBox div {
+        font-size: 1.8rem;
+        font-weight: 700;
+      }
+
+      .profile__statsBox span {
+        font-size: 0.9rem;
+        letter-spacing: 0.1rem;
+        color: var(--darkGray);
+      }
+
+      @media only screen and (max-width: 23.45em) {
+        .background {
+          width: 37.5rem;
+          background: top -600px left -750px no-repeat
+              url(images/bg-pattern-top.svg),
+            right -750px top 300px no-repeat url(images/bg-pattern-bottom.svg);
+          background-color: var(--darkCyan);
+        }
+        .profile {
+          width: 33rem;
+          height: 36rem;
+        }
+
+        .profile__img {
+          top: 40%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="background">
+      <div class="profile">
+        <div class="profile__upperBackground"></div>
+        <img class="profile__img" src="images/image-victor.jpg" />
+        <div class="profile__infoBox">
+          <div class="profile__introBox">
+            <span class="profile__name">Victor Crest</span>
+            <span class="profile__age">26</span>
+            <div class="profile__address">London</div>
+          </div>
+          <div class="profile__statsBox">
+            <div>80K <br /><span>Followers</span></div>
+            <div>803K <br /><span>Likes</span></div>
+            <div>1.4K <br /><span>Photos</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
