@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | FAQ Accordion Card</title>
+
+    <style>
+      :root {
+        --veryDarkDesaturatedBlue: hsl(238, 29%, 16%);
+        --softRed: hsl(14, 88%, 65%);
+        --softViolet: hsl(273, 75%, 66%);
+        --softBlue: hsl(240, 73%, 65%);
+        --veryDarkGrayishBlue: hsl(237, 12%, 33%);
+        --darkGrayishBlue: hsl(240, 6%, 50%);
+        --lightGrayishBlue: hsl(240, 5%, 91%);
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      body {
+        font-family: "Kumbh Sans", sans-serif;
+      }
+
+      .background {
+        width: 140rem;
+        height: 90rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: linear-gradient(to top, var(--softBlue), var(--softViolet));
+      }
+
+      .accordion {
+        width: 95rem;
+        height: 50rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        border-radius: 20px;
+        /* overflow: hidden; */
+        box-shadow: 5px 20px 10px rgb(0, 0, 0, 0.3);
+
+        display: flex;
+      }
+
+      .accordion__imgBox {
+        width: 50%;
+        height: 100%;
+        background: top -295px right 88px no-repeat url(images/bg-pattern-desktop.svg);
+        /* flex: 1; */
+        position: relative;
+        overflow: hidden;
+      }
+
+      .accordion__imgBox img {
+        position: absolute;
+        top: 13%;
+        left: -18%;
+      }
+
+      .accordion__boxImg {
+        position: absolute;
+        top: 40%;
+        left: -10%;
+        z-index: 3;
+      }
+
+      .accordion__infoBox {
+        /* flex: 1; */
+
+        /* border: 10px solid black; */
+      }
+
+      .accordion__description {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        margin-top: 6rem;
+        /* padding: 6rem 0; */
+      }
+
+      .accordion__heading {
+        font-size: 3rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+      }
+
+      .accordion__info {
+        width: 35rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid var(--lightGrayishBlue);
+      }
+
+      .accordion__tab {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .accordion__question {
+        font-size: 1.3rem;
+        font-weight: 700;
+        opacity: 0.5;
+        cursor: pointer;
+        /* transition: ; */
+      }
+
+      .accordion__question:hover {
+        color: var(--softRed);
+      }
+
+      .active .accordion__question {
+        opacity: 1;
+      }
+
+      .accordion__btn {
+        width: 0.9rem;
+        height: 0.7rem;
+        cursor: pointer;
+        margin-right: 1.1rem;
+        /* transition: ; */
+      }
+
+      .active .accordion__btn {
+        transform: rotate(180deg);
+      }
+
+      .accordion__answer {
+        font-size: 1.2rem;
+        color: var(--darkGrayishBlue);
+        opacity: 0.8;
+        display: none;
+        /* transition:; */
+      }
+
+      .active .accordion__answer {
+        display: block;
+      }
+
+      @media only screen and (max-width: 23.45em) {
+        .background {
+          width: 37.5rem;
+          height: 100%;
+          background: linear-gradient(
+            to bottom,
+            var(--softViolet),
+            var(--softBlue)
+          );
+        }
+        .accordion {
+          margin-top: 3rem;
+          width: 33.5rem;
+          height: 55rem;
+          /* display: block; */
+          flex-direction: column;
+        }
+
+        .accordion__imgBox {
+          width: 100%;
+          height: 25%;
+          overflow: visible;
+          background: center no-repeat url(images/bg-pattern-mobile.svg);
+          top: -4%;
+        }
+
+        .accordion__imgBox img {
+          width: 24rem;
+          height: 24rem;
+          top: -86%;
+          left: 14%;
+        }
+
+        .accordion__boxImg {
+          display: none;
+        }
+
+        .accordion__description {
+          width: 100%;
+          margin-top: 0;
+        }
+
+        .accordion__heading {
+          text-align: center;
+        }
+
+        .accordion__info {
+          margin: 0 auto;
+          width: 30rem;
+        }
+
+        .accordion__answer {
+          width: 85%;
+        }
+
+        .accordion__question:hover {
+          color: inherit;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="background">
+      <div class="accordion">
+        <picture class="accordion__imgBox">
+          <source
+            media="(max-width: 23.45em)"
+            srcset="./images/illustration-woman-online-mobile.svg"
+          />
+          <source
+            media="(max-width: 90em)"
+            srcset="./images/illustration-woman-online-desktop.svg"
+          />
+          <img src="./images/illustration-woman-online-desktop.svg" />
+        </picture>
+        <!-- <div class="accordion__imgBox">
+          <img src="images/illustration-woman-online-desktop.svg" />
+        </div> -->
+        <img
+          class="accordion__boxImg"
+          src="images/illustration-box-desktop.svg"
+        />
+        <div clsas="accordion__infoBox">
+          <div class="accordion__description">
+            <span class="accordion__heading">faq</span>
+            <div class="accordion__info">
+              <div class="accordion__tab">
+                <p class="accordion__question">
+                  How many team members can I invite?
+                </p>
+                <img
+                  class="accordion__btn"
+                  src="images/icon-arrow-down.svg"
+                  alt="icon-arrow-down"
+                />
+              </div>
+              <p class="accordion__answer">
+                You can invite up to 2 additional users on the Free plan. There
+                is no limit on team members for the Premium plan.
+              </p>
+            </div>
+            <div class="accordion__info active">
+              <div class="accordion__tab">
+                <p class="accordion__question">
+                  What is the maximum file upload size?
+                </p>
+                <img
+                  class="accordion__btn"
+                  src="images/icon-arrow-down.svg"
+                  alt="icon-arrow-down"
+                />
+              </div>
+              <p class="accordion__answer">
+                No more than 2GB. All files in your account must fit your
+                allotted storage space.
+              </p>
+            </div>
+            <div class="accordion__info">
+              <div class="accordion__tab">
+                <p class="accordion__question">How do I reset my password?</p>
+                <img
+                  class="accordion__btn"
+                  src="images/icon-arrow-down.svg"
+                  alt="icon-arrow-down"
+                />
+              </div>
+              <p class="accordion__answer">
+                Click “Forgot password” from the login page or “Change password”
+                from your profile page. A reset link will be emailed to you.
+              </p>
+            </div>
+            <div class="accordion__info">
+              <div class="accordion__tab">
+                <p class="accordion__question">Can I cancel my subscription?</p>
+                <img
+                  class="accordion__btn"
+                  src="images/icon-arrow-down.svg"
+                  alt="icon-arrow-down"
+                />
+              </div>
+              <p class="accordion__answer">
+                Yes! Send us a message and we’ll process your request no
+                questions asked.
+              </p>
+            </div>
+            <div class="accordion__info">
+              <div class="accordion__tab">
+                <p class="accordion__question">
+                  Do you provide additional support?
+                </p>
+                <img
+                  class="accordion__btn"
+                  src="images/icon-arrow-down.svg"
+                  alt="icon-arrow-down"
+                />
+              </div>
+              <p class="accordion__answer">
+                Chat and email support is available 24/7. Phone lines are open
+                during normal business hours.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const descriptionTag = document.querySelector(".accordion__description");
+      descriptionTag.addEventListener("click", (e) => {
+        console.log(e.target);
+        console.log(e.target.closest(".accordion__info"));
+        const closestInfoTag = e.target.closest(".accordion__info");
+        closestInfoTag.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>
