@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Article preview component</title>
+
+    <style>
+      :root {
+        --veryDarkGrayishBlue: hsl(217, 19%, 35%);
+        --desaturatedDarkBlue: hsl(214, 17%, 51%);
+        --grayishBlue: hsl(212, 23%, 69%);
+        --lightGrayishBlue: hsl(210, 46%, 95%);
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      body {
+        font-family: "Manrope", sans-serif;
+        background-color: var(--lightGrayishBlue);
+      }
+
+      .article {
+        width: 70rem;
+        height: 26rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        display: flex;
+        border-radius: 5px;
+        background-color: white;
+      }
+      .article__imgBox {
+        flex: 0.59;
+        background: no-repeat url(./images/drawers.jpg);
+        background-size: cover;
+        border-radius: 5px 0 0 5px;
+      }
+
+      .article__infoBox {
+        flex: 1;
+      }
+
+      .article__info {
+        padding: 3rem 4rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .article__heading {
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 0.01rem;
+      }
+
+      .article__description {
+        font-size: 1.3rem;
+        font-weight: 500;
+        color: var(--desaturatedDarkBlue);
+        margin-bottom: 1rem;
+      }
+
+      .article__figureBox {
+        display: flex;
+        align-items: center;
+      }
+
+      .article__figureImg {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+      }
+
+      .article__details {
+        display: flex;
+        flex-direction: column;
+        gap: 0.1rem;
+        letter-spacing: 0.03rem;
+
+        margin-left: 1.3rem;
+      }
+
+      .article__figureName {
+        font-weight: 700;
+      }
+
+      .article__figureDate {
+        color: var(--grayishBlue);
+      }
+
+      .article__figureBtn {
+        margin-left: auto;
+        border: none;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 0.1rem;
+        cursor: pointer;
+        z-index: 98;
+      }
+
+      .article__figureBtn::before {
+        content: "";
+        width: 3.5rem;
+        height: 3.5rem;
+        z-index: 998;
+        background-color: var(--lightGrayishBlue);
+        position: absolute;
+        top: 46.4rem;
+        left: 27.4rem;
+        border-radius: 50%;
+      }
+
+      .article__figureBtn:focus .article__shareBox {
+        display: block;
+        display: flex;
+      }
+
+      .article__figureBtn img {
+        width: 1.3rem;
+        height: 1.3rem;
+        z-index: 999;
+      }
+
+      .article__shareBox {
+        position: absolute;
+        top: 12.7rem;
+        left: 52rem;
+        width: 24.5rem;
+        height: 5rem;
+        background-color: var(--veryDarkGrayishBlue);
+        padding: 0 4rem;
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        border-radius: 6px;
+        display: none;
+      }
+
+      .article__shareBox::before {
+        content: "";
+        width: 1.5rem;
+        height: 1.5rem;
+        background-color: var(--veryDarkGrayishBlue);
+        position: absolute;
+        top: 4.3rem;
+        left: 11.5rem;
+        transform: rotate(45deg);
+      }
+
+      .article__shareBox span {
+        text-transform: uppercase;
+        letter-spacing: 0.4rem;
+        font-weight: 500;
+        font-size: 1.1rem;
+        color: var(--grayishBlue);
+      }
+
+      .article__shareBox img {
+        width: 1.8rem;
+        height: 1.8rem;
+      }
+
+      .article__shareBox img:nth-child(3) {
+        width: 1.7rem;
+        height: 1.7rem;
+        transform: rotate(7deg);
+      }
+
+      @media only screen and (max-width: 23.45em) {
+        .article {
+          width: 34rem;
+          height: 51rem;
+          flex-direction: column;
+          margin-top: 3rem;
+        }
+
+        .article__imgBox {
+          flex: none;
+          width: 100%;
+          height: 22.2rem;
+          border-radius: 5px 5px 0 0;
+        }
+
+        .article__infoBox {
+          flex: none;
+          width: 100%;
+          height: 29rem;
+        }
+
+        .article__info {
+          padding: 3rem 3rem;
+        }
+
+        .article__heading {
+          font-size: 1.7rem;
+        }
+
+        .article__description {
+          font-size: 1.42rem;
+        }
+
+        .article__figureBox {
+          margin-top: 1.2rem;
+        }
+
+        .article__figureBtn {
+          width: 3.5rem;
+          height: 3.5rem;
+        }
+
+        .article__figureBtn:focus::before {
+          background-color: var(--desaturatedDarkBlue);
+          z-index: 998;
+        }
+
+        .article__figureBtn img {
+          width: 1.4rem;
+          height: 1.4rem;
+        }
+
+        .article__figureBtn:focus > img:first-child {
+          margin-top: 0.3rem;
+          filter: brightness(0) saturate(100%) invert(93%) sepia(94%)
+            saturate(0%) hue-rotate(248deg) brightness(106%) contrast(106%);
+        }
+
+        .article__shareBox {
+          top: 45rem;
+          left: 0;
+          width: 34rem;
+          height: 6.2rem;
+          border-radius: 0px 0px 6px 6px;
+          z-index: 97;
+          gap: 2rem;
+        }
+
+        .article__shareBox::befor {
+          display: none;
+        }
+
+        .article__shareBox span {
+          letter-spacing: 0.4rem;
+
+          font-weight: 500;
+          font-size: 1.3rem;
+          color: var(--grayishBlue);
+        }
+
+        .article__shareBox img {
+          width: 2rem;
+          height: 2rem;
+        }
+
+        .article__shareBox img:nth-child(3) {
+          width: 1.8rem;
+          height: 1.8rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <article class="article">
+      <div class="article__imgBox"></div>
+      <div class="article__infoBox">
+        <div class="article__info">
+          <h3 class="article__heading">
+            Shift the overall look and feel by adding these wonderful touches to
+            furniture in your home
+          </h3>
+          <p class="article__description">
+            Ever been in a room and felt like something was missing? Perhaps it
+            felt slightly bare and uninviting. I’ve got some simple tips to help
+            you make any room feel complete.
+          </p>
+
+          <div class="article__figureBox">
+            <img
+              class="article__figureImg"
+              src="./images/avatar-michelle.jpg"
+              alt="a picture with michellee"
+            />
+            <div class="article__details">
+              <span class="article__figureName">Michelle Appleton</span>
+              <span class="article__figureDate">28 Jun 2020</span>
+            </div>
+            <button class="article__figureBtn">
+              <img src="./images/icon-share.svg" />
+              <div class="article__shareBox">
+                <span>Share</span>
+                <img src="./images/icon-facebook.svg" />
+                <img src="./images/icon-twitter.svg" />
+                <img src="./images/icon-pinterest.svg" />
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </article>
+  </body>
+</html>
