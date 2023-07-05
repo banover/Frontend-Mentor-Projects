@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Four card feature section</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      :root {
+        --red: hsl(0, 78%, 62%);
+        --cyan: hsl(180, 62%, 55%);
+        --orange: hsl(34, 97%, 64%);
+        --blue: hsl(212, 86%, 64%);
+        --veryDarkBlue: hsl(234, 12%, 34%);
+        --grayishBlue: hsl(229, 6%, 66%);
+        --veryLightGray: hsl(0, 0%, 98%);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+
+      .cards {
+        width: 100%;
+        height: 82rem;
+      }
+
+      .cards__infoBox {
+        text-align: center;
+        margin-top: 6rem;
+      }
+
+      .cards__heading {
+        font-size: 3.6rem;
+        font-weight: 200;
+      }
+
+      .cards__heading span {
+        display: block;
+        font-weight: 600;
+        color: var(--veryDarkBlue);
+        margin-top: -1rem;
+        margin-bottom: 1.4rem;
+      }
+
+      .cards__description {
+        color: var(--grayishBlue);
+        font-size: 1.5rem;
+        width: 50rem;
+        margin: 0 auto;
+      }
+
+      .cards__cardBox {
+        /* width: 100%;
+        height: 100%; */
+        position: relative;
+        /* margin-bottom: 4rem; */
+      }
+
+      .cards__card {
+        /* border-top: 1px solid var(--blue); */
+        width: 35rem;
+        height: 25rem;
+        box-shadow: 0px 2px 10px rgb(0, 0, 0, 0.3);
+        border-radius: 4px;
+
+        padding: 2.5rem 2.5rem;
+        position: relative;
+      }
+
+      .cards__card:nth-child(1) {
+        border-top: 4px solid var(--cyan);
+        position: absolute;
+        top: 20rem;
+        left: 20rem;
+      }
+      .cards__card:nth-child(2) {
+        border-top: 4px solid var(--red);
+        position: absolute;
+        top: 5rem;
+        left: 58.5rem;
+      }
+      .cards__card:nth-child(3) {
+        border-top: 4px solid var(--orange);
+        position: absolute;
+        top: 32.7rem;
+        left: 58.5rem;
+      }
+      .cards__card:nth-child(4) {
+        border-top: 4px solid var(--blue);
+        position: absolute;
+        top: 20rem;
+        left: 97rem;
+      }
+
+      .cards__cardTitle {
+        font-size: 2.2em;
+        font-weight: 600;
+      }
+
+      .cards__cardDescription {
+        font-size: 1.4rem;
+        color: var(--grayishBlue);
+        /* width: 95%; */
+      }
+
+      .cards__cardImg {
+        display: block;
+        position: absolute;
+        top: 14rem;
+        left: 25rem;
+      }
+
+      @media only screen and (max-width: 23.45em) {
+        .cards {
+          width: 37.5rem;
+          height: 120rem;
+        }
+
+        .cards__infoBox {
+          /* padding: 2rem 2.5rem; */
+          /* width: 87%;
+          height: 15rem;
+          margin: 0 auto; */
+          /* height: 12rem; */
+        }
+
+        .cards__heading {
+          font-size: 2.5rem;
+          font-weight: 200;
+        }
+
+        .cards__heading span {
+          display: block;
+          font-weight: 600;
+          color: var(--veryDarkBlue);
+          margin-top: -0.5rem;
+          margin-bottom: 1.4rem;
+        }
+
+        .cards__description {
+          display: inline-block;
+          width: 31rem;
+          height: 7rem;
+          /* width: 85%; */
+          /* padding: 0rem 3rem; */
+          /* text-align: center; */
+
+          font-size: 1.55rem;
+          margin: 0 auto;
+        }
+
+        .cards__cardBox {
+          margin-top: 6rem;
+          /* margin-bottom: 6rem; */
+        }
+
+        .cards__card {
+          /* border-top: 1px solid var(--blue); */
+          width: 88%;
+          height: 22rem;
+          box-shadow: 0px 2px 10px rgb(0, 0, 0, 0.3);
+          border-radius: 4px;
+
+          padding: 2.5rem 2.5rem;
+          position: relative;
+          margin: 0 auto;
+        }
+
+        .cards__card:nth-child(1) {
+          border-top: 4px solid var(--cyan);
+          position: relative;
+          top: 0;
+          left: 0;
+        }
+        .cards__card:nth-child(2) {
+          border-top: 4px solid var(--red);
+          position: relative;
+          top: 0;
+          left: 0;
+        }
+        .cards__card:nth-child(3) {
+          border-top: 4px solid var(--orange);
+          position: relative;
+          top: 0;
+          left: 0;
+        }
+        .cards__card:nth-child(4) {
+          border-top: 4px solid var(--blue);
+          position: relative;
+          top: 0;
+          left: 0;
+        }
+
+        .cards__card:not(:last-child) {
+          margin-bottom: 2rem;
+        }
+
+        .cards__cardDescription {
+          font-size: 1.3rem;
+          /* color: var(--grayishBlue); */
+          width: 90%;
+        }
+
+        .cards__cardImg {
+          /* display: block;
+          position: absolute; */
+          top: 12rem;
+          left: 24rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="cards">
+      <header class="cards__infoBox">
+        <h2 class="cards__heading">
+          Reliable, efficient delivery<br /><span>Powered by Technology</span>
+        </h2>
+        <p class="cards__description">
+          Our Artificial Intelligence powered tools use millions of project data
+          points to ensure that your project is successful
+        </p>
+      </header>
+      <main class="cards__cardBox">
+        <article class="cards__card">
+          <h3 class="cards__cardTitle">Supervisor</h3>
+          <p class="cards__cardDescription">
+            Monitors activity to identify project roadblocks
+          </p>
+          <img
+            class="cards__cardImg"
+            src="./images/icon-supervisor.svg"
+            alt="a reading glasses picture"
+          />
+        </article>
+        <article class="cards__card">
+          <h3 class="cards__cardTitle">Team Builder</h3>
+          <p class="cards__cardDescription">
+            Scans our talent network to create the optimal team for your project
+          </p>
+          <img
+            class="cards__cardImg"
+            src="./images/icon-team-builder.svg"
+            alt="a builder picture"
+          />
+        </article>
+        <article class="cards__card">
+          <h3 class="cards__cardTitle">Karma</h3>
+          <p class="cards__cardDescription">
+            Regularly evaluates our talent to ensure quality
+          </p>
+          <img
+            class="cards__cardImg"
+            src="./images/icon-karma.svg"
+            alt="a light bulb picture"
+          />
+        </article>
+        <article class="cards__card">
+          <h3 class="cards__cardTitle">Calculator</h3>
+          <p class="cards__cardDescription">
+            Uses data from past projects to provide better delivery estimates
+          </p>
+          <img
+            class="cards__cardImg"
+            src="./images/icon-calculator.svg"
+            alt="a calculator picture"
+          />
+        </article>
+      </main>
+    </section>
+  </body>
+</html>
