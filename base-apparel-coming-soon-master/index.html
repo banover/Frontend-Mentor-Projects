@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Frontend Mentor | Base Apparel coming soon page</title>
+
+    <style>
+      :root {
+        --desaturatedRed: hsl(0, 36%, 70%);
+        --softRed: hsl(0, 93%, 68%);
+        --darkGrayishRed: hsl(0, 6%, 24%);
+        --gradientWhiteFrom: hsl(0, 0%, 100%);
+        --gradientWhiteTo: hsl(0, 100%, 98%);
+        --gradientRedFrom: hsl(0, 80%, 86%);
+        --gradientRedTo: hsl(0, 74%, 74%);
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      body {
+        font-family: "Josefin Sans", sans-serif;
+      }
+
+      .baseSection {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        background: linear-gradient(
+          135deg,
+          hsl(0, 0%, 100%),
+          hsl(0, 100%, 98%)
+        );
+      }
+      /* .baseSection__logo {
+      
+        padding: 0 18rem;
+      } */
+
+      .baseSection__infoBox {
+        position: relative;
+        padding: 6rem 18rem;
+      }
+
+      .baseSection__logo {
+        display: block;
+        margin-bottom: 12rem;
+      }
+
+      .baseSection__heading {
+        font-size: 6.5rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 1.5rem;
+        margin-bottom: 3rem;
+      }
+
+      .baseSection__heading span {
+        color: var(--desaturatedRed);
+        font-weight: 300;
+      }
+
+      .baseSection__description {
+        font-size: 1.6rem;
+        font-weight: 400;
+        color: var(--desaturatedRed);
+        line-height: 2.8rem;
+        width: 80%;
+        margin-bottom: 3.3rem;
+      }
+
+      .baseSection__input {
+        padding: 0 2rem;
+        height: 4.5rem;
+        width: 80%;
+        border-radius: 20px;
+        outline: none;
+        border: 1px solid var(--desaturatedRed);
+        opacity: 0.5;
+        font-family: "Josefin Sans", sans-serif;
+        color: var(--darkGrayishRed);
+        font-weight: 600;
+        font-size: 1.5rem;
+      }
+
+      .baseSection__input::placeholder {
+        font-family: "Josefin Sans", sans-serif;
+        color: var(--desaturatedRed);
+        font-size: 1.5rem;
+        opacity: 0.7;
+      }
+
+      .baseSection__input:focus {
+        box-sizing: border-box;
+        outline: none;
+        border: 2px solid red;
+      }
+
+      /* .baseSection__input:invalid + .baseSection__btn::before,
+      .baseSection__input:invalid + .baseSection__btn::after {
+        display: block;
+      } */
+      /* js로 처리하기 */
+
+      .baseSection__btn {
+        width: 10%;
+        /* padding: 1.57rem 2rem; */
+        padding: 1.06rem 2rem;
+        border-radius: 20px;
+        border: none;
+        outline: 2px solid transparent;
+        background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+        box-shadow: 0px 4px 12px var(--desaturatedRed);
+
+        position: absolute;
+        top: 55.4rem;
+        left: 53rem;
+
+        cursor: pointer;
+      }
+
+      .baseSection__btn:hover {
+        background: var(--gradientRedFrom);
+      }
+
+      .baseSection__invalidIcon {
+        width: 2.5rem;
+        height: 2.5rem;
+        background-color: orange;
+        position: absolute;
+
+        top: 56.5rem;
+        left: 49.5rem;
+        background: no-repeat url(./images/icon-error.svg);
+        background-position: contain;
+        visibility: hidden;
+        opacity: 1;
+      }
+
+      .baseSection__invalidText {
+        font-family: "Josefin Sans", sans-serif;
+        font-size: 1.4rem;
+        font-weight: 400;
+        color: var(--softRed);
+        width: 20rem;
+        /* background-color: orangered; */
+        position: absolute;
+
+        top: 61rem;
+        left: 20.2rem;
+        text-align: left;
+        visibility: hidden;
+        opacity: 1;
+      }
+
+      @media only screen and (max-width: 23.45em) {
+        html {
+          font-size: 31.25%;
+        }
+
+        .baseSection {
+          width: 75rem;
+          height: 145rem;
+          flex-direction: column;
+          /* display: grid;
+          grid-template-columns: 1fr;
+          grid-template-rows: 0.2fr 0.7fr 1fr; */
+        }
+
+        .baseSection__infoBox {
+          padding: 0;
+          width: 100%;
+          height: 100%;
+          text-align: center;
+          /* grid-row: 3/ -1; */
+        }
+
+        .baseSection__logo {
+          width: 25rem;
+          height: 5rem;
+          margin-left: 5rem;
+          margin-top: 5.5rem;
+          margin-bottom: 66rem;
+        }
+
+        .baseSection__heading {
+          width: 80%;
+          margin: 0 auto;
+          font-size: 8rem;
+          letter-spacing: 2rem;
+
+          /* margin-top: 8rem; */
+        }
+
+        .baseSection__description {
+          font-size: 3rem;
+          font-weight: 400;
+
+          line-height: 3.5rem;
+          width: 85%;
+          margin: 4rem auto;
+        }
+
+        .baseSection__imgBox {
+          position: absolute;
+          top: 15.8rem;
+          left: 0;
+        }
+
+        .baseSection__input {
+          padding: 0 3.5rem;
+          height: 8rem;
+          width: 85%;
+          border-radius: 20px;
+        }
+
+        .baseSection__btn {
+          width: 13%;
+
+          height: 8rem;
+
+          box-shadow: 0px 2px 4px var(--desaturatedRed);
+
+          top: 123rem;
+          left: 59.5rem;
+        }
+
+        .baseSection__invalidIcon {
+          width: 5rem;
+          height: 5rem;
+          top: 124.8rem;
+          left: 52.2rem;
+        }
+
+        .baseSection__invalidText {
+          width: 35rem;
+          top: 133rem;
+          left: 9.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="baseSection">
+      <div class="baseSection__infoBox">
+        <img
+          class="baseSection__logo"
+          src="./images/logo.svg"
+          alt="BASE APPAREL logo"
+        />
+        <h2 class="baseSection__heading"><span>We're</span> coming soon</h2>
+        <p class="baseSection__description">
+          Hello fellow shoppers! We're currently building our new fashion store.
+          Add your email below to stay up-to-date with announcements and our
+          launch deals.
+        </p>
+
+        <form class="baseSection__form">
+          <input
+            class="baseSection__input"
+            type="text"
+            placeholder="Email Address"
+            required
+          />
+          <button class="baseSection__btn" type="submit">
+            <img src="./images/icon-arrow.svg" alt="a right way arrow" />
+          </button>
+        </form>
+        <div class="baseSection__invalidIcon"></div>
+        <div class="baseSection__invalidText">Please provide a valid email</div>
+      </div>
+
+      <picture class="baseSection__imgBox">
+        <source
+          media="(max-width: 23.45em)"
+          srcset="./images/hero-mobile.jpg"
+        />
+        <source media="(max-width: 90em)" srcset="./images/hero-desktop.jpg" />
+        <img src="./images/hero-desktop.jpg" />
+      </picture>
+    </section>
+    <script>
+      const form = document.querySelector(".baseSection__form");
+      const input = document.querySelector(".baseSection__input");
+      const btn = document.querySelector(".baseSection__btn");
+      const invalidIcon = document.querySelector(".baseSection__invalidIcon");
+      const invalidText = document.querySelector(".baseSection__invalidText");
+      // const buttonBefore = document.querySelector(".baseSection__btn::before");
+      // const buttonAfter = document.querySelector(".baseSection__btn::after");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        console.log(e.target[0].value);
+
+        const reg =
+          /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+
+        console.log(!reg.exec(e.target[0].value));
+        if (!reg.exec(e.target[0].value)) {
+          console.log("실행중");
+          invalidIcon.style.opacity = 1;
+          invalidIcon.style.visibility = "visible";
+          invalidText.style.opacity = 1;
+          invalidText.style.visibility = "visible";
+        }
+      });
+      // if()
+    </script>
+  </body>
+</html>
