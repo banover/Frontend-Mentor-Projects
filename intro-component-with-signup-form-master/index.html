@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Intro component with sign up form</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      :root {
+        --red: hsl(0, 100%, 74%);
+        --green: hsl(154, 59%, 51%);
+        --blue: hsl(248, 32%, 49%);
+        --darkBlue: hsl(249, 10%, 26%);
+        --grayishBlue: hsl(246, 25%, 77%);
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+
+      .intro {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 144rem;
+        height: 80rem;
+        /* height: auto; */
+        background: no-repeat url(./images/bg-intro-desktop.png);
+        background-color: var(--red);
+
+        display: flex;
+        padding: 0 15rem;
+      }
+
+      .intro__leftPage {
+        width: 50%;
+        height: 100%;
+        color: white;
+      }
+
+      .intro__infoBox {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* align-items: center; */
+        gap: 2.5rem;
+        /* padding-left: 21rem; */
+        /* padding-left: 27.5%; */
+      }
+
+      .intro__infoBox h2 {
+        font-size: 4.9rem;
+        line-height: 5.3rem;
+      }
+
+      .intro__infoBox p {
+        width: 90%;
+        font-size: 1.6rem;
+        line-height: 2.5rem;
+      }
+
+      .intro__rightPage {
+        width: 50%;
+        height: 100%;
+
+        /* display: flex;
+        align-items: center; */
+
+        /* padding: 12em 0; */
+        /* margin-left: -5rem; */
+      }
+
+      .intro__rightPageContainer {
+        width: 100%;
+        /* height: auto; */
+        height: 100%;
+        /* margin: auto; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* align-items: center; */
+        gap: 2rem;
+      }
+
+      .intro__banner {
+        width: 100%;
+        height: 5rem;
+        background-color: var(--blue);
+        border-radius: 6px;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.69);
+        font-size: 1.5rem;
+        font-weight: 400;
+        padding: 1.2rem 0;
+      }
+
+      .intro__banner span {
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: white;
+      }
+
+      .intro__formBox {
+        width: 100%;
+        /* height: 100%; */
+        height: auto;
+        background-color: white;
+        border-radius: 6px;
+        box-shadow: 0px 7px 0px rgb(0, 0, 0, 0.3);
+      }
+
+      .intro__form {
+        width: 100%;
+        /* height: 100%; */
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        align-items: center;
+        gap: 1.7rem;
+        padding: 4rem 0;
+        position: relative;
+      }
+
+      .intro__inputBox {
+        width: 85%;
+        height: 5.5rem;
+        display: flex;
+        align-items: center;
+      }
+
+      .intro__inputBox img {
+        margin-left: -5rem;
+        display: none;
+        /* **************************************************** */
+      }
+
+      .intro__form input {
+        display: block;
+        /* width: 85%; */
+        width: 100%;
+        /* height: 5.5rem; */
+        height: 100%;
+        height: 5.5rem;
+        outline: none;
+        border: 1.5px solid rgba(0, 0, 0, 0.15);
+
+        border-radius: 4px;
+
+        font-family: "Poppins", sans-serif;
+        padding-left: 2.5rem;
+        font-weight: 600;
+        font-size: 1.2rem;
+      }
+
+      .intro__form input:focus {
+        border: 1.5px solid var(--blue);
+      }
+
+      /* .intro__form input:invalid ~ img {
+        display: block;
+      } */
+
+      /* .intro__emailInput:invalid::placeholder {
+        color: red;
+      } */
+
+      .intro__form p:not(:last-child) {
+        width: 85%;
+        height: 1rem;
+        font-family: "Poppins", sans-serif;
+        color: var(--red);
+        font-weight: 600;
+        text-align: right;
+        margin-top: -1rem;
+        margin-bottom: 0.5rem;
+
+        display: none;
+        /* ********************************************** */
+      }
+
+      .intro__submitBtn {
+        width: 85%;
+        height: 5.5rem;
+        background-color: var(--green);
+        border: none;
+        border-radius: 4px;
+
+        color: white;
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        font-weight: 500;
+        letter-spacing: 0.1rem;
+
+        box-shadow: inset 0px 1px 1px rgb(0, 0, 0, 0.1),
+          inset 0px -2px 1px rgb(0, 0, 0, 0.2);
+
+        cursor: pointer;
+      }
+
+      .intro__submitBtn:hover {
+        opacity: 0.7;
+      }
+
+      .intro__infomation {
+        color: var(--grayishBlue);
+        font-size: 1.2rem;
+        font-weight: 400;
+        margin-top: -0.5rem;
+      }
+
+      .intro__infomation span {
+        color: var(--red);
+        font-weight: 500;
+      }
+
+      @media only screen and (max-width: 23.45em) {
+        .intro {
+          width: 37.5rem;
+          height: 100rem;
+
+          /* height: 100rem; */
+
+          background: no-repeat url(./images/bg-intro-mobile.png);
+          background-color: var(--red);
+
+          /* display: flex; */
+          flex-direction: column;
+          /* gap: 2.5rem; */
+          /* gap: 10rem; */
+          padding: 3rem 2rem;
+          margin-top: 40rem;
+        }
+
+        .intro__leftPage {
+          /* margin-top: 30rem; */
+          width: 100%;
+          height: 34.5rem;
+          /* color: white; */
+        }
+
+        .intro__infoBox {
+          width: 100%;
+          height: 100%;
+          text-align: center;
+          /* display: block; */
+          /* justify-content: none; */
+        }
+
+        .intro__infoBox h2 {
+          font-size: 3rem;
+          line-height: 3.5rem;
+        }
+
+        .intro__infoBox p {
+          width: 100%;
+          font-size: 1.5rem;
+          padding: 0 2rem;
+          line-height: 2.5rem;
+        }
+
+        .intro__rightPage {
+          width: 100%;
+          height: 60rem;
+          padding: 0;
+        }
+
+        .intro__rightPageContainer {
+          width: 100%;
+          height: 100%;
+          justify-content: start;
+          padding: 0;
+        }
+
+        .intro__banner {
+          height: 8.5rem;
+          font-size: 1.4rem;
+          padding: 2rem 6rem;
+        }
+
+        .intro__banner span {
+          font-size: 1.5rem;
+        }
+
+        .intro__form {
+          padding: 2.5rem 0;
+          gap: 2.25rem;
+        }
+
+        .intro__inputBox {
+          height: 5rem;
+        }
+
+        .intro__infomation {
+          font-size: 1.1rem;
+          font-weight: 500;
+          text-align: center;
+          padding: 0 5rem;
+          line-height: 2rem;
+        }
+
+        .intro__infomation span {
+          font-size: 1.2rem;
+          font-weight: 600;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="intro">
+      <div class="intro__leftPage">
+        <div class="intro__infoBox">
+          <h2>Learn to code by watching others</h2>
+          <p>
+            See how experienced developers solve problems in real-time. Watching
+            scripted tutorials is great, but understanding how developers think
+            is invaluable.
+          </p>
+        </div>
+      </div>
+      <div class="intro__rightPage">
+        <div class="intro__rightPageContainer">
+          <p class="intro__banner">
+            <span>Try it free 7 days</span> then $20/mo. thereafter
+          </p>
+
+          <div class="intro__formBox">
+            <form class="intro__form">
+              <div class="intro__inputBox">
+                <input
+                  class="intro__fristNameInput"
+                  type="text"
+                  placeholder="First Name"
+                  required
+                />
+                <img class="intro__errorMark" src="./images/icon-error.svg" />
+              </div>
+              <p class="intro__inputFirstNameError">
+                First Name cannot be empty
+              </p>
+              <div class="intro__inputBox">
+                <input
+                  class="intro__lastNameInput"
+                  type="text"
+                  placeholder="Last Name"
+                  required
+                />
+                <img class="intro__errorMark" src="./images/icon-error.svg" />
+              </div>
+              <p class="intro__inputLastNameError">Last Name cannot be empty</p>
+              <div class="intro__inputBox">
+                <input
+                  class="intro__emailInput"
+                  type="text"
+                  placeholder="Email Address"
+                  required
+                />
+                <img class="intro__errorMark" src="./images/icon-error.svg" />
+              </div>
+              <p class="intro__inputEmailError">
+                Looks like this is not an email
+              </p>
+              <div class="intro__inputBox">
+                <input
+                  class="intro__passwordInput"
+                  type="text"
+                  placeholder="Password"
+                  required
+                />
+                <img class="intro__errorMark" src="./images/icon-error.svg" />
+              </div>
+              <p class="intro__inputPasswordError">Password cannot be empty</p>
+              <button class="intro__submitBtn" type="submit">
+                Claim your free trial
+              </button>
+              <p class="intro__infomation">
+                By clicking the button, you are agreeing to our
+                <span>Terms and Services</span>
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
