@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/3b0f8ba197.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Frontend Mentor | Ping coming soon page</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      :root {
+        --blue: hsl(223, 87%, 63%);
+        --paleBlue: hsl(223, 100%, 88%);
+        --lightRed: hsl(354, 100%, 66%);
+        --gray: hsl(0, 0%, 59%);
+        --veryDarkBlue: hsl(209, 33%, 12%);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      body {
+        font-family: "Libre Franklin", sans-serif;
+        font-size: 2rem;
+      }
+
+      .comingSoonPage {
+        /* border-top: 20rem; */
+        width: 140rem;
+        height: 100%;
+        /* background-color: orange; */
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .comingSoonPage__header {
+        width: 100%;
+        height: auto;
+        text-align: center;
+        padding: 6rem 0 8rem 0;
+      }
+
+      .comingSoonPage__logo {
+        margin-bottom: 3.5rem;
+      }
+
+      .comingSoonPage__heading {
+        font-size: 5rem;
+        font-weight: 300;
+        color: #666666a1;
+        margin-bottom: 1.5rem;
+      }
+
+      .comingSoonPage__heading span {
+        font-weight: 600;
+        color: black;
+      }
+
+      .comingSoonPage__description {
+        font-size: 2rem;
+        font-weight: 600;
+        color: #666666c7;
+        margin-bottom: 3.5rem;
+      }
+
+      .comingSoonPage__formBox {
+        width: auto;
+        height: auto;
+        position: relative;
+        /* display: none; */
+      }
+
+      .comingSoonPage__form {
+        width: auto;
+        height: auto;
+
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+      }
+
+      .comingSoonPage__emailInput {
+        /* border: none; */
+        /* width: 49.5rem; */
+        width: 46rem;
+        height: 5.5rem;
+        border-radius: 30px;
+        padding: 0;
+
+        font-size: 1.65rem;
+        font-weight: 300;
+        color: rgba(0, 0, 0, 0.701);
+        padding-left: 3rem;
+        border: 0.1px solid rgba(0, 0, 0, 0.15);
+      }
+
+      .comingSoonPage__emailInput::placeholder {
+        opacity: 0.4;
+      }
+
+      .comingSoonPage__emailBtn {
+        /* width: 20rem; */
+        width: 23rem;
+        height: 5.5rem;
+        border-radius: 30px;
+
+        font-size: 1.65rem;
+        font-weight: 600;
+        color: white;
+        background-color: var(--blue);
+        border: none;
+      }
+
+      .comingSoonPage__formErrorMessage {
+        color: rgba(255, 0, 0, 0.5);
+        font-size: 1.4rem;
+        font-weight: 600;
+        position: absolute;
+        top: 6rem;
+        left: 37.7rem;
+        font-style: italic;
+        /* opacity: 0;
+         */
+        display: none;
+      }
+
+      .comingSoonPage__dashBoard {
+        display: block;
+        width: 72rem;
+        height: 50rem;
+        margin: 0 auto;
+        margin-bottom: 8rem;
+      }
+
+      .comingSoonPage__footer {
+        width: 100%;
+        height: auto;
+        text-align: center;
+
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+      }
+
+      .comingSoonPage__iconBox {
+        display: flex;
+        justify-content: center;
+        /* align-items: center; */
+        gap: 1.5rem;
+      }
+
+      .comingSoonPage__iconBox i {
+        display: block;
+        color: var(--blue);
+        width: 3.5rem;
+        height: 3.5rem;
+
+        border-radius: 50%;
+        border: 0.1px solid rgba(0, 0, 0, 0.097);
+        padding-top: 0.7rem;
+        cursor: pointer;
+        /* text-align: center; */
+        /* background-color: orange; */
+      }
+
+      .comingSoonPage__iconBox i:hover {
+        color: white;
+        background-color: var(--blue);
+      }
+
+      .comingSoonPage__footer p {
+        font-size: 1.4rem;
+        color: #6666668e;
+        margin-bottom: 4rem;
+        /* padding-bottom: 6rem; */
+      }
+
+      @media only screen and (max-width: 23.45em) {
+        .comingSoonPage {
+          /* border-top: 20rem; */
+          width: 37.5rem;
+          height: 100%;
+          /* background-color: orange; */
+        }
+
+        .comingSoonPage__header {
+          /* width: 100%;
+          height: auto; */
+          /* text-align: center; */
+          padding: 8rem 3.6rem 4rem 3.6rem;
+        }
+
+        .comingSoonPage__logo {
+          margin-bottom: 3.5rem;
+          width: 5.5rem;
+          height: 1.7rem;
+        }
+
+        .comingSoonPage__heading {
+          font-size: 2.5rem;
+          font-weight: 300;
+        }
+
+        .comingSoonPage__description {
+          font-size: 1.35rem;
+          font-weight: 300;
+          color: black;
+        }
+
+        .comingSoonPage__formBox {
+          width: auto;
+          height: auto;
+          position: relative;
+        }
+
+        .comingSoonPage__form {
+          width: auto;
+          height: auto;
+
+          display: flex;
+          flex-direction: column;
+          /* justify-content: center; */
+          gap: 1.5rem;
+        }
+
+        .comingSoonPage__emailInput {
+          width: 100%;
+          height: 4rem;
+
+          font-size: 1.35rem;
+          border: 0.1px solid hsla(223, 87%, 63%, 0.4);
+        }
+
+        .comingSoonPage__emailInput::placeholder {
+          opacity: 0.35;
+          color: var(--blue);
+        }
+
+        .comingSoonPage__emailBtn {
+          width: 100%;
+          height: 4rem;
+          font-size: 1.3rem;
+          font-weight: 600;
+          background-color: var(--blue);
+        }
+
+        .comingSoonPage__formErrorMessage {
+          font-size: 1.1rem;
+          font-weight: 600;
+          position: relative;
+          top: 0;
+          left: 0;
+          margin-top: -1rem;
+          margin-bottom: 0.8rem;
+        }
+
+        .comingSoonPage__dashBoard {
+          width: 34rem;
+          height: 23rem;
+
+          margin-bottom: 15rem;
+        }
+
+        .comingSoonPage__iconBox {
+          gap: 1.2rem;
+        }
+
+        .comingSoonPage__footer p {
+          font-size: 1.1rem;
+          color: #6666668e;
+          margin-bottom: 3rem;
+         /
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="comingSoonPage">
+      <header class="comingSoonPage__header">
+        <img
+          class="comingSoonPage__logo"
+          src="./images/logo.svg"
+          alt="a ping logo svg"
+        />
+        <h2 class="comingSoonPage__heading">
+          We are launching <span>soon!</span>
+        </h2>
+        <p class="comingSoonPage__description">Subscribe and get notified</p>
+        <div class="comingSoonPage__formBox">
+          <form class="comingSoonPage__form">
+            <input
+              class="comingSoonPage__emailInput"
+              type="text"
+              placeholder="Your email address..."
+              required
+            />
+            <p class="comingSoonPage__formErrorMessage">
+              Please provide a valid email address
+            </p>
+            <button class="comingSoonPage__emailBtn" type="submit">
+              Notify Me
+            </button>
+          </form>
+        </div>
+      </header>
+
+      <aside class="comingSoonPage__aside">
+        <img
+          class="comingSoonPage__dashBoard"
+          src="images/illustration-dashboard.png"
+        />
+      </aside>
+
+      <footer class="comingSoonPage__footer">
+        <div class="comingSoonPage__iconBox">
+          <i class="fa-brands fa-facebook-f"></i>
+          <i class="fa-brands fa-twitter"></i>
+          <i class="fa-brands fa-instagram"></i>
+        </div>
+        <p>&copy; Copyright Ping. All rights reserved.</p>
+      </footer>
+    </section>
+    <script>
+      const formElement = document.querySelector(".comingSoonPage__form");
+      const inputElement = document.querySelector(
+        ".comingSoonPage__emailInput"
+      );
+      const btnElement = document.querySelector(".comingSoonPage__emailBtn");
+      const errorMessageElement = document.querySelector(
+        ".comingSoonPage__formErrorMessage"
+      );
+
+      formElement.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const reg =
+          /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+        const isValidate = !reg.exec(e.target[0].value);
+        if (isValidate) {
+          inputElement.style.border = "1px solid red";
+          errorMessageElement.style.display = "block";
+        }
+      });
+    </script>
+  </body>
+</html>
