@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>
+      Frontend Mentor | Huddle landing page with single introductory section
+    </title>
+
+    <style>
+      :root {
+        --violet: hsl(257, 40%, 49%);
+        --softMagenta: hsl(300, 69%, 71%);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        border: 0;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      body {
+        font-family: "Open Sans", sans-serif;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .landingPage {
+        margin-top: 10rem;
+        width: 144rem;
+        height: 80rem;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-image: url(./images/bg-desktop.svg);
+        background-color: var(--violet);
+
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        grid-template-rows: 0.2fr 0.7fr 0.1fr;
+
+        padding: 0 6.8rem;
+      }
+
+      .landingPage__logoBox {
+        grid-column: 1/2;
+        grid-row: 1/2;
+        width: 100%;
+        height: auto;
+      }
+
+      .landingPage__logo {
+        /* width: 25rem; */
+        height: 5.3rem;
+        margin-top: 5rem;
+      }
+
+      .landingPage__illustrationBox {
+        grid-column: 1/2;
+        grid-row: 2/3;
+        width: 100%;
+        height: auto;
+      }
+
+      .landingPage__illustration {
+        display: block;
+        margin-top: 3rem;
+      }
+
+      .landingPage__textBox {
+        grid-column: 2/-1;
+        grid-row: 2/3;
+        width: 100%;
+        height: auto;
+        /* padding-left: 3.5rem;
+        padding-top: 7rem; */
+        padding: 7rem 0 0 3.5rem;
+      }
+
+      .landingPage__text {
+        display: flex;
+        flex-direction: column;
+        gap: 2.1rem;
+        color: white;
+      }
+
+      .landingPage__heading {
+        /* font-family: */
+        font-size: 4.1rem;
+        font-weight: 600;
+        width: 85%;
+      }
+
+      .landingPage__description {
+        font-family: "Open Sans", sans-serif;
+        font-size: 1.85rem;
+        /* font-weight: 400; */
+        width: 96%;
+      }
+
+      .landingPage__registerBtn {
+        margin-top: 0.5rem;
+        width: 37%;
+        height: 6rem;
+
+        background: white;
+        border-radius: 35px;
+        font-size: 2rem;
+        color: var(--violet);
+        box-shadow: 0 2px 12px rgb(0, 0, 0, 0.3);
+        cursor: pointer;
+      }
+
+      .landingPage__registerBtn:hover {
+        background-color: var(--softMagenta);
+        color: white;
+      }
+
+      .landingPage__iconBox {
+        grid-column: 2/-1;
+        grid-row: 3/-1;
+        width: 100%;
+        height: auto;
+      }
+
+      .landingPage__icons {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: end;
+        margin-left: -2rem;
+        gap: 1.5rem;
+      }
+
+      .landingPage__iconBox i {
+        color: white;
+        font-size: 1.8rem;
+      }
+
+      .outerIcon {
+        width: 3.6rem;
+        height: 3.6rem;
+        border-radius: 50%;
+        border: 1px solid white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+
+      .outerIcon:hover {
+        border: 1px solid var(--softMagenta);
+      }
+
+      .outerIcon:hover i {
+        color: var(--softMagenta);
+      }
+
+      @media only screen and (max-width: 23.45em) {
+        .landingPage {
+          /* margin-top: 30rem; */
+          width: 37.5rem;
+
+          /* width: 100%; */
+          /* height: 140rem; */
+          height: auto;
+          position: relative;
+          top: 0;
+          left: 0;
+          transform: translate(0, 0);
+          background-image: url(./images/bg-mobile.svg);
+          background-size: contain;
+          background-repeat: no-repeat;
+          /* background-color: var(--violet); */
+
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-template-rows: 0.1fr 0.4fr 0.4fr 0.1fr;
+
+          padding: 3rem 3.5rem;
+        }
+
+        .landingPage__logoBox {
+          grid-column: 1/-1;
+          grid-row: 1/2;
+
+          /* width: 100%;
+          height: auto; */
+        }
+
+        .landingPage__logo {
+          width: 12.7rem;
+          height: 4rem;
+          margin-top: 0;
+        }
+
+        .landingPage__illustrationBox {
+          grid-column: 1/2;
+          grid-row: 2/3;
+          margin-top: 1.8rem;
+
+          /* width: 100%;
+        height: auto; */
+        }
+
+        .landingPage__illustration {
+          display: block;
+          margin-top: 3rem;
+          width: 100%;
+        }
+
+        .landingPage__textBox {
+          margin-top: 5.5rem;
+          grid-column: 1/-1;
+          grid-row: 3/4;
+
+          /* width: 100%;
+        height: auto; */
+          /* padding-left: 3.5rem;
+        padding-top: 7rem; */
+          padding: 0;
+        }
+
+        .landingPage__text {
+          width: 100%;
+          /* display: flex;
+          flex-direction: column; */
+          align-items: center;
+          gap: 1.5rem;
+          /* color: white; */
+          text-align: center;
+        }
+
+        .landingPage__heading {
+          /* font-family: */
+          font-size: 2.5rem;
+          /* font-weight: 600; */
+          width: 100%;
+        }
+
+        .landingPage__description {
+          font-family: "Open Sans", sans-serif;
+          font-size: 1.6rem;
+          /* font-weight: 400; */
+          width: 100%;
+        }
+
+        .landingPage__registerBtn {
+          margin-top: 1rem;
+          width: 65%;
+          height: 4rem;
+
+          /* background: white; */
+          /* border-radius: 35px; */
+          font-size: 1.3rem;
+          color: var(--violet);
+          box-shadow: 0 2px 12px rgb(0, 0, 0, 0.3);
+          cursor: pointer;
+        }
+
+        .landingPage__iconBox {
+          margin-top: 6rem;
+          grid-column: 1/-1;
+          grid-row: 4/-1;
+          /* width: 100%;
+        height: auto; */
+        }
+
+        .landingPage__icons {
+          justify-content: center;
+          margin-left: 0;
+          gap: 1rem;
+        }
+
+        .landingPage__iconBox i {
+          color: white;
+          font-size: 1.2rem;
+        }
+
+        .outerIcon {
+          width: 2.6rem;
+          height: 2.6em;
+          border-radius: 50%;
+          border: 1px solid white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    </style>
+
+    <script
+      src="https://kit.fontawesome.com/3b0f8ba197.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <section class="landingPage">
+      <div class="landingPage__logoBox">
+        <img
+          class="landingPage__logo"
+          src="./images/logo.svg"
+          alt="Huddle logo"
+        />
+      </div>
+      <div class="landingPage__illustrationBox">
+        <img
+          class="landingPage__illustration"
+          src="./images/illustration-mockups.svg"
+        />
+      </div>
+      <header class="landingPage__textBox">
+        <div class="landingPage__text">
+          <h2 class="landingPage__heading">
+            Build The Community Your Fans Will Love
+          </h2>
+          <p class="landingPage__description">
+            Huddle re-imagines the way we build communities. You have a voice,
+            but so does your audience. Create connections with your users as you
+            engage in genuine discussion.
+          </p>
+          <button class="landingPage__registerBtn">Register</button>
+        </div>
+      </header>
+
+      <footer class="landingPage__iconBox">
+        <div class="landingPage__icons">
+          <div class="outerIcon">
+            <i class="fa-brands fa-facebook-f"></i>
+          </div>
+          <div class="outerIcon">
+            <i class="fa-brands fa-twitter"></i>
+          </div>
+          <div class="outerIcon">
+            <i class="fa-brands fa-instagram"></i>
+          </div>
+        </div>
+      </footer>
+    </section>
+  </body>
+</html>
