@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>
+      Frontend Mentor | Newsletter sign-up form with success message
+    </title>
+
+    <style>
+      :root {
+        --Tomato: hsl(4, 100%, 67%);
+        --darkSlateGrey: hsl(234, 29%, 20%);
+        --charcoalGrey: hsl(235, 18%, 26%);
+        --grey: hsl(231, 7%, 60%);
+        --white: hsl(0, 0%, 100%);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      body {
+        font-family: "Roboto", sans-serif;
+        background-color: var(--charcoalGrey);
+        font-size: 1.6rem;
+      }
+
+      .newsLetter {
+        width: 82rem;
+        height: auto;
+        /* height: 55rem; */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        border-radius: 20px;
+
+        display: flex;
+        /* display: none; */
+      }
+
+      .newsLetter__leftPage {
+        width: 55%;
+        height: auto;
+        /* flex: 1; */
+        padding: 8rem 0 7.5rem 0;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+      }
+
+      .newsLetter__infoBox {
+        width: 100%;
+        height: auto;
+        /* padding-right: 3rem; */
+        padding: 0 4rem 0 5rem;
+
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      .newsLetter__heading {
+        font-size: 5.5rem;
+      }
+
+      .newsLetter__description {
+      }
+
+      .newsLetter__lists {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .newsLetter__iist {
+        width: 100%;
+        height: auto;
+        display: flex;
+        gap: 1.5rem;
+      }
+
+      .newsLetter__iistDescription {
+        list-style: none;
+      }
+
+      .newsLetter__formBox {
+        width: 100%;
+        height: auto;
+      }
+
+      .newsLetter__form {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        padding: 0 4rem 0 5rem;
+
+        gap: 1rem;
+        position: relative;
+      }
+
+      .newsLetter__form p {
+        font-size: 1.2rem;
+        font-weight: 700;
+      }
+
+      .newsLetter__formError {
+        position: absolute;
+        top: 0;
+        /* left: 30.4rem; */
+        left: 67.3%;
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: red;
+        display: none;
+      }
+
+      .newsLetter__form input {
+        width: 100%;
+        height: 4.5rem;
+        border-radius: 5px;
+        border: 1px solid rgba(0, 0, 0, 0.288);
+        padding-left: 2.5rem;
+        margin-bottom: 0.5rem;
+        font-family: "Roboto", sans-serif;
+        font-size: 1.5rem;
+      }
+
+      .newsLetter__form input::placeholder {
+        font-size: 1.5rem;
+      }
+
+      .newsLetter__form input:focus {
+        outline: none;
+
+        border: 1.5px solid rgba(0, 0, 0, 0.807);
+      }
+
+      .newsLetter__form button {
+        width: 100%;
+        height: 4.5rem;
+        border-radius: 5px;
+        border: none;
+        background-color: var(--darkSlateGrey);
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+
+      .newsLetter__form button:hover {
+        background-color: var(--Tomato);
+      }
+
+      .newsLetter__RightPage {
+        width: 45%;
+        height: auto;
+        /* flex: 1; */
+      }
+
+      .newsLetter__imgBox {
+        width: 100%;
+        height: 100%;
+        position: relative;
+      }
+
+      .newsLetter__imgBox img {
+        /* width: 45rem; */
+        width: 100%;
+        height: 50rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* width: 100%; */
+        /* height: auto; */
+      }
+
+      .success {
+        width: 22em;
+        height: 37rem;
+        background-color: white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        padding: 3rem 4.5rem;
+        border-radius: 20px;
+        /* visibility: hidden;
+         */
+        /* opacity: 0; */
+        display: none;
+      }
+
+      .success img {
+        width: 4rem;
+        height: 4rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .success h2 {
+        width: 100%;
+        font-size: 4rem;
+        font-weight: 700;
+      }
+
+      .success p {
+        width: 100%;
+        font-size: 1.1rem;
+        /* font-weight: 400
+        ; */
+        color: var(--charcoalGrey);
+        line-height: 1.7rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+      }
+
+      .success p span {
+        font-weight: 700;
+      }
+
+      .success button {
+        border: none;
+        width: 100%;
+        height: 4rem;
+        border-radius: 5px;
+        background-color: var(--darkSlateGrey);
+        color: white;
+        font-family: "Roboto", sans-serif;
+        font-size: 1.15rem;
+        font-weight: 700;
+        cursor: pointer;
+        /* letter-spacing: 0.03rem; */
+      }
+
+      .success button:hover {
+        background-color: var(--Tomato);
+      }
+
+      @media only screen and (max-width: 23.45em) {
+        .newsLetter {
+          /* border-top: 20rem; */
+          width: 37.5rem;
+          height: auto;
+          /* height: 120rem; */
+          flex-direction: column;
+          gap: 0rem;
+          position: relative;
+          top: 0;
+          left: 0;
+          transform: translate(0, 0);
+          border-radius: 0;
+          /* display: none; */
+        }
+
+        .newsLetter__leftPage {
+          order: 2;
+          width: 100%;
+          padding: 3.5rem 2.5rem;
+        }
+
+        .newsLetter__infoBox {
+          /* padding: 0 2.5rem; */
+          padding: 0;
+          margin-bottom: 0.5rem;
+        }
+
+        .newsLetter__heading {
+          font-size: 4rem;
+        }
+
+        .newsLetter__iist img {
+          align-self: flex-start;
+        }
+
+        .newsLetter__imgBox {
+          width: 100%;
+          height: auto;
+          position: none;
+        }
+
+        .newsLetter__imgBox img {
+          /* width: 45rem; */
+          width: 100%;
+          height: auto;
+          position: relative;
+          top: 0;
+          left: 0;
+          transform: translate(0, 0);
+          /* width: 100%; */
+          /* height: auto; */
+        }
+
+        .newsLetter__form {
+          width: 100%;
+          height: auto;
+          display: flex;
+          flex-direction: column;
+          /* padding: 0 2.5rem; */
+          padding: 0;
+
+          gap: 1rem;
+          position: relative;
+        }
+
+        .newsLetter__formError {
+          left: 66.8%;
+        }
+
+        .newsLetter__RightPage {
+          order: 1;
+          width: 100%;
+          height: auto;
+
+          /* height: 100%; */
+        }
+
+        .success {
+          position: absolute;
+          top: 0;
+          left: 0;
+          transform: translate(0, 0);
+          width: 100%;
+          height: auto;
+          border-radius: 0;
+
+          /* visibility: visible; */
+          /* padding-top: 14rem; */
+          padding: 14rem 3rem 5rem 3rem;
+          /* display: none;
+           */
+          /* opacity: 0; */
+          display: none;
+        }
+
+        .success img {
+          width: 5rem;
+          height: 5rem;
+        }
+
+        .success p {
+          font-size: 1.5rem;
+          font-weight: 400;
+        }
+
+        .success button {
+          margin-top: 23rem;
+          font-size: 1.4rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="success">
+      <img src="./assets/images/icon-success.svg" alt="a success icon" />
+      <h2>Thanks for subscribing!</h2>
+      <p>
+        A confirmation email has been sent to
+        <span>ash@loremcompany.com.</span> Please open it and click the button
+        inside to confirm your subscription.
+      </p>
+      <button>Dismiss message</button>
+    </div>
+    <!-- Sign-up form start -->
+    <section class="newsLetter">
+      <div class="newsLetter__leftPage">
+        <div class="newsLetter__infoBox">
+          <h2 class="newsLetter__heading">Stay updated!</h2>
+          <p class="newsLetter__description">
+            Join 60,000+ product managers receiving monthly updates on:
+          </p>
+          <ul class="newsLetter__lists">
+            <div class="newsLetter__iist">
+              <img src="./assets/images/icon-list.svg" alt="a check imgage" />
+              <li class="newsLetter__iistDescription">
+                Product discovery and building what matters
+              </li>
+            </div>
+            <div class="newsLetter__iist">
+              <img src="./assets/images/icon-list.svg" alt="a check imgage" />
+              <li class="newsLetter__iistDescription">
+                Measuring to ensure updates are a success
+              </li>
+            </div>
+            <div class="newsLetter__iist">
+              <img src="./assets/images/icon-list.svg" alt="a check imgage" />
+              <li class="newsLetter__iistDescription">And much more!</li>
+            </div>
+          </ul>
+        </div>
+        <div class="newsLetter__formBox">
+          <form class="newsLetter__form">
+            <p>Email address</p>
+            <p class="newsLetter__formError">Valid email required</p>
+            <input type="text" placeholder="email@compandy.com" required />
+            <button type="submit">Subscribe to monthly newsletter</button>
+          </form>
+        </div>
+      </div>
+      <div class="newsLetter__RightPage">
+        <div class="newsLetter__imgBox">
+          <picture class="baseSection__imgBox">
+            <source
+              media="(max-width: 23.45em)"
+              srcset="./assets/images/illustration-sign-up-mobile.svg"
+            />
+            <source
+              media="(max-width: 90em)"
+              srcset="./assets/images/illustration-sign-up-desktop.svg"
+            />
+            <img
+              src="./assets/images/illustration-sign-up-desktop.svg"
+              alt="an illustration "
+            />
+          </picture>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sign-up form end -->
+
+    <!-- Success message start -->
+
+    <!-- Success message end -->
+    <script>
+      const section = document.querySelector(".newsLetter");
+      const success = document.querySelector(".success");
+      const emailForm = document.querySelector(".newsLetter__form");
+      const emailInput = document.querySelector(".newsLetter__form input");
+      const errorMessage = document.querySelector(".newsLetter__formError");
+      emailForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        console.log(e.target[0].value);
+        const emailValue = e.target[0].value;
+        const reg =
+          /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+
+        if (!reg.exec(emailValue)) {
+          errorMessage.style.display = "block";
+          emailInput.style.border = "1px solid red";
+          emailInput.style.backgroundColor = "rgb(255, 0, 0, 0.1)";
+          emailInput.style.color = "red";
+        } else {
+          section.style.display = "none";
+
+          success.style.display = "flex";
+        }
+      });
+    </script>
+  </body>
+</html>
