@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Age calculator app</title>
+
+    <style>
+      :root {
+        --purple: hsl(259, 100%, 65%);
+        --lightRed: hsl(0, 100%, 67%);
+
+        --white: hsl(0, 0%, 100%);
+        --offWhite: hsl(0, 0%, 94%);
+        --lightGrey: hsl(0, 0%, 86%);
+        --smokeyGrey: hsl(0, 1%, 44%);
+        --offBlack: hsl(0, 0%, 8%);
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: var(--lightGrey);
+      }
+
+      .calculator {
+        width: 73rem;
+        height: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        border-radius: 20px 20px 30% 20px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 6rem;
+
+        padding: 4rem 0 4rem 5rem;
+        border: none;
+      }
+
+      .calculator__formBox {
+        width: 100%;
+        height: auto;
+
+        /* padding-bottom: 4rem; */
+        /* border-bottom: 1px solid rgb(0, 0, 0, 0.3); */
+      }
+
+      .calculator__form {
+        width: 100%;
+        height: auto;
+        display: flex;
+        gap: 2rem;
+        position: relative;
+      }
+
+      .calculator__inputBox {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+      }
+
+      .calculator__inputBox label {
+        width: 6rem;
+        font-size: 1.4rem;
+        /* font-weight: 700; */
+        color: var(--smokeyGrey);
+        letter-spacing: 0.1rem;
+      }
+
+      .calculator__inputBox input {
+        width: 14.5rem;
+        height: 6rem;
+        font-size: 3.2rem;
+        font-weight: 700;
+        padding-left: 2rem;
+        border: 1px solid rgba(0, 0, 0, 0.155);
+        border-radius: 4px;
+        /* width: ; */
+      }
+
+      .calculator__inputBox input::placeholder {
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        /* width: ; */
+      }
+
+      .calculator__inputBox input:focus {
+        outline: none;
+        border: 1.5px solid var(--purple);
+      }
+
+      .calculator__submitBtn {
+        width: 8rem;
+        height: 8rem;
+        border-radius: 50%;
+        /* outline: none; */
+        border: none;
+        background-color: var(--purple);
+        position: absolute;
+        top: 102%;
+        left: 80%;
+        cursor: pointer;
+      }
+
+      .calculator__submitBtn:hover {
+        background-color: black;
+      }
+
+      .calculator__errorMessage {
+        color: red;
+        font-size: 1.2rem;
+        /* font-weight: 700; */
+        font-style: italic;
+        display: none;
+      }
+
+      .horizontal_line {
+        width: 85%;
+        height: 1px;
+        background-color: rgba(0, 0, 0, 0.2);
+        margin-top: 4rem;
+      }
+
+      .calculator__resultBox {
+        width: 100%;
+        height: auto;
+      }
+
+      .calculator__result {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: -1rem;
+
+        font-weight: 700;
+        font-style: italic;
+      }
+
+      .calculator__result p {
+        font-size: 9rem;
+        margin-top: -4rem;
+      }
+
+      .calculator__result p:first-child {
+        margin-top: -4.5rem;
+      }
+
+      .calculator__result p span {
+        color: var(--purple);
+        letter-spacing: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="calculator">
+      <div class="calculator__formBox">
+        <form class="calculator__form">
+          <div class="calculator__inputBox">
+            <label for="day">DAY</label>
+            <input
+              class="calculator__dayInput"
+              type="text"
+              placeholder="DD"
+              name="day"
+            />
+            <p class="calculator__errorMessage dayError">
+              This field is required
+            </p>
+          </div>
+          <div class="calculator__inputBox">
+            <label for="month">MONTH</label>
+            <input
+              class="calculator__monthInput"
+              type="text"
+              placeholder="MM"
+              name="month"
+            />
+            <p class="calculator__errorMessage monthError">
+              This field is required
+            </p>
+          </div>
+          <div class="calculator__inputBox">
+            <label for="year">YEAR</label>
+            <input
+              class="calculator__yearInput"
+              type="text"
+              placeholder="YYYY"
+              name="year"
+            />
+            <p class="calculator__errorMessage yearError">
+              This field is required
+            </p>
+          </div>
+          <button class="calculator__submitBtn" type="submit">
+            <img src="./assets/images/icon-arrow.svg" />
+          </button>
+        </form>
+        <div class="horizontal_line"></div>
+      </div>
+      <div class="calculator__resultBox">
+        <div class="calculator__result">
+          <p class="calculator__yearResult"><span>--</span>years</p>
+          <p class="calculator__monthResult"><span>--</span>months</p>
+          <p class="calculator__dayResult"><span>--</span>days</p>
+        </div>
+      </div>
+    </div>
+    <script>
+      const formElement = document.querySelector(".calculator__form");
+      const inputElement = document.querySelectorAll(
+        ".calculator__inputBox input"
+      );
+      const labelElement = document.querySelectorAll(
+        ".calculator__inputBox label"
+      );
+      const errorMessgeElement = document.querySelectorAll(
+        ".calculator__errorMessage"
+      );
+      const dayErrorElement = document.querySelector(".dayError");
+      const monthErrorElement = document.querySelector(".monthError");
+      const yearErrorElement = document.querySelector(".yearError");
+      const yearResultElement = document.querySelector(
+        ".calculator__yearResult span"
+      );
+      const monthResultElement = document.querySelector(
+        ".calculator__monthResult span"
+      );
+      const dayResultElement = document.querySelector(
+        ".calculator__dayResult span"
+      );
+      const allResultElement = document.querySelectorAll(
+        ".calculator__result span"
+      );
+
+      formElement.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const dayValue = e.target[0].value;
+        const monthValue = e.target[1].value;
+        const yearValue = e.target[2].value;
+        // console.log(typeof dayValue, typeof monthValue, typeof yearValue);
+        const currentDateTime = new Date("2023-07-15");
+        const currentYearValue = currentDateTime.getFullYear();
+        const currentMonthValue = currentDateTime.getMonth() + 1;
+        const currentDayValue = currentDateTime.getDate();
+        // console.log(currentDayValue, currentMonthValue, currentYearValue);
+        labelElement.forEach((el) => (el.style.color = "black"));
+        inputElement.forEach(
+          (el) => (el.style.border = "1px solid rgba(0, 0, 0, 0.155)")
+        );
+        yearErrorElement.textContent = "This field is required";
+        yearErrorElement.style.display = "none";
+        monthErrorElement.textContent = "This field is required";
+        monthErrorElement.style.display = "none";
+        dayErrorElement.textContent = "This field is required";
+        dayErrorElement.style.display = "none";
+
+        if (dayValue === "" || monthValue === "" || yearValue === "") {
+          yearErrorElement.style.display = "block";
+          monthErrorElement.style.display = "block";
+          dayErrorElement.style.display = "block";
+          return;
+        }
+
+        if (yearValue > currentYearValue) {
+          labelElement.forEach((el) => (el.style.color = "red"));
+          inputElement.forEach((el) => (el.style.border = "1.5px solid red"));
+          yearErrorElement.textContent = "Must be in the past";
+          yearErrorElement.style.display = "block";
+        }
+
+        if (monthValue > 12 || monthValue < 1) {
+          labelElement.forEach((el) => (el.style.color = "red"));
+          inputElement.forEach((el) => (el.style.border = "1.5px solid red"));
+          monthErrorElement.style.display = "block";
+          monthErrorElement.textContent = "Must be a valid month";
+        }
+
+        if (monthValue === 2 && dayValue > 28) {
+          labelElement.forEach((el) => (el.style.color = "red"));
+          inputElement.forEach((el) => (el.style.border = "1.5px solid red"));
+          dayErrorElement.textContent = "Must be a valid date";
+          dayErrorElement.style.display = "block";
+        }
+
+        if (dayValue < 1 || dayValue > 31) {
+          labelElement.forEach((el) => (el.style.color = "red"));
+          inputElement.forEach((el) => (el.style.border = "1.5px solid red"));
+          dayErrorElement.textContent = "Must be a valid date";
+          dayErrorElement.style.display = "block";
+        }
+
+        if (monthValue < 8 && monthValue % 2 === 0) {
+          if (dayValue > 30) {
+            labelElement.forEach((el) => (el.style.color = "red"));
+            inputElement.forEach((el) => (el.style.border = "1.5px solid red"));
+            dayErrorElement.textContent = "Must be a valid date";
+            dayErrorElement.style.display = "block";
+            // text를 바꿔야함
+          }
+        }
+
+        const yearResultElement = document.querySelector(
+          ".calculator__yearResult span"
+        );
+        const monthResultElement = document.querySelector(
+          ".calculator__monthResult span"
+        );
+        const dayResultElement = document.querySelector(
+          ".calculator__dayResult span"
+        );
+
+        allResultElement.forEach((el) => (el.style.letterSpacing = 0));
+
+        // const currentDateTime = new Date();
+        // const dayValue = e.target[0].value;
+        // const monthValue = e.target[1].value;
+        // const yearValue = e.target[2].value;
+        const inputDateTime = new Date(
+          `${yearValue}-${monthValue}-${dayValue}`
+        );
+        console.log(inputDateTime);
+        console.log(currentDateTime);
+        const secondsFromPastToCurrent = currentDateTime - inputDateTime;
+
+        // const resultYear = Math.floor(
+        //   new Date(secondsFromPastToCurrent) / (1000 * 60 * 60 * 24 * 365)
+        // );
+        // const resultMonth = new Date(secondsFromPastToCurrent).getMonth();
+        // const resultDay =
+        //   Math.floor(
+        //     new Date(secondsFromPastToCurrent) / (1000 * 60 * 60 * 24)
+        //   ) % 365;
+
+        const resultYear =
+          new Date(secondsFromPastToCurrent).getFullYear() - 1970;
+        const resultMonth = new Date(secondsFromPastToCurrent).getMonth();
+        const resultDay = new Date(secondsFromPastToCurrent).getDate() - 1;
+        yearResultElement.textContent = resultYear;
+        monthResultElement.textContent = resultMonth;
+        dayResultElement.textContent = resultDay;
+      });
+    </script>
+  </body>
+</html>
