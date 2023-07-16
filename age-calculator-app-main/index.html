@@ -180,6 +180,110 @@
         color: var(--purple);
         letter-spacing: 1rem;
       }
+
+      @media only screen and (max-width: 23.45em) {
+        .calculator {
+          width: 35.5rem;
+          height: auto;
+
+          position: relative;
+          top: 0;
+          left: 0;
+          transform: translate(0, 0);
+          /* background-color: white; */
+          border-radius: 20px 20px 120px 20px;
+
+          display: flex;
+          flex-direction: column;
+          gap: 9rem;
+
+          padding: 4rem 2.5rem;
+
+          border: none;
+          margin: 6rem auto 20rem auto;
+        }
+
+        .calculator__form {
+          gap: 1.5rem;
+          padding-bottom: 3rem;
+        }
+
+        .calculator__inputBox label {
+          font-size: 1.6rem;
+        }
+
+        .calculator__inputBox input {
+          width: 9rem;
+          height: 5rem;
+          font-size: 2rem;
+
+          padding-left: 1.2rem;
+        }
+
+        .calculator__submitBtn {
+          width: 5.5rem;
+          height: 5.5rem;
+          position: absolute;
+
+          /* top: 102%; */
+          left: 42%;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .calculator__submitBtn img {
+          width: 2rem;
+          height: 2rem;
+        }
+
+        .calculator__submitBtn:hover {
+          background-color: black;
+        }
+
+        .calculator__errorMessage {
+          color: red;
+          font-size: 0.1rem;
+          font-style: italic;
+          display: none;
+        }
+
+        .horizontal_line {
+          width: 100%;
+          margin-top: 2.9rem;
+        }
+
+        .calculator__resultBox {
+          width: 100%;
+          height: auto;
+        }
+
+        .calculator__result {
+          width: 100%;
+          height: auto;
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+
+          font-weight: 700;
+          font-style: italic;
+        }
+
+        .calculator__result p {
+          font-size: 5rem;
+          /* margin-top: -4rem; */
+        }
+
+        .calculator__result p:first-child {
+          /* margin-top: -4.5rem; */
+        }
+
+        .calculator__result p span {
+          color: var(--purple);
+          letter-spacing: 0.5rem;
+        }
+      }
     </style>
   </head>
   <body>
@@ -230,9 +334,9 @@
       </div>
       <div class="calculator__resultBox">
         <div class="calculator__result">
-          <p class="calculator__yearResult"><span>--</span>years</p>
-          <p class="calculator__monthResult"><span>--</span>months</p>
-          <p class="calculator__dayResult"><span>--</span>days</p>
+          <p class="calculator__yearResult"><span>--</span> years</p>
+          <p class="calculator__monthResult"><span>--</span> months</p>
+          <p class="calculator__dayResult"><span>--</span> days</p>
         </div>
       </div>
     </div>
@@ -266,15 +370,16 @@
       formElement.addEventListener("submit", (e) => {
         e.preventDefault();
 
+        let isThereError = false;
+
         const dayValue = e.target[0].value;
         const monthValue = e.target[1].value;
         const yearValue = e.target[2].value;
-        // console.log(typeof dayValue, typeof monthValue, typeof yearValue);
         const currentDateTime = new Date("2023-07-15");
         const currentYearValue = currentDateTime.getFullYear();
         const currentMonthValue = currentDateTime.getMonth() + 1;
         const currentDayValue = currentDateTime.getDate();
-        // console.log(currentDayValue, currentMonthValue, currentYearValue);
+
         labelElement.forEach((el) => (el.style.color = "black"));
         inputElement.forEach(
           (el) => (el.style.border = "1px solid rgba(0, 0, 0, 0.155)")
@@ -286,82 +391,98 @@
         dayErrorElement.textContent = "This field is required";
         dayErrorElement.style.display = "none";
 
-        if (dayValue === "" || monthValue === "" || yearValue === "") {
-          yearErrorElement.style.display = "block";
-          monthErrorElement.style.display = "block";
+        yearResultElement.textContent = "--";
+        monthResultElement.textContent = "--";
+        dayResultElement.textContent = "--";
+
+        if (dayValue === "") {
           dayErrorElement.style.display = "block";
-          return;
+          isThereError = true;
+        }
+
+        if (monthValue === "") {
+          monthErrorElement.style.display = "block";
+          isThereError = true;
+        }
+
+        if (yearValue === "") {
+          yearErrorElement.style.display = "block";
+          isThereError = true;
         }
 
         if (yearValue > currentYearValue) {
-          labelElement.forEach((el) => (el.style.color = "red"));
-          inputElement.forEach((el) => (el.style.border = "1.5px solid red"));
-          yearErrorElement.textContent = "Must be in the past";
+          isThereError = true;
+
+          yearErrorElement.textContent =
+            yearValue === "" ? "This field is required" : "Must be in the past";
           yearErrorElement.style.display = "block";
         }
 
         if (monthValue > 12 || monthValue < 1) {
-          labelElement.forEach((el) => (el.style.color = "red"));
-          inputElement.forEach((el) => (el.style.border = "1.5px solid red"));
+          isThereError = true;
+
+          monthErrorElement.textContent =
+            monthValue === ""
+              ? "This field is required"
+              : "Must be a valid month";
           monthErrorElement.style.display = "block";
-          monthErrorElement.textContent = "Must be a valid month";
         }
 
-        if (monthValue === 2 && dayValue > 28) {
-          labelElement.forEach((el) => (el.style.color = "red"));
-          inputElement.forEach((el) => (el.style.border = "1.5px solid red"));
-          dayErrorElement.textContent = "Must be a valid date";
+        if (monthValue === "2" && dayValue > 28) {
+          isThereError = true;
+
+          dayErrorElement.textContent =
+            monthValue === ""
+              ? "This field is required"
+              : "Must be a valid date";
           dayErrorElement.style.display = "block";
         }
 
         if (dayValue < 1 || dayValue > 31) {
-          labelElement.forEach((el) => (el.style.color = "red"));
-          inputElement.forEach((el) => (el.style.border = "1.5px solid red"));
-          dayErrorElement.textContent = "Must be a valid date";
+          isThereError = true;
+
+          dayErrorElement.textContent =
+            dayValue === "" ? "This field is required" : "Must be a valid day";
           dayErrorElement.style.display = "block";
         }
 
         if (monthValue < 8 && monthValue % 2 === 0) {
-          if (dayValue > 30) {
-            labelElement.forEach((el) => (el.style.color = "red"));
-            inputElement.forEach((el) => (el.style.border = "1.5px solid red"));
-            dayErrorElement.textContent = "Must be a valid date";
+          if (dayValue > 30 && dayValue < 32) {
+            isThereError = true;
+
+            dayErrorElement.textContent =
+              dayValue === ""
+                ? "This field is required"
+                : "Must be a valid date";
             dayErrorElement.style.display = "block";
-            // text를 바꿔야함
           }
         }
 
-        const yearResultElement = document.querySelector(
-          ".calculator__yearResult span"
-        );
-        const monthResultElement = document.querySelector(
-          ".calculator__monthResult span"
-        );
-        const dayResultElement = document.querySelector(
-          ".calculator__dayResult span"
-        );
+        if (monthValue > 7 && monthValue % 2 === 1) {
+          if (dayValue > 30 && dayValue < 32) {
+            isThereError = true;
+
+            dayErrorElement.textContent =
+              dayValue === ""
+                ? "This field is required"
+                : "Must be a valid date";
+            dayErrorElement.style.display = "block";
+          }
+        }
+
+        if (isThereError) {
+          labelElement.forEach((el) => (el.style.color = "red"));
+          inputElement.forEach((el) => (el.style.border = "1.5px solid red"));
+          return;
+        }
 
         allResultElement.forEach((el) => (el.style.letterSpacing = 0));
 
-        // const currentDateTime = new Date();
-        // const dayValue = e.target[0].value;
-        // const monthValue = e.target[1].value;
-        // const yearValue = e.target[2].value;
         const inputDateTime = new Date(
           `${yearValue}-${monthValue}-${dayValue}`
         );
-        console.log(inputDateTime);
-        console.log(currentDateTime);
-        const secondsFromPastToCurrent = currentDateTime - inputDateTime;
 
-        // const resultYear = Math.floor(
-        //   new Date(secondsFromPastToCurrent) / (1000 * 60 * 60 * 24 * 365)
-        // );
-        // const resultMonth = new Date(secondsFromPastToCurrent).getMonth();
-        // const resultDay =
-        //   Math.floor(
-        //     new Date(secondsFromPastToCurrent) / (1000 * 60 * 60 * 24)
-        //   ) % 365;
+        const secondsFromPastToCurrent = currentDateTime - inputDateTime;
 
         const resultYear =
           new Date(secondsFromPastToCurrent).getFullYear() - 1970;
