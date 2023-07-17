@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | News homepage</title>
+
+    <style>
+      :root {
+        --softOrange: hsl(35, 77%, 62%);
+        --softRed: hsl(5, 85%, 63%);
+
+        --offWhite: hsl(36, 100%, 99%);
+        --grayishBlue: hsl(233, 8%, 79%);
+        --darkGrayishBlue: hsl(236, 13%, 42%);
+        --veryDarkBlue: hsl(240, 100%, 5%);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        font-size: 1.5rem;
+      }
+
+      .newsHomepage {
+        width: 140rem;
+        height: auto;
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        grid-template-rows: auto 28.5rem 17.8rem 18rem;
+        margin: 0 auto;
+        padding: 7rem 14rem;
+        row-gap: 2.5rem;
+        column-gap: 2.5rem;
+      }
+
+      .newsHomepage__nav {
+        grid-row: 1 / 2;
+        grid-column: 1/-1;
+        width: 100%;
+        height: auto;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 0 0 4rem 0;
+      }
+
+      .newsHomepage__navlists {
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+        list-style: none;
+        font-size: 1.8rem;
+      }
+
+      .newsHomepage__navlist a {
+        text-decoration: none;
+        color: black;
+      }
+
+      .newsHomepage__navlist a:hover {
+        color: var(--softOrange);
+      }
+
+      .newsHomepage__mainImgBox {
+        grid-row: 2 / 3;
+        grid-column: 1 / 3;
+        width: 100%;
+        height: auto;
+      }
+
+      .newsHomepage__mainImg {
+        width: 100%;
+        height: 28.5rem;
+      }
+
+      .newsHomepage__mainArticleNameBox {
+        grid-row: 3 / 4;
+        grid-column: 1 / 2;
+        width: 100%;
+      }
+
+      .newsHomepage__mainArticleName {
+        font-size: 6rem;
+        font-weight: 800;
+        line-height: 5.7rem;
+      }
+
+      .newsHomepage__mainArticleInfoBox {
+        grid-row: 3 / 4;
+        grid-column: 2 / 3;
+        width: 100%;
+        padding: 0 0.5rem 0 0;
+
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+      }
+
+      .newsHomepage__mainArticleDescription {
+        line-height: 2.2rem;
+      }
+
+      .newsHomepage__readMoreBtn {
+        display: block;
+        width: 55%;
+        height: 6rem;
+        color: white;
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        font-weight: 700;
+        letter-spacing: 0.5rem;
+        background-color: var(--softRed);
+        text-decoration: none;
+        cursor: pointer;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .newsHomepage__readMoreBtn:hover {
+        background-color: black;
+      }
+
+      .newsHomepage__middleArticlesBox {
+        grid-row: 2 / 4;
+        grid-column: 3 / 4;
+        width: 100%;
+        height: 100%;
+      }
+
+      .newsHomepage__middleArticles {
+        width: 100%;
+        height: 100%;
+        background-color: var(--veryDarkBlue);
+        color: white;
+
+        display: flex;
+        flex-direction: column;
+
+        padding: 3rem 2rem 0 2rem;
+      }
+
+      .newsHomepage__middleArticles h3 {
+        font-size: 4rem;
+        color: var(--softOrange);
+      }
+
+      .newsHomepage__article {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 3rem 0;
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .newsHomepage__article:nth-child(4) {
+        border: none;
+      }
+
+      .newsHomepage__article a {
+        font-weight: 700;
+        font-size: 2.15rem;
+        text-decoration: none;
+        color: white;
+      }
+
+      .newsHomepage__article a:hover {
+        color: var(--softOrange);
+      }
+
+      .newsHomepage__article p {
+        color: var(--grayishBlue);
+        font-weight: 400;
+        font-size: 1.6rem;
+      }
+
+      .newsHomepage__bottomArticle:nth-child(1) {
+        grid-row: 4 / -1;
+        grid-column: 1 / 2;
+      }
+      .newsHomepage__bottomArticle:nth-child(2) {
+        grid-row: 4 / -1;
+        grid-column: 2 / 3;
+      }
+      .newsHomepage__bottomArticle:nth-child(3) {
+        grid-row: 4 / -1;
+        grid-column: 3 / 4;
+      }
+
+      .newsHomepage__bottomArticle {
+        width: 100%;
+        height: 100%;
+        padding-top: 5rem;
+        display: flex;
+        gap: 2.5rem;
+      }
+
+      .newsHomepage__bottomArticle img {
+        width: 10.5rem;
+        height: 13rem;
+      }
+
+      .newsHomepage__bottomArticleInfoBox {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .newsHomepage__bottomArticleInfoBox span {
+        font-size: 3.8rem;
+        font-weight: 700;
+        color: var(--grayishBlue);
+      }
+
+      .newsHomepage__bottomArticleInfoBox a {
+        text-decoration: none;
+        color: black;
+        font-weight: 700;
+        font-size: 1.9rem;
+        cursor: pointer;
+      }
+
+      .newsHomepage__bottomArticleInfoBox a:hover {
+        color: var(--softRed);
+      }
+
+      .newsHomepage__bottomArticleInfoBox p {
+        color: var(--darkGrayishBlue);
+        font-size: 1.5rem;
+      }
+
+      @media only screen and (max-width: 23.45em) {
+        .newsHomepage {
+          width: 37.5rem;
+          height: auto;
+          /* background-color: orangered; */
+
+          display: grid;
+          grid-template-columns: 100%;
+          /* grid-template-rows: 0.1fr 0.5fr 0.3fr 0.1fr; */
+          /* grid-template-rows: auto 28.5rem 17.8rem 18rem; */
+          grid-template-rows: repeat(6, auto);
+          margin: 0;
+          padding: 2.5rem 1.5rem 8rem 1.5rem;
+          row-gap: 3rem;
+          column-gap: 0;
+        }
+
+        .newsHomepage__nav {
+          grid-column: 1/-1;
+          grid-row: 1/2;
+          padding: 0 0;
+        }
+
+        .newsHomepage__mainImgBox {
+          width: 100%;
+          height: auto;
+          grid-column: 1/-1;
+          grid-row: 2/3;
+        }
+
+        .newsHomepage__mainImgBox img {
+          width: 100%;
+          height: auto;
+        }
+
+        .newsHomepage__mainArticleNameBox {
+          grid-column: 1/-1;
+          grid-row: 3/4;
+        }
+
+        .newsHomepage__mainArticleName {
+          width: 90%;
+          font-size: 4.05rem;
+          font-weight: 800;
+          line-height: 4rem;
+          margin-top: -0.5rem;
+        }
+
+        .newsHomepage__mainArticleInfoBox {
+          grid-column: 1/-1;
+          grid-row: 4/5;
+          gap: 2.5rem;
+        }
+
+        .newsHomepage__mainArticleDescription {
+          line-height: 2.5rem;
+          margin-top: -1rem;
+        }
+
+        .newsHomepage__readMoreBtn {
+          margin-bottom: 3.5rem;
+        }
+
+        .newsHomepage__middleArticlesBox {
+          grid-column: 1/-1;
+          grid-row: 5/6;
+        }
+
+        .newsHomepage__article a {
+          /* font-weight: 700; */
+          font-size: 2.08rem;
+          /* text-decoration: none;
+          color: white; */
+        }
+
+        .newsHomepage__article p {
+          font-size: 1.55rem;
+        }
+
+        .newsHomepage__bottomArticle {
+          padding: 0;
+        }
+
+        .newsHomepage__bottomArticle img {
+          height: 12rem;
+        }
+
+        .newsHomepage__bottomArticleInfoBox span {
+          font-size: 3rem;
+          font-weight: 700;
+        }
+
+        .newsHomepage__bottomArticleInfoBox a {
+          font-weight: 700;
+          font-size: 1.83rem;
+        }
+
+        .newsHomepage__bottomArticleInfoBox p {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="newsHomepage">
+      <nav class="newsHomepage__nav">
+        <img
+          class="newsHomepage__logo"
+          src="./assets/images/logo.svg"
+          alt="a newsPage logo"
+        />
+        <ul class="newsHomepage__navlists">
+          <li class="newsHomepage__navlist"><a href="#">Home</a></li>
+          <li class="newsHomepage__navlist"><a href="#">New</a></li>
+          <li class="newsHomepage__navlist"><a href="#">Popular</a></li>
+          <li class="newsHomepage__navlist"><a href="#">Trending</a></li>
+          <li class="newsHomepage__navlist"><a href="#">Categories</a></li>
+        </ul>
+      </nav>
+      <!-- <div class=""> -->
+      <picture class="newsHomepage__mainImgBox">
+        <source
+          media="(max-width: 23.45em)"
+          srcset="./assets/images/image-web-3-mobile.jpg"
+        />
+        <source
+          media="(max-width: 144em)"
+          srcset="./assets/images/image-web-3-desktop.jpg"
+        />
+        <img
+          class="newsHomepage__mainImg"
+          src="./assets/images/image-web-3-desktop.jpg"
+          alt="a main article picture"
+        />
+      </picture>
+      <!-- <img
+          class="newsHomepage__mainImg"
+          src="./assets/images/image-web-3-desktop.jpg"
+        /> -->
+      <!-- </div> -->
+      <div class="newsHomepage__mainArticleNameBox">
+        <h2 class="newsHomepage__mainArticleName">
+          The Bright Future of Web 3.0?
+        </h2>
+      </div>
+      <div class="newsHomepage__mainArticleInfoBox">
+        <p class="newsHomepage__mainArticleDescription">
+          We dive into the next evolution of the web that claims to put the
+          power of the platforms back into the hands of the people. But is it
+          really fulfilling its promise?
+        </p>
+        <a class="newsHomepage__readMoreBtn">Read more</a>
+      </div>
+      <div class="newsHomepage__middleArticlesBox">
+        <article class="newsHomepage__middleArticles">
+          <h3>New</h3>
+          <article class="newsHomepage__article">
+            <a href="#">Hydrogen VS Electric Cars</a>
+            <p>Will hydrogen-fueled cars ever catch up to EVs?</p>
+          </article>
+          <article class="newsHomepage__article">
+            <a href="#">The Downsides of AI Artistry</a>
+            <p>
+              What are the possible adverse effects of on-demand AI image
+              generation?
+            </p>
+          </article>
+          <article class="newsHomepage__article">
+            <a href="#">Is VC Funding Drying Up?</a>
+            <p>
+              Private funding by VC firms is down 50% YOY. We take a look at
+              what that means.
+            </p>
+          </article>
+        </article>
+      </div>
+      <!-- <div class="newsHomepage__bottomArticleBox">-->
+      <!-- <div class="newsHomepage__bottomArticles"> -->
+      <article class="newsHomepage__bottomArticle">
+        <img src="./assets/images/image-retro-pcs.jpg" alt="a pc picture" />
+        <div class="newsHomepage__bottomArticleInfoBox">
+          <span>01</span>
+          <a>Reviving Retro PCs</a>
+          <p>What happens when old PCs are given modern upgrades?</p>
+        </div>
+      </article>
+      <article class="newsHomepage__bottomArticle">
+        <img
+          src="./assets/images/image-top-laptops.jpg"
+          alt="a pc-chips picture"
+        />
+        <div class="newsHomepage__bottomArticleInfoBox">
+          <span>02</span>
+          <a>Top 10 Laptops of 2022</a>
+          <p>Our best picks for various needs and budgets.</p>
+        </div>
+      </article>
+      <article class="newsHomepage__bottomArticle">
+        <img
+          src="./assets/images/image-gaming-growth.jpg"
+          alt="a game pad picture"
+        />
+        <div class="newsHomepage__bottomArticleInfoBox">
+          <span>03</span>
+          <a>The Growth of Gaming</a>
+          <p>How the pandemic has sparked fresh opportunities.</p>
+        </div>
+      </article>
+      <!-- </div> -->
+      <!--</div> -->
+    </section>
+  </body>
+</html>
