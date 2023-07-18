@@ -58,6 +58,7 @@
         padding: 7rem 14rem;
         row-gap: 2.5rem;
         column-gap: 2.5rem;
+        position: relative;
       }
 
       .newsHomepage__nav {
@@ -88,6 +89,53 @@
 
       .newsHomepage__navlist a:hover {
         color: var(--softOrange);
+      }
+
+      .newsHomepage__mobileNav {
+        cursor: pointer;
+        display: none;
+      }
+
+      .modalBackground {
+        display: none;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.444);
+        z-index: 99;
+      }
+
+      .newsHomepage__mobileNavigationModal {
+        width: 26rem;
+        height: 100%;
+        position: absolute;
+        left: 11.5rem;
+        z-index: 100;
+        background-color: white;
+
+        display: flex;
+        flex-direction: column;
+        gap: 9rem;
+        padding: 2.5rem 2rem;
+        display: none;
+      }
+
+      .newsHomepage__mobileNavigationModal img {
+        display: block;
+        width: 3.5rem;
+        height: 3.5rem;
+        margin-left: auto;
+        cursor: pointer;
+      }
+
+      .newsHomepage__mobileNavigationModal ul {
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+        gap: 3rem;
+        list-style: none;
+        font-size: 1.6rem;
+        font-weight: 700;
       }
 
       .newsHomepage__mainImgBox {
@@ -283,6 +331,16 @@
           padding: 0 0;
         }
 
+        .newsHomepage__navlists {
+          display: none;
+        }
+
+        .newsHomepage__mobileNav {
+          display: block;
+          cursor: pointer;
+          height: 2.3rem;
+        }
+
         .newsHomepage__mainImgBox {
           width: 100%;
           height: auto;
@@ -378,8 +436,24 @@
           <li class="newsHomepage__navlist"><a href="#">Trending</a></li>
           <li class="newsHomepage__navlist"><a href="#">Categories</a></li>
         </ul>
+        <img
+          class="newsHomepage__mobileNav"
+          src="./assets/images/icon-menu.svg"
+          alt="a menu icon"
+        />
       </nav>
-      <!-- <div class=""> -->
+      <div class="modalBackground"></div>
+      <div class="newsHomepage__mobileNavigationModal">
+        <img src="./assets/images/icon-menu-close.svg" alt="a closed menu" />
+        <ul class="newsHomepage__mobileNavlists">
+          <li class="newsHomepage__navlist"><a href="#">Home</a></li>
+          <li class="newsHomepage__navlist"><a href="#">New</a></li>
+          <li class="newsHomepage__navlist"><a href="#">Popular</a></li>
+          <li class="newsHomepage__navlist"><a href="#">Trending</a></li>
+          <li class="newsHomepage__navlist"><a href="#">Categories</a></li>
+        </ul>
+      </div>
+
       <picture class="newsHomepage__mainImgBox">
         <source
           media="(max-width: 23.45em)"
@@ -471,5 +545,25 @@
       <!-- </div> -->
       <!--</div> -->
     </section>
+    <script>
+      const mobileNavBtn = document.querySelector(".newsHomepage__mobileNav");
+      const mobileNavBackground = document.querySelector(".modalBackground");
+      const mobileNav = document.querySelector(
+        ".newsHomepage__mobileNavigationModal"
+      );
+      const mobileNavClosedBtn = document.querySelector(
+        ".newsHomepage__mobileNavigationModal img"
+      );
+
+      mobileNavBtn.addEventListener("click", () => {
+        mobileNavBackground.style.display = "block";
+        mobileNav.style.display = "flex";
+      });
+
+      mobileNavClosedBtn.addEventListener("click", () => {
+        mobileNavBackground.style.display = "none";
+        mobileNav.style.display = "none";
+      });
+    </script>
   </body>
 </html>
