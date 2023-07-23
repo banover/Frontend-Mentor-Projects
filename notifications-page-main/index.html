@@ -133,6 +133,7 @@
 
         padding: 1.5rem 1.5rem;
         border-radius: 3px;
+        position: relative;
       }
 
       .notification__list img {
@@ -210,11 +211,12 @@
 
       .notification__imgHoverEffect {
         /* background-color: orange; */
-        width: 4.8rem;
-        height: 4.8rem;
+        width: 5rem;
+        height: 5rem;
         position: absolute;
-        top: -2.5%;
-        left: 91.25%;
+        top: 17%;
+        left: 90.1%;
+
         cursor: pointer;
         border-radius: 8px;
         border: 1px solid var(--Blue);
@@ -225,9 +227,11 @@
 
       .notification__onPicture {
         display: block;
-        position: absolute;
-        top: 0;
-        left: 91.5%;
+        /* width: 3rem;
+        height: 3rem; */
+        /* position: absolute; */
+        /* top: 0; */
+        /* left: 91.5%; */
         cursor: pointer;
         z-index: 10;
 
@@ -252,6 +256,75 @@
 
       .notification__privateMessage:hover {
         background-color: var(--LightGrayishBlue1);
+      }
+
+      @media only screen and (max-width: 23.45em) {
+        .notification {
+          width: 37.5rem;
+          /* height: auto; */
+
+          margin: 0;
+          /* background-color: white; */
+          /* box-shadow: 0px 0px 2px rgb(0, 0, 0, 0.1); */
+          border-radius: 0;
+
+          /* display: flex; */
+          /* flex-direction: column; */
+          gap: 2.5rem;
+
+          padding: 2.5rem 1.8rem;
+        }
+
+        .notification__notificationBox {
+          gap: 1rem;
+        }
+
+        .notification__notificationBox h2 {
+          font-size: 2.1rem;
+        }
+
+        .notification__notificationBox span {
+          width: 3rem;
+          height: 2.4rem;
+        }
+
+        .notification__list {
+          /* width: 70%; */
+        }
+
+        .notification__list img {
+          /* width: 4.5rem;
+          height: 4.5rem; */
+          width: 4rem;
+          height: 4rem;
+          align-self: flex-start;
+        }
+
+        .notification__description {
+          font-size: 1.45rem;
+        }
+
+        .notification__name {
+          font-size: 1.3rem;
+        }
+
+        .notification__postName {
+          font-size: 1.3rem;
+        }
+
+        .notification__privateMessage {
+          font-size: 1.4rem;
+        }
+
+        .notification__timeLine {
+          font-size: 1.4rem;
+          margin-top: -0.3rem;
+        }
+
+        .notification__imgHoverEffect {
+          top: 12%;
+          left: 82.5%;
+        }
       }
     </style>
   </head>
@@ -342,13 +415,19 @@
                 on your picture<span class="notification__unReadFlag"></span>
               </p>
               <span class="notification__timeLine">1 week ago</span>
-              <img
+              <!-- <img
                 class="notification__onPicture"
                 src="./assets/images/image-chess.webp"
                 alt="a picture which a girl plays chess"
               />
-              <div class="notification__imgHoverEffect"></div>
+              <div class="notification__imgHoverEffect"></div> -->
             </div>
+            <img
+              class="notification__onPicture"
+              src="./assets/images/image-chess.webp"
+              alt="a picture which a girl plays chess"
+            />
+            <div class="notification__imgHoverEffect"></div>
           </li>
           <li class="notification__list">
             <img
@@ -384,5 +463,14 @@
         </ul>
       </main>
     </section>
+    <script>
+      const readBtn = document.querySelector(".notification__readBtn");
+      const unReadNotification = document.querySelectorAll(".--unRead");
+      readBtn.addEventListener("click", () => {
+        unReadNotification.forEach((notiList) => {
+          notiList.classList.remove("--unRead");
+        });
+      });
+    </script>
   </body>
 </html>
