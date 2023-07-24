@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <title>Frontend Mentor | Interactive card details form</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      :root {
+        /* - Linear gradient (active input border): hsl(249, 99%, 64%) to hsl(278, 94%, 30%)
+      - Red (input errors): hsl(0, 100%, 66%) */
+
+        --white: hsl(0, 0%, 100%);
+        --lightGrayishViolet: hsl(270, 3%, 87%);
+        --darkGrayishViolet: hsl(279, 6%, 55%);
+        --veryDarkViolet: hsl(278, 68%, 11%);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      body {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 1.8rem;
+      }
+
+      .InteractiveCard {
+        /* background-color: orangered; */
+
+        width: 144rem;
+        height: auto;
+        margin: 0 auto;
+        display: flex;
+
+        position: relative;
+      }
+
+      .InteractiveCard__leftImgBox {
+        width: 30%;
+        height: auto;
+      }
+
+      .InteractiveCard__leftImgBox img {
+        width: 100%;
+        height: 100%;
+      }
+
+      .InteractiveCard__rightFormBox {
+        width: 70%;
+        height: auto;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .InteractiveCard__form {
+        background-color: white;
+        width: 50%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+
+        margin-left: 13rem;
+        /* display: none; */
+      }
+
+      .InteractiveCard__inputList {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .InteractiveCard__inputList label {
+        text-transform: uppercase;
+        letter-spacing: 0.15rem;
+      }
+
+      .InteractiveCard__inputList input {
+        height: 5.5rem;
+        padding: 0 2.4rem;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 2.4rem;
+        color: black;
+        /* opacity: 0.4; */
+
+        border: 1px solid rgb(0, 0, 0, 0.1);
+        border-radius: 8px;
+      }
+
+      .InteractiveCard__inputList input::placeholder {
+        font-family: "Space Grotesk", sans-serif;
+        color: var(--lightGrayishViolet);
+        /* opacity: 1; */
+        font-size: 2.4rem;
+      }
+
+      .InteractiveCard__multiInputList {
+        width: 100%;
+        height: auto;
+        display: flex;
+        gap: 1.5rem;
+      }
+
+      .InteractiveCard__multiInputList label {
+        text-transform: uppercase;
+        letter-spacing: 0.155rem;
+      }
+
+      .InteractiveCard__expireDateInputBox {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .InteractiveCard__expireDateInput {
+        width: 100%;
+        display: flex;
+        gap: 1.5rem;
+      }
+
+      .InteractiveCard__expireDateInput input {
+        width: 44%;
+        height: 5.5rem;
+        padding: 0 2.2rem;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 2.4rem;
+        color: black;
+        /* opacity: 0.4; */
+
+        border: 1px solid rgb(0, 0, 0, 0.1);
+        border-radius: 8px;
+      }
+
+      .InteractiveCard__expireDateInput input::placeholder {
+        font-family: "Space Grotesk", sans-serif;
+        color: var(--lightGrayishViolet);
+        /* opacity: 1; */
+        font-size: 2.4rem;
+      }
+
+      .InteractiveCard__cvcInputBox {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .InteractiveCard__cvcInputBox input {
+        height: 5.5rem;
+        padding: 0 2.2rem;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 2.4rem;
+        color: black;
+        /* opacity: 0.4; */
+
+        border: 1px solid rgb(0, 0, 0, 0.1);
+        /* border: 1px solid;
+        border-image-slice: 1;
+        border-image-source: linear-gradient(to right, red, blue); */
+        border-radius: 8px;
+      }
+
+      .InteractiveCard__cvcInputBox input::placeholder {
+        font-family: "Space Grotesk", sans-serif;
+        color: var(--lightGrayishViolet);
+        /* opacity: 1; */
+        font-size: 2.4rem;
+      }
+
+      .InteractiveCard__submitBtn {
+        height: 7rem;
+        border: none;
+        font-family: "Space Grotesk", sans-serif;
+        color: white;
+        font-size: 2.5rem;
+        letter-spacing: 0.15rem;
+        background-color: var(--veryDarkViolet);
+        border-radius: 10px;
+        margin-top: 2rem;
+      }
+
+      .InteractiveCard__frontCardImg {
+        position: absolute;
+        top: 17%;
+        left: 7%;
+      }
+      .InteractiveCard__backCardImg {
+        position: absolute;
+        top: 51%;
+        left: 12%;
+      }
+
+      .frontCardCoverPage {
+        width: 44.7rem;
+        height: 24.5rem;
+
+        position: absolute;
+        top: 17%;
+        left: 7%;
+
+        /* background-color: orange; */
+        padding: 2.5rem 3rem;
+        color: white;
+        z-index: 99;
+      }
+
+      .frontCardCoverPage img {
+        margin-bottom: 5.5rem;
+      }
+
+      .frontCardCoverPage img + p {
+        font-size: 2.9rem;
+        letter-spacing: 0.3rem;
+        margin-bottom: 2.5rem;
+      }
+
+      .bottomCoverPage {
+        display: flex;
+        justify-content: space-between;
+        text-transform: uppercase;
+        font-size: 1.7rem;
+      }
+
+      .backCardCoverPage {
+        width: 44.7rem;
+        height: 24.5rem;
+
+        position: absolute;
+        top: 51%;
+        left: 12%;
+
+        /* background-color: orange; */
+
+        color: white;
+        z-index: 99;
+      }
+
+      .backCardCoverPage span {
+        display: block;
+        padding-top: 11.1rem;
+        padding-left: 36rem;
+        font-size: 1.5rem;
+        letter-spacing: 0.2rem;
+      }
+
+      .wrongFormatErrorMessage {
+        font-size: 1.4rem;
+        color: red;
+        margin-top: -0.3rem;
+        display: none;
+      }
+
+      .InteractiveCard__completeState {
+        /* background-color: white; */
+        width: 40%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+
+        margin-left: 13rem;
+
+        display: none;
+      }
+
+      .InteractiveCard__completeState img {
+        /* display: block; */
+        width: 6.5rem;
+        height: 6.5rem;
+      }
+
+      .InteractiveCard__completeState p:nth-child(2) {
+        font-size: 3.5rem;
+        letter-spacing: 0.2rem;
+        text-transform: uppercase;
+      }
+      .InteractiveCard__completeState p:nth-child(3) {
+        font-size: 2rem;
+        margin-top: -1.3rem;
+        color: var(--darkGrayishViolet);
+        margin-bottom: 1.5rem;
+      }
+
+      .InteractiveCard__completeState button {
+        border: none;
+        border-radius: 5px;
+        background-color: var(--veryDarkViolet);
+        color: white;
+        width: 100%;
+        height: 4.5rem;
+        font-size: 2rem;
+      }
+      /* 447 * 245 */
+    </style>
+  </head>
+  <body>
+    <section class="InteractiveCard">
+      <div class="InteractiveCard__leftImgBox">
+        <!-- <img src="./images/bg-main-desktop.png" alt="a gradient png" /> -->
+        <picture>
+          <source
+            media="(max-width: 23.45em)"
+            srcset="./images/bg-main-mobile.png"
+          />
+          <source
+            media="(max-width: 144em)"
+            srcset="./images/bg-main-desktop.png"
+          />
+          <img src="./images/bg-main-desktop.png" alt="a gradient png" />
+        </picture>
+      </div>
+      <img
+        class="InteractiveCard__frontCardImg"
+        src="./images/bg-card-front.png"
+        alt="a card front photo"
+      />
+      <img
+        class="InteractiveCard__backCardImg"
+        src="./images/bg-card-back.png"
+        alt="a card back photo"
+      />
+      <div class="frontCardCoverPage">
+        <img src="./images/card-logo.svg" />
+
+        <p>0000 0000 0000 0000</p>
+        <div class="bottomCoverPage">
+          <p>Jane Appleseed</p>
+          <span>00/00</span>
+        </div>
+      </div>
+      <div class="backCardCoverPage">
+        <span>000</span>
+      </div>
+      <div class="InteractiveCard__rightFormBox">
+        <form class="InteractiveCard__form">
+          <div class="InteractiveCard__inputList">
+            <label class="InteractiveCard__name" for="cardholderName"
+              >Cardholder Name</label
+            >
+            <input
+              name="cardholderName"
+              type="text"
+              placeholder="e.g. Jane Appleseed"
+              required
+            />
+            <p class="wrongFormatErrorMessage name">Can't be blank</p>
+          </div>
+          <div class="InteractiveCard__inputList">
+            <label class="InteractiveCard__name" for="cardNumber"
+              >Card Number</label
+            >
+            <input
+              name="cardNumber"
+              type="text"
+              placeholder="e.g. 1234 5678 9123 0000"
+              required
+            />
+            <p class="wrongFormatErrorMessage cardNumber">
+              Wrong format, numbers only
+            </p>
+          </div>
+          <div class="InteractiveCard__multiInputList">
+            <div class="InteractiveCard__expireDateInputBox">
+              <label for="expireDate">Exp. Date (MM/YY)</label>
+              <div class="InteractiveCard__expireDateInput">
+                <input
+                  name="expireDate"
+                  type="text"
+                  placeholder="MM"
+                  required
+                />
+                <input
+                  name="expireDate"
+                  type="text"
+                  placeholder="YY"
+                  required
+                />
+              </div>
+              <p class="wrongFormatErrorMessage expireDate">Can't be blank</p>
+            </div>
+            <div class="InteractiveCard__cvcInputBox">
+              <label for="cvc">CVC</label>
+              <input name="cvc" type="text" required placeholder="e.g. 123" />
+              <p class="wrongFormatErrorMessage cvc">Can't be blank</p>
+            </div>
+          </div>
+          <button class="InteractiveCard__submitBtn">Confirm</button>
+        </form>
+        <div class="InteractiveCard__completeState">
+          <img src="./images/icon-complete.svg" alt="a complete icon" />
+          <p>Thank you!</p>
+          <p>We've added your card details</p>
+          <button>Continue</button>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const completeStateElement = document.querySelector(
+        ".InteractiveCard__completeState"
+      );
+      const formElement = document.querySelector(".InteractiveCard__form");
+      const nameInputElement = document.querySelector(
+        'input[name="cardholderName"]'
+      );
+      const cardNumberInputElement = document.querySelector(
+        'input[name="cardNumber"]'
+      );
+      const expireMonthElement = document.querySelector(
+        'input[placeholder="MM"]'
+      );
+      const expireYearElement = document.querySelector(
+        'input[placeholder="YY"]'
+      );
+      const cvcElement = document.querySelector('input[name="cvc"]');
+      const nameErrorMessage = document.querySelector(".name");
+      const carnNumberErrorMessage = document.querySelector(".cardNumber");
+      const expireDateErrorMessage = document.querySelector(".expireDate");
+      const cvcErrorMessage = document.querySelector(".cvc");
+      const continueBtn = document.querySelector(
+        ".InteractiveCard__completeState button"
+      );
+
+      console.log(
+        carnNumberErrorMessage,
+        expireDateErrorMessage,
+        cvcErrorMessage
+      );
+
+      formElement.addEventListener("submit", (e) => {
+        e.preventDefault();
+        // console.log(cardNumberInputElement.value);
+
+        const onlyNumberReg = /^[0-9]+$/;
+
+        if (
+          nameInputElement.value === "" ||
+          !onlyNumberReg.exec(cardNumberInputElement.value) ||
+          !onlyNumberReg.exec(expireMonthElement.value) ||
+          !onlyNumberReg.exec(expireYearElement.value) ||
+          !onlyNumberReg.exec(cvcElement.value)
+        ) {
+          nameInputElement.style.border = "2px solid transparent";
+          nameInputElement.style.background =
+            "Linear-gradient(#fff 0 0) padding-box, Linear-gradient(to bottom right, hsl(249, 99%, 64%), hsl(278, 94%, 30%)) border-box";
+          cardNumberInputElement.style.border = "2px solid transparent";
+          cardNumberInputElement.style.background =
+            "Linear-gradient(#fff 0 0) padding-box, Linear-gradient(to bottom right, hsl(249, 99%, 64%), hsl(278, 94%, 30%)) border-box";
+          expireMonthElement.style.border = "2px solid transparent";
+          expireMonthElement.style.background =
+            "Linear-gradient(#fff 0 0) padding-box, Linear-gradient(to bottom right, hsl(249, 99%, 64%), hsl(278, 94%, 30%)) border-box";
+          expireYearElement.style.border = "2px solid transparent";
+          expireYearElement.style.background =
+            "Linear-gradient(#fff 0 0) padding-box, Linear-gradient(to bottom right, hsl(249, 99%, 64%), hsl(278, 94%, 30%)) border-box";
+          cvcElement.style.border = "2px solid transparent";
+          cvcElement.style.background =
+            "Linear-gradient(#fff 0 0) padding-box, Linear-gradient(to bottom right, hsl(249, 99%, 64%), hsl(278, 94%, 30%)) border-box";
+
+          if (nameInputElement.value === "") {
+            nameInputElement.style.border = "2px solid red";
+            nameErrorMessage.style.display = "block";
+          }
+
+          if (!onlyNumberReg.exec(cardNumberInputElement.value)) {
+            cardNumberInputElement.style.border = "2px solid red";
+            carnNumberErrorMessage.style.display = "block";
+          }
+          if (
+            !onlyNumberReg.exec(cardNumberInputElement.value) &&
+            cardNumberInputElement.value === ""
+          ) {
+            cardNumberInputElement.style.border = "2px solid red";
+            carnNumberErrorMessage.textContent = `Can't be black`;
+            carnNumberErrorMessage.style.display = "block";
+          }
+
+          if (
+            !onlyNumberReg.exec(expireMonthElement.value) ||
+            !onlyNumberReg.exec(expireYearElement.value)
+          ) {
+            //
+            if (!onlyNumberReg.exec(expireMonthElement.value)) {
+              expireMonthElement.style.border = "2px solid red";
+              expireDateErrorMessage.textContent = `Wrong format, numbers only`;
+            }
+            if (
+              !onlyNumberReg.exec(expireMonthElement.value) &&
+              expireMonthElement.value === ""
+            ) {
+              expireMonthElement.style.border = "2px solid red";
+              expireDateErrorMessage.textContent = `Can't be black`;
+            }
+
+            if (!onlyNumberReg.exec(expireYearElement.value)) {
+              expireYearElement.style.border = "2px solid red";
+              expireDateErrorMessage.textContent = `Wrong format, numbers only`;
+            }
+            if (
+              !onlyNumberReg.exec(expireYearElement.value) &&
+              expireYearElement.value === ""
+            ) {
+              expireMonthElement.style.border = "2px solid red";
+              expireDateErrorMessage.textContent = `Can't be black`;
+            }
+            expireDateErrorMessage.style.display = "block";
+          }
+
+          if (!onlyNumberReg.exec(cvcElement.value)) {
+            cvcElement.style.border = "2px solid red";
+            cvcErrorMessage.textContent = `Wrong format, numbers only`;
+            cvcErrorMessage.style.display = "block";
+          }
+          if (
+            !onlyNumberReg.exec(cvcElement.value) &&
+            cvcElement.value === ""
+          ) {
+            cvcElement.style.border = "2px solid red";
+            cvcErrorMessage.textContent = `Can't be black`;
+            cvcErrorMessage.style.display = "block";
+          }
+        } else {
+          // complete display block설정
+          formElement.style.display = "none";
+          completeStateElement.style.display = "flex";
+        }
+      });
+      continueBtn.addEventListener("click", () => {
+        completeStateElement.style.display = "none";
+        formElement.style.display = "flex";
+
+        nameInputElement.style.border = "border: 1px solid rgb(0, 0, 0, 0.1);";
+        nameInputElement.value = "";
+        cardNumberInputElement.style.border =
+          "border: 1px solid rgb(0, 0, 0, 0.1);";
+        cardNumberInputElement.value = "";
+        expireMonthElement.style.border =
+          "border: 1px solid rgb(0, 0, 0, 0.1);";
+        expireMonthElement.value = "";
+        expireYearElement.style.border = "border: 1px solid rgb(0, 0, 0, 0.1);";
+        expireYearElement.value = "";
+        cvcElement.style.border = "border: 1px solid rgb(0, 0, 0, 0.1);";
+        cvcElement.value = "";
+
+        carnNumberErrorMessage.style.display = "none";
+        expireDateErrorMessage.style.display = "none";
+        cvcErrorMessage.style.display = "none";
+      });
+    </script>
+  </body>
+</html>
