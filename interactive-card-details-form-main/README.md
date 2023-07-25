@@ -4,30 +4,8 @@
 
 ## 피드백
 
--
+- border에 linear-gradient 입히는 방법, background를 활용해서 border-size, padding-size의 영역을 조절해 만듬, 특히 border-radius 적용해야하면 이 방식활용, border-image-source를 활용하는 방법도 있지만 이 방법은 border-radius 적용하기가 어려움
 
-## The challenge
+- BEM 제대로 사용하고 있는지 점검이 필요
 
-Your challenge is to build out this interactive card details form and get it looking as close to the design as possible.
-
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
-
-Your users should be able to:
-
-- Fill in the form and see the card details update in real-time
-- Receive error messages when the form is submitted if:
-  - Any input field is empty
-  - The card number, expiry date, or CVC fields are in the wrong format
-- View the optimal layout depending on their device's screen size
-- See hover, active, and focus states for interactive elements on the page
-
-Want some support on the challenge? [Join our Slack community](https://www.frontendmentor.io/slack) and ask questions in the **#help** channel.
-
-### Expected behaviour
-
-- Update the details on the card as the user fills in the fields
-- Validate the form fields when the form is submitted
-- If there are no errors, display the completed state
-- Reset the form when the user clicks "Continue" on the completed state
-
-**⚠️ IMPORTANT ⚠️: When you create the live version of your project, we recommmend giving it a random name for the URL. This is because with it being a fake credit card form, some browsers will open a warning notice before people can access your project. So it's best to name the project something unrelated to credit cards so that browsers don't show the warning to people viewing your project.**
+- form submit 이후 해당 input을 select해서 value값을 바로 확인할 수 있음, 물론 event를 활용할 수도 있음

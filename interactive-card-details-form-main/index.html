@@ -204,6 +204,7 @@
         background-color: var(--veryDarkViolet);
         border-radius: 10px;
         margin-top: 2rem;
+        cursor: pointer;
       }
 
       .InteractiveCard__frontCardImg {
@@ -317,8 +318,261 @@
         width: 100%;
         height: 4.5rem;
         font-size: 2rem;
+        cursor: pointer;
       }
       /* 447 * 245 */
+
+      @media only screen and (max-width: 23.45em) {
+        .InteractiveCard {
+          width: 37.5rem;
+          height: auto;
+          margin: 0 0;
+          display: flex;
+          flex-direction: column;
+
+          position: relative;
+        }
+
+        .InteractiveCard__leftImgBox {
+          width: 100%;
+          height: auto;
+        }
+
+        .InteractiveCard__leftImgBox img {
+          width: 100%;
+          height: 100%;
+        }
+
+        .InteractiveCard__frontCardImg {
+          width: 75%;
+          height: 16rem;
+          position: absolute;
+          top: 15.8%;
+          left: 4%;
+          z-index: 98;
+        }
+        .InteractiveCard__backCardImg {
+          width: 75%;
+          height: 16.5rem;
+          position: absolute;
+          top: 3.5%;
+          left: 20%;
+          z-index: 97;
+        }
+
+        .frontCardCoverPage {
+          width: 75%;
+          /* width: 44.7rem; */
+          height: 16rem;
+
+          position: absolute;
+          top: 15.8%;
+          left: 4%;
+
+          /* background-color: orange; */
+          padding: 1.5rem 2rem;
+
+          z-index: 99;
+        }
+
+        .frontCardCoverPage img {
+          width: 5.5rem;
+          height: 3rem;
+          margin-bottom: 3.5rem;
+        }
+
+        .frontCardCoverPage img + p {
+          font-size: 1.8rem;
+          letter-spacing: 0.2rem;
+          margin-bottom: 2rem;
+        }
+
+        .bottomCoverPage {
+          font-size: 0.7rem;
+          letter-spacing: 0.1rem;
+        }
+
+        .backCardCoverPage {
+          width: 75%;
+          /* width: 44.7rem; */
+          height: 16.5rem;
+
+          position: absolute;
+          top: 3.5%;
+          left: 20%;
+
+          /* background-color: orange; */
+
+          color: white;
+          z-index: 99;
+        }
+
+        .backCardCoverPage span {
+          width: 100%;
+          height: 100%;
+          display: block;
+          padding-top: 7.5rem;
+          padding-left: 22rem;
+          font-size: 1rem;
+          letter-spacing: 0.1rem;
+          /* z-index: 100; */
+        }
+
+        .InteractiveCard__rightFormBox {
+          width: 100%;
+          height: auto;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          padding: 7rem 2rem 4rem 2rem;
+        }
+
+        .InteractiveCard__form {
+          background-color: white;
+          width: 100%;
+          height: auto;
+          display: flex;
+          flex-direction: column;
+          gap: 1.5rem;
+
+          margin-left: 0;
+          /* display: none; */
+        }
+
+        .InteractiveCard__inputList {
+          width: 100%;
+          height: auto;
+          display: flex;
+          flex-direction: column;
+          gap: 0.8rem;
+        }
+
+        .InteractiveCard__inputList label {
+          /* text-transform: uppercase; */
+          /* letter-spacing: 0.15rem; */
+          font-size: 1.2rem;
+        }
+
+        .InteractiveCard__inputList input {
+          height: 4rem;
+          padding: 0 1.5rem;
+
+          font-size: 1.6rem;
+        }
+
+        .InteractiveCard__inputList input::placeholder {
+          font-size: 1.6rem;
+        }
+
+        .InteractiveCard__multiInputList {
+          width: 100%;
+          height: auto;
+          display: flex;
+          gap: 1.5rem;
+        }
+
+        .InteractiveCard__multiInputList label {
+          font-size: 1.2rem;
+        }
+
+        .InteractiveCard__expireDateInputBox {
+          width: 50%;
+          display: flex;
+          flex-direction: column;
+          gap: 0.8rem;
+        }
+
+        .InteractiveCard__expireDateInput {
+          width: 100%;
+          display: flex;
+          gap: 1rem;
+        }
+
+        .InteractiveCard__expireDateInput input {
+          width: 50%;
+          height: 4rem;
+          padding: 0 1.5rem;
+
+          font-size: 1.6rem;
+        }
+
+        .InteractiveCard__expireDateInput input::placeholder {
+          font-size: 1.6rem;
+        }
+
+        .InteractiveCard__cvcInputBox {
+          width: 50%;
+          display: flex;
+          flex-direction: column;
+          gap: 0.8rem;
+        }
+
+        .InteractiveCard__cvcInputBox input {
+          height: 4rem;
+          padding: 0 1.5rem;
+
+          font-size: 1.6rem;
+        }
+
+        .InteractiveCard__cvcInputBox input::placeholder {
+          font-size: 1.6rem;
+        }
+
+        .InteractiveCard__submitBtn {
+          height: 5rem;
+          border: none;
+          font-family: "Space Grotesk", sans-serif;
+          color: white;
+          font-size: 1.6rem;
+          letter-spacing: 0.1rem;
+
+          margin-top: 1.2rem;
+          cursor: pointer;
+        }
+        /* 여기에 error message font-size조절하자 */
+
+        .InteractiveCard__completeState {
+          /* background-color: white; */
+          width: 100%;
+          height: auto;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 3rem;
+
+          margin-left: 0rem;
+          margin-top: -1rem;
+
+          display: none;
+        }
+
+        .InteractiveCard__completeState img {
+          /* display: block; */
+          width: 7.5rem;
+          height: 7.5rem;
+        }
+
+        .InteractiveCard__completeState p:nth-child(2) {
+          font-size: 3rem;
+        }
+        .InteractiveCard__completeState p:nth-child(3) {
+          font-size: 1.8rem;
+          margin-top: -1.8rem;
+
+          margin-bottom: 1.5rem;
+        }
+
+        .InteractiveCard__completeState button {
+          border: none;
+          border-radius: 5px;
+
+          height: 4.5rem;
+          font-size: 1.9rem;
+          letter-spacing: 0.1rem;
+        }
+      }
     </style>
   </head>
   <body>
