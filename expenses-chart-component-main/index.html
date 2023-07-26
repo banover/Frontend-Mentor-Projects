@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Frontend Mentor | Expenses chart component</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      :root {
+        --softRed: hsl(10, 79%, 65%);
+        --cyan: hsl(186, 34%, 60%);
+
+        --darkBrown: hsl(25, 47%, 15%);
+        --mediumBrown: hsl(28, 10%, 53%);
+        --cream: hsl(27, 66%, 92%);
+        --veryPaleOrange: hsl(33, 100%, 98%);
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      body {
+        font-family: "DM Sans", sans-serif;
+        font-size: 1.8rem;
+        background-color: var(--cream);
+      }
+
+      .expensesChart {
+        width: 52rem;
+        height: auto;
+        /* background-color: orange; */
+        margin: 10rem auto;
+
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      .expensesChart__balanceBox {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2.5rem 3rem;
+
+        background-color: var(--softRed);
+        border-radius: 20px;
+      }
+
+      .expensesChart__balanceView {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        color: white;
+      }
+
+      .expensesChart__balanceView p {
+      }
+
+      .expensesChart__balanceView span {
+        font-size: 3.1rem;
+        font-weight: 700;
+      }
+
+      .expensesChart__chartBox {
+        width: 100%;
+        height: auto;
+        background-color: white;
+        padding: 2.5rem 3.5rem;
+        border-radius: 20px;
+
+        display: flex;
+        flex-direction: column;
+      }
+
+      .expensesChart__heading {
+        font-size: 3.1rem;
+        font-weight: 700;
+      }
+
+      .expensesChart__chart {
+        width: 100%;
+        height: auto;
+        border-bottom: 2px solid var(--cream);
+
+        display: flex;
+        gap: 1.7rem;
+        padding: 6.5rem 0 2.5rem 0;
+      }
+
+      .expensesChart__barGraphBox {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .expensesChart__barGraph {
+        width: 100%;
+
+        border-radius: 6px;
+        cursor: pointer;
+        position: relative;
+      }
+
+      .expensesChart__barGraph::before {
+        content: attr(data-content);
+        position: absolute;
+        top: -3.7rem;
+        left: -0.8rem;
+        display: block;
+        width: 6.5rem;
+        height: 3rem;
+        background-color: black;
+        color: white;
+        font-family: "DM Sans", sans-serif;
+        font-size: 1.4rem;
+        font-weight: 700;
+        text-align: center;
+        border-radius: 5px;
+        padding-top: 0.6rem;
+        display: none;
+      }
+
+      .expensesChart__barGraphBox:nth-child(1)
+        .expensesChart__barGraph:hover::before {
+        display: block;
+      }
+      .expensesChart__barGraphBox:nth-child(2)
+        .expensesChart__barGraph:hover::before {
+        display: block;
+      }
+      .expensesChart__barGraphBox:nth-child(3)
+        .expensesChart__barGraph:hover::before {
+        display: block;
+      }
+      .expensesChart__barGraphBox:nth-child(4)
+        .expensesChart__barGraph:hover::before {
+        display: block;
+      }
+      .expensesChart__barGraphBox:nth-child(5)
+        .expensesChart__barGraph:hover::before {
+        display: block;
+      }
+      .expensesChart__barGraphBox:nth-child(6)
+        .expensesChart__barGraph:hover::before {
+        display: block;
+      }
+      .expensesChart__barGraphBox:nth-child(7)
+        .expensesChart__barGraph:hover::before {
+        display: block;
+      }
+
+      .expensesChart__barDate {
+        font-size: 1.5rem;
+        /* margin-left: 0.95rem; */
+        color: var(--mediumBrown);
+      }
+
+      .expensesChart__totalBox {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+        /* align-items: center; */
+        padding: 2.5rem 0rem 0.5rem 0rem;
+      }
+
+      .expensesChart__total {
+        display: flex;
+        flex-direction: column;
+        /* gap: 0.2rem; */
+      }
+
+      .expensesChart__total p {
+        color: var(--mediumBrown);
+      }
+
+      .expensesChart__total span {
+        font-size: 4.7rem;
+        font-weight: 700;
+      }
+
+      .expensesChart__compareBox {
+        align-self: flex-end;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0.8rem;
+      }
+
+      .expensesChart__compareBox span {
+        align-self: flex-end;
+        font-weight: 700;
+      }
+
+      .expensesChart__compareBox p {
+        color: var(--mediumBrown);
+      }
+
+      @media only screen and (max-width: 23.45em) {
+        .expensesChart {
+          width: 37.5rem;
+
+          margin: 0 0;
+
+          gap: 1.5rem;
+
+          padding: 6rem 1.5rem;
+        }
+
+        .expensesChart__balanceBox {
+          padding: 2rem 2.5rem;
+
+          background-color: var(--softRed);
+          border-radius: 10px;
+        }
+
+        .expensesChart__balanceBox img {
+          height: 4rem;
+        }
+
+        .expensesChart__balanceView {
+          gap: 0.5rem;
+        }
+
+        .expensesChart__balanceView p {
+          font-size: 1.4rem;
+        }
+
+        .expensesChart__balanceView span {
+          font-size: 2.3rem;
+        }
+
+        /*  */
+
+        .expensesChart__chartBox {
+          padding: 2.5rem 2rem 2rem 2rem;
+          border-radius: 10px;
+        }
+
+        .expensesChart__heading {
+          font-size: 2.4rem;
+        }
+
+        .expensesChart__chart {
+          border-bottom: 3px solid var(--cream);
+
+          gap: 1.2rem;
+          padding: 5.5rem 0 2rem 0;
+        }
+
+        .expensesChart__barGraphBox {
+          gap: 0.5rem;
+        }
+
+        .expensesChart__barGraph {
+          border-radius: 4px;
+        }
+
+        .expensesChart__barGraph::before {
+          top: -3rem;
+          left: -0.6rem;
+
+          width: 4.5rem;
+          height: 2.5rem;
+
+          font-size: 1.2rem;
+
+          border-radius: 5px;
+          padding-top: 0.5rem;
+        }
+
+        /*  */
+
+        .expensesChart__barDate {
+          font-size: 1.2rem;
+        }
+
+        .expensesChart__totalBox {
+          padding: 2.5rem 0rem 0rem 0rem;
+        }
+
+        .expensesChart__total {
+          gap: 0.2rem;
+        }
+
+        .expensesChart__total p {
+          font-size: 1.5rem;
+        }
+
+        .expensesChart__total span {
+          font-size: 2.9rem;
+        }
+
+        .expensesChart__compareBox {
+          margin-bottom: 0.2rem;
+        }
+
+        .expensesChart__compareBox span {
+          font-size: 1.5rem;
+        }
+
+        .expensesChart__compareBox p {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+    <script defer type="module" src="index.js"></script>
+  </head>
+  <body>
+    <section class="expensesChart">
+      <div class="expensesChart__balanceBox">
+        <div class="expensesChart__balanceView">
+          <p>My balance</p>
+          <span>$921.48</span>
+        </div>
+        <img src="./images/logo.svg" alt="a logo picture" />
+      </div>
+      <div class="expensesChart__chartBox">
+        <p class="expensesChart__heading">Spending - Last 7 days</p>
+        <div class="expensesChart__chart">
+          <!-- <div class="expensesChart__barGraphBox">
+            <div class="expensesChart__barGraph"></div>
+            <span class="expensesChart__barDate">mon</span>
+          </div>
+          <div class="expensesChart__barGraphBox">
+            <div class="expensesChart__barGraph"></div>
+            <span class="expensesChart__barDate">mon</span>
+          </div>
+          <div class="expensesChart__barGraphBox">
+            <div class="expensesChart__barGraph"></div>
+            <span class="expensesChart__barDate">mon</span>
+          </div>
+          <div class="expensesChart__barGraphBox">
+            <div class="expensesChart__barGraph"></div>
+            <span class="expensesChart__barDate">mon</span>
+          </div>
+          <div class="expensesChart__barGraphBox">
+            <div class="expensesChart__barGraph"></div>
+            <span class="expensesChart__barDate">mon</span>
+          </div>
+          <div class="expensesChart__barGraphBox">
+            <div class="expensesChart__barGraph"></div>
+            <span class="expensesChart__barDate">mon</span>
+          </div>
+          <div class="expensesChart__barGraphBox">
+            <div class="expensesChart__barGraph"></div>
+            <span class="expensesChart__barDate">mon</span>
+          </div> -->
+        </div>
+        <div class="expensesChart__totalBox">
+          <div class="expensesChart__total">
+            <p>Total this month</p>
+            <span>$478.33</span>
+          </div>
+          <div class="expensesChart__compareBox">
+            <span>+2.4%</span>
+            <p>from last month</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- mon tue wed thu fri sat sun -->
+  </body>
+</html>
