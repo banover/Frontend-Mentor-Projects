@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Intro section with dropdown navigation</title>
+
+    <style>
+      :root {
+        --almostWhite: hsl(0, 0%, 98%);
+        --mediumGray: hsl(0, 0%, 41%);
+        --almostBlack: hsl(0, 0%, 8%);
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      body {
+        font-family: "Epilogue", sans-serif;
+        font-size: 1.8rem;
+      }
+
+      .introSection {
+        width: 144rem;
+        height: auto;
+        /* background-color: greenyellow; */
+        margin: 0 auto;
+        padding-bottom: 6rem;
+      }
+
+      .introSection__header {
+        width: 100%;
+        /* height: 5rem; */
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* background-color: orangered; */
+        padding: 2rem 2rem;
+        position: relative;
+      }
+
+      .introSection__leftHeader {
+        display: flex;
+        align-items: center;
+        gap: 6.5rem;
+      }
+
+      .introSection__leftHeader {
+        width: 8.4rem;
+        height: 2.7rem;
+      }
+
+      .introSection__navBar {
+      }
+
+      .introSection__navLists {
+        list-style: none;
+        display: flex;
+        gap: 3rem;
+        margin-top: -0.5rem;
+      }
+
+      .introSection__navlist {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        cursor: pointer;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--mediumGray);
+      }
+
+      .introSection__navlist:hover {
+        color: black;
+      }
+
+      .introSection__navlist:hover img {
+        content: url(./images/icon-arrow-up.svg);
+        filter: brightness(0%);
+      }
+
+      .introSection__navlist img {
+        width: 1rem;
+        height: 0.6rem;
+      }
+
+      .introSection__navlist.features:hover ~ .introSection__navFeaturesMenu {
+        display: block;
+      }
+      .introSection__navlist.company:hover ~ .introSection__navcompanyMenu {
+        display: block;
+      }
+
+      .introSection__navFeaturesMenu {
+        position: absolute;
+        top: 79%;
+        left: 6.6%;
+        /* width: 20rem; */
+        width: auto;
+        height: auto;
+        /* background-color: orange; */
+        font-family: "Epilogue", sans-serif;
+        font-weight: 700;
+        color: var(--mediumGray);
+        padding: 2.4rem 2.4rem;
+        padding-left: 2.1rem;
+        border-radius: 12px;
+        box-shadow: 1px 2px 4px rgb(0, 0, 0, 0.3);
+        display: none;
+      }
+
+      .introSection__navFeaturesMenuLists {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+        gap: 2rem;
+      }
+
+      .introSection__navFeaturesMenuList {
+        display: flex;
+        align-items: center;
+        /* align-self: flex-start; */
+
+        gap: 1.7rem;
+        font-size: 1.6rem;
+      }
+
+      .introSection__navFeaturesMenuList:nth-child(2) img {
+        margin-right: -0.3rem;
+      }
+      .introSection__navFeaturesMenuList:nth-child(3) img {
+        margin-left: 0.1rem;
+      }
+
+      .introSection__navcompanyMenu {
+        position: absolute;
+        top: 79%;
+        left: 20%;
+        /* width: 20rem; */
+        width: auto;
+        height: auto;
+        /* background-color: orange; */
+        font-family: "Epilogue", sans-serif;
+        font-weight: 700;
+        color: var(--mediumGray);
+        /* padding: 2.4rem 2.2rem; */
+        padding: 2.4rem 1.9rem 2.8rem 2.1rem;
+        /* padding-left: 2.1rem; */
+        /* padding-bottom: 2.8rem; */
+        border-radius: 12px;
+        box-shadow: 1px 2px 4px rgb(0, 0, 0, 0.3);
+        display: none;
+      }
+
+      .introSection__navcompanyMenuLists {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+        gap: 2rem;
+      }
+
+      .introSection__navcompanyMenuList {
+        font-size: 1.6rem;
+      }
+
+      .introSection__loginBox {
+        display: flex;
+        gap: 3.5rem;
+      }
+
+      .introSection__loginBtn {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: var(--mediumGray);
+        background-color: white;
+
+        border: none;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .introSection__loginBtn:hover {
+        color: black;
+      }
+
+      .introSection__registerBtn {
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: var(--mediumGray);
+        background-color: white;
+
+        text-decoration: none;
+        border: 2px solid var(--mediumGray);
+        padding: 1rem 2rem;
+        border-radius: 15px;
+
+        cursor: pointer;
+      }
+
+      .introSection__registerBtn:hover {
+        color: black;
+        border: 2px solid black;
+      }
+
+      .introSection__main {
+        width: 100%;
+        height: auto;
+        display: flex;
+        padding: 4rem 10rem;
+      }
+
+      .introSection__leftPage {
+        width: 55%;
+        height: auto;
+
+        display: flex;
+        flex-direction: column;
+        gap: 11rem;
+        padding-left: 5rem;
+      }
+
+      .introSection__infoBox {
+        width: 100%;
+        height: auto;
+
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+        padding: 12rem 10rem 0 0rem;
+      }
+
+      .introSection__heading {
+        width: 100%;
+        height: auto;
+        font-size: 7.8rem;
+        font-weight: 700;
+      }
+
+      .introSection__heading span {
+        display: block;
+        margin-top: -1rem;
+      }
+
+      .introSection__description {
+        width: 80%;
+        height: auto;
+        line-height: 2.6rem;
+        color: var(--mediumGray);
+      }
+
+      .introSection__learnMoreBtn {
+        width: 30%;
+        height: 5.5rem;
+        /* padding: 1.5rem 3rem; */
+        border-radius: 12px;
+        border: 1.5px solid black;
+        background-color: black;
+        color: white;
+        font-family: "Epilogue", sans-serif;
+        font-size: 1.8rem;
+        font-weight: 700;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1rem;
+        cursor: pointer;
+      }
+
+      .introSection__learnMoreBtn:hover {
+        background-color: white;
+        color: black;
+      }
+
+      .introSection__relativeCompany {
+        width: 100%;
+        height: auto;
+      }
+
+      .introSection__relativeCompanyLists {
+        list-style: none;
+        display: flex;
+
+        align-items: center;
+        gap: 3.5rem;
+      }
+
+      .introSection__rightPage {
+        width: 45%;
+        height: auto;
+        padding: 0 0 0 2.5rem;
+      }
+
+      .introSection__rightPage img {
+        width: 100%;
+        height: 65rem;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="introSection">
+      <header class="introSection__header">
+        <div class="introSection__leftHeader">
+          <img
+            class="introSection__logo"
+            src="./images/logo.svg"
+            alt="a snap logo picture"
+          />
+          <nav class="introSection__navBar">
+            <ul class="introSection__navLists">
+              <li class="introSection__navlist features">
+                <a>Features</a
+                ><img
+                  src="./images/icon-arrow-down.svg"
+                  alt="an arrow-down icon"
+                />
+              </li>
+              <li class="introSection__navlist company">
+                <a>Company</a
+                ><img
+                  src="./images/icon-arrow-down.svg"
+                  alt="an arrow-down icon"
+                />
+              </li>
+              <li class="introSection__navlist">
+                <a>Careers</a>
+              </li>
+              <li class="introSection__navlist">
+                <a>About</a>
+              </li>
+              <div class="introSection__navFeaturesMenu">
+                <ul class="introSection__navFeaturesMenuLists">
+                  <li class="introSection__navFeaturesMenuList">
+                    <img src="./images/icon-todo.svg" alt="a list icon" />Todo
+                    List
+                  </li>
+                  <li class="introSection__navFeaturesMenuList">
+                    <img
+                      src="./images/icon-calendar.svg"
+                      alt="a calender icon"
+                    />Calendar
+                  </li>
+                  <li class="introSection__navFeaturesMenuList">
+                    <img
+                      src="./images/icon-reminders.svg"
+                      alt="a bell icon"
+                    />Reminders
+                  </li>
+                  <li class="introSection__navFeaturesMenuList">
+                    <img
+                      src="./images/icon-planning.svg"
+                      alt="a clock icon"
+                    />Planning
+                  </li>
+                </ul>
+              </div>
+              <div class="introSection__navcompanyMenu">
+                <ul class="introSection__navcompanyMenuLists">
+                  <li class="introSection__navcompanyMenuList">History</li>
+                  <li class="introSection__navcompanyMenuList">Our Team</li>
+                  <li class="introSection__navcompanyMenuList">Blog</li>
+                </ul>
+              </div>
+            </ul>
+          </nav>
+        </div>
+        <div class="introSection__loginBox">
+          <button class="introSection__loginBtn">Login</button>
+          <button class="introSection__registerBtn">Register</button>
+        </div>
+      </header>
+
+      <main class="introSection__main">
+        <div class="introSection__leftPage">
+          <div class="introSection__infoBox">
+            <h2 class="introSection__heading">Make<span>remote work</span></h2>
+            <p class="introSection__description">
+              Get your team in sync, no matter your location. Streamline
+              processes, create team rituals, and watch productivity soar.
+            </p>
+            <button class="introSection__learnMoreBtn">Learn more</button>
+          </div>
+          <div class="introSection__relativeCompany">
+            <ul class="introSection__relativeCompanyLists">
+              <li class="introSection__relativeCompanylist">
+                <img src="./images/client-databiz.svg" alt="a databiz logo" />
+              </li>
+              <li class="introSection__relativeCompanylist">
+                <img
+                  src="./images/client-audiophile.svg"
+                  alt="a audiophile logo"
+                />
+              </li>
+              <li class="introSection__relativeCompanylist">
+                <img src="./images/client-meet.svg" alt="a meet logo" />
+              </li>
+              <li class="introSection__relativeCompanylist">
+                <img src="./images/client-maker.svg" alt="a maker logo" />
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="introSection__rightPage">
+          <picture class="introSection__rightPageBackgroundPicture">
+            <source
+              media="(max-width: 23.45em)"
+              srcset="./images/image-hero-mobile.png"
+            />
+            <source
+              media="(max-width: 144em)"
+              srcset="./images/image-hero-desktop.png"
+            />
+            <img
+              src="./images/image-hero-desktop.png"
+              alt="a computing man picture"
+            />
+          </picture>
+        </div>
+      </main>
+    </section>
+  </body>
+</html>
