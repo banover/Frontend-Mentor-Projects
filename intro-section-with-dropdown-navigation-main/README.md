@@ -7,16 +7,12 @@
 - img element의 src attribute를 css를 이용해서 바꾸는 법
   content= url()을 활용한다.
 
-## The challenge
+- svg를 img element안에 사용할 때, svg의 색을 변경하고 싶으면
+  filter를 활용하자.
 
-Your challenge is to build out this intro section with dropdown navigation and get it looking as close to the design as possible.
+일기: html code 일부를 재활용하려다가 전체 코드가 망가졌다. 그런데
+update중에 알게 된 점은 애초에 design을 보고 html code를 잘못짠 것이었다.
+navigation을 만드는 과정에서 구조를 잘못잡아두니 후에 reponsive design을 할 때
+문제가 생겼다. 다음부터는 좀더 design을 세세히, 특히 responsive한 경우를 꼼꼼하게 보자.
 
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
-
-Your users should be able to:
-
-- View the relevant dropdown menus on desktop and mobile when interacting with the navigation links
-- View the optimal layout for the content depending on their device's screen size
-- See hover states for all interactive elements on the page
-
-Want some support on the challenge? [Join our Slack community](https://www.frontendmentor.io/slack) and ask questions in the **#help** channel.
+한줄평: 개망함!
