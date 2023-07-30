@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Advice generator app</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      :root {
+        --lightCyan: hsl(193, 38%, 86%);
+        --neonGreen: hsl(150, 100%, 66%);
+
+        --grayishBlue: hsl(217, 19%, 38%);
+        --darkGrayishBlue: hsl(217, 19%, 24%);
+        --darkBlue: hsl(218, 23%, 16%);
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      body {
+        font-family: "Manrope", sans-serif;
+        font-size: 2.8rem;
+      }
+
+      .background {
+        display: block;
+        width: 144rem;
+        /* height: 80rem; */
+        /* width: 100%;
+        height: 100%; */
+        /* width: 100%; */
+        height: auto;
+        background-color: var(--darkBlue);
+        margin: 0 auto;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .adviceGenerator {
+        width: 50rem;
+        height: auto;
+        background-color: var(--darkGrayishBlue);
+        /* margin-top: 10rem; */
+
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        margin: 25rem auto;
+        padding: 4.5rem 4rem 5rem 4rem;
+        text-align: center;
+        border-radius: 15px;
+
+        position: relative;
+      }
+
+      .adviceGenerator__heading {
+        width: 100%;
+        /* margin-top: 10rem; */
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        color: var(--neonGreen);
+        letter-spacing: 0.4rem;
+      }
+
+      .adviceGenerator__advice {
+        width: 100%;
+        color: white;
+        /* font-size: ; */
+      }
+
+      .adviceGenerator__divider img {
+        width: 100%;
+      }
+
+      .adviceGenerator__btnBackground {
+        width: 5rem;
+        height: 5rem;
+        background-color: var(--neonGreen);
+        border-radius: 50%;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+      }
+
+      .adviceGenerator__btnBackground:hover {
+        box-shadow: 0rem 0rem 3rem #52ffa8;
+      }
+
+      .adviceGenerator__btn {
+        width: 2rem;
+        height: 2rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      @media only screen and (max-width: 23.45em) {
+        .background {
+          width: 37.5rem;
+        }
+
+        .adviceGenerator {
+          width: 33.5rem;
+
+          gap: 2rem;
+
+          margin: 10rem auto;
+          padding: 3.5rem 2rem 4.5rem 2rem;
+        }
+
+        .adviceGenerator__advice {
+          width: 100%;
+          color: white;
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="background">
+      <div class="adviceGenerator">
+        <h2 class="adviceGenerator__heading">
+          Advice #<span class="adviceGenerator__adviceID"></span>
+        </h2>
+        <p class="adviceGenerator__advice"></p>
+        <picture class="adviceGenerator__divider">
+          <source
+            media="(max-width:23.45em)"
+            srcset="./images/pattern-divider-mobile.svg"
+            alt="a pattern-divider-desktop"
+          />
+          <source
+            medis="(max-width:144rem)"
+            srcset="./images/pattern-divider-desktop.svg"
+            alt="a pattern-divider-desktop"
+          />
+          <img
+            src="./images/pattern-divider-desktop.svg"
+            alt="a pattern-divider-desktop"
+          />
+        </picture>
+        <div class="adviceGenerator__btnBackground">
+          <img
+            class="adviceGenerator__btn"
+            src="./images/icon-dice.svg"
+            alt="a dice icon"
+          />
+        </div>
+      </div>
+    </div>
+    <script>
+      const adviceBtn = document.querySelector(
+        ".adviceGenerator__btnBackground"
+      );
+      const adviceId = document.querySelector(".adviceGenerator__adviceID");
+      const adviceParagraph = document.querySelector(
+        ".adviceGenerator__advice"
+      );
+
+      function getRandomnumber() {
+        return Math.floor(Math.random() * 150 + 1);
+      }
+
+      async function loadAdvices() {
+        const response = await fetch(
+          `https://api.adviceslip.com/advice/${getRandomnumber()}`
+          // `https://api.adviceslip.com/advice/117`
+        );
+        const data = await response.json();
+        const adviceData = data.slip;
+        console.log(adviceData);
+
+        adviceId.textContent = adviceData.id;
+        adviceParagraph.textContent = `"${adviceData.advice}"`;
+      }
+
+      adviceBtn.addEventListener("click", () => {
+        loadAdvices();
+      });
+    </script>
+  </body>
+</html>
