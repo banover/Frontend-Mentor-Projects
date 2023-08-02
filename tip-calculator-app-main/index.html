@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Frontend Mentor | Tip calculator app</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      :root {
+        --Strongcyan: hsl(172, 67%, 45%);
+
+        --Verydarkcyan: hsl(183, 100%, 15%);
+        --Darkgrayishcyan: hsl(186, 14%, 43%);
+        --Grayishcyan: hsl(184, 14%, 56%);
+        --Lightgrayishcyan: hsl(185, 41%, 84%);
+        --Verylightgrayishcyan: hsl(189, 41%, 97%);
+        --White: hsl(0, 0%, 100%);
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        font-size: 62.5%;
+      }
+
+      body {
+        font-family: "Space Mono", monospace;
+        font-size: 2.4rem;
+      }
+
+      .tipCalculator {
+        width: 144rem;
+        height: auto;
+        background-color: var(--Lightgrayishcyan);
+        margin: 0 auto;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6rem;
+
+        padding: 12rem 0;
+      }
+
+      .tipCalculator__header {
+        width: 100%;
+      }
+
+      .tipCalculator__heading {
+        text-transform: uppercase;
+        letter-spacing: 0.6rem;
+        font-size: 2.4rem;
+        color: var(--Verydarkcyan);
+        text-align: center;
+      }
+
+      .tipCalculator__heading span {
+        display: block;
+      }
+
+      .tipCalculator__main {
+        width: 70%;
+        height: auto;
+        background-color: white;
+
+        display: flex;
+        gap: 2.5rem;
+
+        padding: 3rem 3rem 3rem 4.5rem;
+        border-radius: 25px;
+      }
+
+      .tipCalculator__inputBox {
+        width: 50%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+        /* padding-right: 4rem; */
+        padding: 1rem 4rem 2rem 0;
+      }
+
+      .tipCalculator__billInputBox {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .tipCalculator__billInputBox label {
+        font-size: 1.9rem;
+        color: var(--Darkgrayishcyan);
+      }
+
+      .tipCalculator__billInput {
+        width: 100%;
+        display: flex;
+        position: relative;
+        align-items: center;
+      }
+
+      .tipCalculator__billInputBox input {
+        width: 100%;
+        outline: none;
+        border: 2px solid transparent;
+        background-color: var(--Verylightgrayishcyan);
+        box-shadow: 0px 0px 1px rgb(0, 0, 0, 0.3);
+        border-radius: 4px;
+        padding: 0.7rem 2rem;
+        font-family: "Space Mono", monospace;
+        font-size: 2.8rem;
+        color: var(--Verydarkcyan);
+        text-align: right;
+      }
+
+      .tipCalculator__billInputBox input::placeholder {
+        color: var(--Grayishcyan);
+      }
+
+      .tipCalculator__billInputBox input:focus {
+        outline: none;
+        border: 2px solid var(--Strongcyan);
+      }
+
+      .tipCalculator__billInputBox img {
+        width: 1.2rem;
+        height: 2rem;
+
+        margin-left: -94.3%;
+      }
+
+      .tipCalculator__tipInputBox {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 1.3rem;
+      }
+
+      .tipCalculator__tipInputBox p {
+        font-size: 1.9rem;
+        color: var(--Darkgrayishcyan);
+      }
+
+      .tipCalculator__tipBtns {
+        width: 100%;
+        display: flex;
+        gap: 1.3rem;
+        /* flex-direction: column; */
+        flex-wrap: wrap;
+      }
+
+      /* .tipCalculator__tipBtns button {
+        width: 30%;
+        border: none;
+        background-color: var(--Verydarkcyan);
+        color: white;
+        font-family: "Space Mono", monospace;
+        font-size: 2.4rem;
+        text-align: center;
+        padding: 0.3rem;
+        border-radius: 5px;
+        cursor: pointer;
+      } */
+
+      .tipCalculator__tipBtns input[type="radio"] {
+        display: none;
+      }
+
+      .tipCalculator__tipBtns input[type="radio"]:checked + label {
+        background-color: var(--Strongcyan);
+      }
+
+      .tipCalculator__tipBtn {
+        width: 31.235%;
+      }
+
+      .tipCalculator__tipBtn label {
+        display: block;
+        width: 100%;
+        border: none;
+        background-color: var(--Verydarkcyan);
+        color: white;
+        font-family: "Space Mono", monospace;
+        font-size: 2.8rem;
+        text-align: center;
+        padding: 0.8rem 0;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .tipCalculator__tipBtn:last-child label {
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        display: block;
+        padding: 0 0;
+        border-radius: 5px;
+      }
+
+      .tipCalculator__tipBtn:last-child label input {
+        display: block;
+        width: 100%;
+        /* height: 4.2rem; */
+        height: 100%;
+        outline: none;
+        border: 2px solid transparent;
+        border-radius: 5px;
+        background-color: var(--Verylightgrayishcyan);
+        text-align: right;
+        font-family: "Space Mono", monospace;
+        font-size: 2.8rem;
+        color: var(--Verydarkcyan);
+        padding: 0rem 2rem;
+      }
+
+      .tipCalculator__tipBtn:last-child label input:focue {
+        outline: none;
+        /* border: 2px solid var(--Strongcyan); */
+      }
+
+      .tipCalculator__tipBtn:last-child label input::placeholder {
+        color: var(--Verydarkcyan);
+        font-size: 2.5rem;
+        font-family: "Space Mono", monospace;
+        text-align: center;
+      }
+
+      .tipCalculator__numberOfPeopleInputBox {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .tipCalculator__numberOfPeopleInputBox label {
+        font-size: 1.9rem;
+        color: var(--Darkgrayishcyan);
+      }
+
+      .tipCalculator__numberOfPeopleInputBox input {
+        width: 100%;
+        outline: none;
+        border: 2px solid transparent;
+        background-color: var(--Verylightgrayishcyan);
+        box-shadow: 0px 0px 1px rgb(0, 0, 0, 0.3);
+        border-radius: 4px;
+        padding: 0.7rem 2rem;
+        font-family: "Space Mono", monospace;
+        font-size: 2.8rem;
+        color: var(--Verydarkcyan);
+        text-align: right;
+      }
+
+      .tipCalculator__numberOfPeopleInputBox input::placeholder {
+        color: var(--Grayishcyan);
+      }
+
+      .tipCalculator__numberOfPeopleInputBox input:focus {
+        outline: none;
+        border: 2px solid var(--Strongcyan);
+      }
+
+      .tipCalculator__peopleInput {
+        width: 100%;
+        display: flex;
+        position: relative;
+        align-items: center;
+      }
+      .tipCalculator__peopleInput img {
+        width: 1.3rem;
+        height: 1.8rem;
+
+        margin-left: -94.7%;
+      }
+
+      /*  */
+
+      .tipCalculator__resultBox {
+        background-color: var(--Verydarkcyan);
+        width: 50%;
+
+        display: flex;
+        flex-direction: column;
+        gap: 2.3rem;
+
+        padding: 4.2rem 4rem 3rem 4rem;
+        border-radius: 15px;
+      }
+
+      .tipCalculator__tipAmount {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* gap: 12rem; */
+      }
+
+      .tipCalculator__tipAmount p {
+        font-size: 2rem;
+        color: white;
+      }
+
+      .tipCalculator__tipAmount p span {
+        display: block;
+        color: var(--Grayishcyan);
+        font-size: 1.4rem;
+        /* margin-top: -0.2rem; */
+      }
+
+      .tipCalculator__tipAmount p ~ span {
+        font-size: 5.5rem;
+        color: var(--Strongcyan);
+      }
+
+      .tipCalculator__total {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .tipCalculator__total p {
+        font-size: 2rem;
+        color: white;
+      }
+
+      .tipCalculator__total p span {
+        display: block;
+        color: var(--Grayishcyan);
+        font-size: 1.4rem;
+      }
+
+      .tipCalculator__total p ~ span {
+        font-size: 5.5rem;
+        color: var(--Strongcyan);
+      }
+
+      .tipCalculator__resetBtn {
+        width: 100;
+        height: auto;
+        border: none;
+        background-color: hsla(183, 92%, 24%, 0.6);
+        color: var(--Verydarkcyan);
+        text-transform: uppercase;
+        font-size: 2rem;
+        font-family: "Space Mono", monospace;
+        padding: 1.2rem 0;
+        border-radius: 5px;
+
+        margin-top: auto;
+        margin-bottom: 2rem;
+      }
+
+      .tipCalculator__resetBtn:hover {
+        background-color: var(--Strongcyan);
+      }
+    </style>
+  </head>
+  <body>
+    <section class="tipCalculator">
+      <header class="tipCalculator__header">
+        <h2 class="tipCalculator__heading">spli<span>tter</span></h2>
+      </header>
+      <main class="tipCalculator__main">
+        <div class="tipCalculator__inputBox">
+          <div class="tipCalculator__billInputBox">
+            <label for="bill">Bill</label>
+            <div class="tipCalculator__billInput">
+              <input type="text" id="bill" placeholder="0" required />
+              <img src="images/icon-dollar.svg" />
+            </div>
+          </div>
+          <div class="tipCalculator__tipInputBox">
+            <p>Select Tip %</p>
+            <div class="tipCalculator__tipBtns">
+              <div class="tipCalculator__tipBtn">
+                <input type="radio" id="5" name="tipPercent" />
+                <label for="5">5%</label>
+              </div>
+              <div class="tipCalculator__tipBtn">
+                <input type="radio" id="10" name="tipPercent" />
+                <label for="10">10%</label>
+              </div>
+              <div class="tipCalculator__tipBtn">
+                <input type="radio" id="15" name="tipPercent" />
+                <label for="15">15%</label>
+              </div>
+              <div class="tipCalculator__tipBtn">
+                <input type="radio" id="20" name="tipPercent" />
+                <label for="20">20%</label>
+              </div>
+              <div class="tipCalculator__tipBtn">
+                <input type="radio" id="25" name="tipPercent" />
+                <label for="25">25%</label>
+              </div>
+              <!-- <button>5%</button>
+              <button>10%</button>
+              <button>15%</button>
+              <button>25%</button>
+              <button>50%</button> -->
+              <div class="tipCalculator__tipBtn">
+                <input type="radio" id="custom" name="tipPercent" />
+                <label for="custom">
+                  <input type="text" placeholder="Custom"
+                /></label>
+              </div>
+            </div>
+          </div>
+          <div class="tipCalculator__numberOfPeopleInputBox">
+            <label for="people">Number of People</label>
+            <div class="tipCalculator__peopleInput">
+              <input type="text" id="people" placeholder="0" required />
+              <img src="images/icon-person.svg" />
+            </div>
+          </div>
+        </div>
+        <div class="tipCalculator__resultBox">
+          <div class="tipCalculator__tipAmount">
+            <p>Tip Amount<span>/ person</span></p>
+            <span>$0.00</span>
+          </div>
+          <div class="tipCalculator__total">
+            <p>Total<span>/ person</span></p>
+            <span>$0.00</span>
+          </div>
+
+          <button class="tipCalculator__resetBtn">Reset</button>
+        </div>
+      </main>
+    </section>
+    <script>
+      const AllTipBtnInput = document.querySelectorAll(
+        ".tipCalculator__tipBtn:not(:last-child) input"
+      );
+      const customBtn = document.querySelector(
+        ".tipCalculator__tipBtn:last-child label"
+      );
+      const customTipBtnInput = document.querySelector(
+        ".tipCalculator__tipBtn:last-child input[type='radio']"
+      );
+      const customTipBtnLavel = document.querySelector(
+        ".tipCalculator__tipBtn:last-child input[type='text']"
+      );
+      let checkedBtn;
+      let tipPercentValue;
+
+      AllTipBtnInput.forEach((input) => {
+        input.addEventListener("click", (e) => {
+          // console.log(e.target.id);
+          tipPercentValue = Number(e.target.id);
+          customTipBtnLavel.style.border = "2px solid transparent";
+          checkedBtn = input;
+          console.log(checkedBtn);
+        });
+      });
+
+      customBtn.addEventListener("click", (e) => {
+        AllTipBtnInput.forEach((input) => {
+          input.checked = false;
+        });
+        // customTipBtnInput.setAttribute("checked", true);
+        customTipBtnInput.checked = true;
+        console.log(customTipBtnLavel);
+        customTipBtnLavel.style.border = "2px solid hsl(172, 67%, 45%)";
+        // customTipBtnLavel.style.border = "2px solid #fff";
+        checkedBtn = customBtn;
+        // const checkedBtn = document.querySelector(
+        //   ".tipCalculator__tipBtn input[type='radio']:checked"
+        // );
+
+        // tipPercentValue = checkedBtn.value;
+        // console.log();
+        console.log(checkedBtn);
+      });
+      // console.log(checkedBtn);
+    </script>
+  </body>
+</html>
