@@ -97,7 +97,7 @@
         display: flex;
         flex-direction: column;
         gap: 4rem;
-        /* padding-right: 4rem; */
+
         padding: 1rem 4rem 2rem 0;
       }
 
@@ -168,22 +168,9 @@
         width: 100%;
         display: flex;
         gap: 1.3rem;
-        /* flex-direction: column; */
+
         flex-wrap: wrap;
       }
-
-      /* .tipCalculator__tipBtns button {
-        width: 30%;
-        border: none;
-        background-color: var(--Verydarkcyan);
-        color: white;
-        font-family: "Space Mono", monospace;
-        font-size: 2.4rem;
-        text-align: center;
-        padding: 0.3rem;
-        border-radius: 5px;
-        cursor: pointer;
-      } */
 
       .tipCalculator__tipBtns input[type="radio"] {
         display: none;
@@ -223,7 +210,7 @@
       .tipCalculator__tipBtn:last-child label input {
         display: block;
         width: 100%;
-        /* height: 4.2rem; */
+
         height: 100%;
         outline: none;
         border: 2px solid transparent;
@@ -234,11 +221,6 @@
         font-size: 2.8rem;
         color: var(--Verydarkcyan);
         padding: 0rem 2rem;
-      }
-
-      .tipCalculator__tipBtn:last-child label input:focue {
-        outline: none;
-        /* border: 2px solid var(--Strongcyan); */
       }
 
       .tipCalculator__tipBtn:last-child label input::placeholder {
@@ -254,11 +236,25 @@
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
+        position: relative;
       }
 
       .tipCalculator__numberOfPeopleInputBox label {
-        font-size: 1.9rem;
+        width: 100%;
+        font-size: 1.7rem;
         color: var(--Darkgrayishcyan);
+      }
+
+      .tipCalculator__numberOfPeopleInputBox span {
+        font-family: "Space Mono", monospace;
+        font-size: 1.7rem;
+        text-align: right;
+        color: red;
+
+        position: absolute;
+        top: 0;
+        left: 67.2%;
+        visibility: hidden;
       }
 
       .tipCalculator__numberOfPeopleInputBox input {
@@ -290,14 +286,17 @@
         position: relative;
         align-items: center;
       }
+
+      .tipCalculator__peopleInput input {
+        border: 2px solid transparent;
+      }
+
       .tipCalculator__peopleInput img {
         width: 1.3rem;
         height: 1.8rem;
 
         margin-left: -94.7%;
       }
-
-      /*  */
 
       .tipCalculator__resultBox {
         background-color: var(--Verydarkcyan);
@@ -317,7 +316,6 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        /* gap: 12rem; */
       }
 
       .tipCalculator__tipAmount p {
@@ -329,7 +327,6 @@
         display: block;
         color: var(--Grayishcyan);
         font-size: 1.4rem;
-        /* margin-top: -0.2rem; */
       }
 
       .tipCalculator__tipAmount p ~ span {
@@ -380,6 +377,165 @@
       .tipCalculator__resetBtn:hover {
         background-color: var(--Strongcyan);
       }
+
+      @media only screen and (max-width: 23.45em) {
+        .tipCalculator {
+          width: 37.5rem;
+          height: auto;
+
+          margin: 0 0;
+
+          gap: 3rem;
+
+          padding: 0 0;
+        }
+
+        .tipCalculator__heading {
+          font-size: 2.4rem;
+          margin-top: 4rem;
+          letter-spacing: 1rem;
+        }
+
+        .tipCalculator__main {
+          width: 100%;
+
+          flex-direction: column;
+          gap: 4rem;
+
+          padding: 3rem 3rem 1.5rem 3rem;
+          border-radius: 15px;
+          border-radius: 20px 20px 0 0;
+        }
+
+        .tipCalculator__inputBox {
+          width: 100%;
+
+          gap: 3rem;
+
+          padding: 0 0;
+        }
+
+        .tipCalculator__billInputBox label {
+          font-size: 1.5rem;
+        }
+
+        .tipCalculator__billInputBox input {
+          padding: 0 2rem;
+
+          font-size: 2.4rem;
+        }
+
+        .tipCalculator__billInputBox img {
+          width: 1rem;
+          height: 1.8rem;
+        }
+
+        .tipCalculator__tipInputBox {
+          gap: 1rem;
+        }
+
+        .tipCalculator__tipInputBox p {
+          font-size: 1.75rem;
+        }
+
+        .tipCalculator__tipBtns {
+          width: 100%;
+          display: flex;
+          gap: 1.3rem;
+
+          flex-wrap: wrap;
+        }
+
+        .tipCalculator__tipBtn {
+          width: 47.94%;
+        }
+
+        .tipCalculator__tipBtn label {
+          font-size: 2.4rem;
+
+          padding: 0.2rem 0;
+          border-radius: 4px;
+        }
+
+        .tipCalculator__tipBtn:last-child label {
+          border-radius: 4px;
+        }
+
+        .tipCalculator__tipBtn:last-child label input {
+          border-radius: 4px;
+
+          font-size: 2.4rem;
+
+          padding: 0 2.1rem;
+        }
+
+        .tipCalculator__tipBtn:last-child label input::placeholder {
+          font-size: 2.4rem;
+
+          text-align: right;
+          opacity: 0.7;
+        }
+
+        .tipCalculator__numberOfPeopleInputBox label {
+          font-size: 1.75rem;
+        }
+
+        .tipCalculator__numberOfPeopleInputBox input {
+          padding: 0rem 2rem;
+
+          font-size: 2.4rem;
+        }
+
+        .tipCalculator__numberOfPeopleInputBox input::placeholder {
+          font-size: 2.4rem;
+        }
+
+        .tipCalculator__peopleInput img {
+          width: 1.3rem;
+          height: 1.6rem;
+        }
+
+        .tipCalculator__resultBox {
+          width: 100%;
+
+          gap: 1.4rem;
+
+          padding: 3rem 2rem 2rem 2rem;
+
+          border-radius: 12px;
+        }
+
+        .tipCalculator__tipAmount p {
+          font-size: 1.7rem;
+        }
+
+        .tipCalculator__tipAmount p span {
+          font-size: 1.4rem;
+        }
+
+        .tipCalculator__tipAmount p ~ span {
+          font-size: 3.5rem;
+        }
+
+        .tipCalculator__total p {
+          font-size: 1.7rem;
+          color: white;
+        }
+
+        .tipCalculator__total p ~ span {
+          font-size: 3.5rem;
+        }
+
+        .tipCalculator__resetBtn {
+          font-size: 1.8rem;
+
+          padding: 0.6rem 0;
+          border-radius: 4px;
+
+          margin-bottom: 0;
+          margin-top: 1.5rem;
+        }
+      }
     </style>
   </head>
   <body>
@@ -412,12 +568,12 @@
                 <label for="15">15%</label>
               </div>
               <div class="tipCalculator__tipBtn">
-                <input type="radio" id="20" name="tipPercent" />
-                <label for="20">20%</label>
-              </div>
-              <div class="tipCalculator__tipBtn">
                 <input type="radio" id="25" name="tipPercent" />
                 <label for="25">25%</label>
+              </div>
+              <div class="tipCalculator__tipBtn">
+                <input type="radio" id="50" name="tipPercent" />
+                <label for="50">50%</label>
               </div>
               <!-- <button>5%</button>
               <button>10%</button>
@@ -434,6 +590,7 @@
           </div>
           <div class="tipCalculator__numberOfPeopleInputBox">
             <label for="people">Number of People</label>
+            <span>Can't be zero</span>
             <div class="tipCalculator__peopleInput">
               <input type="text" id="people" placeholder="0" required />
               <img src="images/icon-person.svg" />
@@ -443,11 +600,11 @@
         <div class="tipCalculator__resultBox">
           <div class="tipCalculator__tipAmount">
             <p>Tip Amount<span>/ person</span></p>
-            <span>$0.00</span>
+            <span class="tipCalculator__tipAmountValue">$0.00</span>
           </div>
           <div class="tipCalculator__total">
             <p>Total<span>/ person</span></p>
-            <span>$0.00</span>
+            <span class="tipCalculator__totalValue">$0.00</span>
           </div>
 
           <button class="tipCalculator__resetBtn">Reset</button>
@@ -455,50 +612,106 @@
       </main>
     </section>
     <script>
-      const AllTipBtnInput = document.querySelectorAll(
+      "use strict";
+      const billInput = document.querySelector(
+        ".tipCalculator__billInput input"
+      );
+      const AllTipBtnInputExceptCustom = document.querySelectorAll(
         ".tipCalculator__tipBtn:not(:last-child) input"
+      );
+      const AlltipBtnInput = document.querySelectorAll(
+        ".tipCalculator__tipBtn input"
       );
       const customBtn = document.querySelector(
         ".tipCalculator__tipBtn:last-child label"
       );
-      const customTipBtnInput = document.querySelector(
+      const customRadioInput = document.querySelector(
         ".tipCalculator__tipBtn:last-child input[type='radio']"
       );
-      const customTipBtnLavel = document.querySelector(
+      const customBtnLavel = document.querySelector(
         ".tipCalculator__tipBtn:last-child input[type='text']"
       );
-      let checkedBtn;
-      let tipPercentValue;
+      const peopleInput = document.querySelector(
+        ".tipCalculator__peopleInput input"
+      );
+      const tipAmoutResultElement = document.querySelector(
+        ".tipCalculator__tipAmountValue"
+      );
+      const totalResultElement = document.querySelector(
+        ".tipCalculator__totalValue"
+      );
+      const resetBtn = document.querySelector(".tipCalculator__resetBtn");
+      const numberOfPeopleInputError = document.querySelector(
+        ".tipCalculator__numberOfPeopleInputBox span"
+      );
 
-      AllTipBtnInput.forEach((input) => {
+      let billValue;
+      billInput.addEventListener("change", (e) => {
+        billValue = Number(e.target.value);
+      });
+
+      let tipPercentValue;
+      AllTipBtnInputExceptCustom.forEach((input) => {
         input.addEventListener("click", (e) => {
-          // console.log(e.target.id);
           tipPercentValue = Number(e.target.id);
-          customTipBtnLavel.style.border = "2px solid transparent";
-          checkedBtn = input;
-          console.log(checkedBtn);
+          customBtnLavel.style.border = "2px solid transparent";
         });
       });
 
       customBtn.addEventListener("click", (e) => {
-        AllTipBtnInput.forEach((input) => {
+        AllTipBtnInputExceptCustom.forEach((input) => {
           input.checked = false;
         });
-        // customTipBtnInput.setAttribute("checked", true);
-        customTipBtnInput.checked = true;
-        console.log(customTipBtnLavel);
-        customTipBtnLavel.style.border = "2px solid hsl(172, 67%, 45%)";
-        // customTipBtnLavel.style.border = "2px solid #fff";
-        checkedBtn = customBtn;
-        // const checkedBtn = document.querySelector(
-        //   ".tipCalculator__tipBtn input[type='radio']:checked"
-        // );
 
-        // tipPercentValue = checkedBtn.value;
-        // console.log();
-        console.log(checkedBtn);
+        customRadioInput.checked = true;
+        console.log(customBtnLavel);
+        customBtnLavel.style.border = "2px solid hsl(172, 67%, 45%)";
       });
-      // console.log(checkedBtn);
+
+      customBtnLavel.addEventListener("change", (e) => {
+        tipPercentValue = Number(e.target.value);
+      });
+
+      let numberOfPeopleValue;
+      peopleInput.addEventListener("change", (e) => {
+        numberOfPeopleValue = Number(e.target.value);
+      });
+
+      const setCalculatorInterval = setInterval(isReadyToCal, 500);
+
+      function isReadyToCal() {
+        if (billValue && tipPercentValue && numberOfPeopleValue === 0) {
+          peopleInput.style.border = "2px solid red";
+          numberOfPeopleInputError.style.visibility = "visible";
+          return;
+        }
+        if (billValue && tipPercentValue && numberOfPeopleValue) {
+          const totalTipValue = Number(
+            (billValue * (tipPercentValue / 100)) / numberOfPeopleValue
+          );
+          tipAmoutResultElement.textContent = `$${totalTipValue.toFixed(2)}`;
+
+          totalResultElement.textContent = `$${(
+            billValue / numberOfPeopleValue +
+            totalTipValue
+          ).toFixed(2)}`;
+        }
+      }
+
+      resetBtn.addEventListener("click", () => {
+        billValue = null;
+        tipPercentValue = null;
+        numberOfPeopleValue = null;
+        billInput.value = 0;
+        peopleInput.value = 0;
+        AlltipBtnInput.forEach((el) => {
+          el.checked = false;
+        });
+        customBtnLavel.style.border = "2px solid transparent";
+        customBtnLavel.value = 0;
+        tipAmoutResultElement.textContent = "$0.00";
+        totalResultElement.textContent = "$0.00";
+      });
     </script>
   </body>
 </html>
