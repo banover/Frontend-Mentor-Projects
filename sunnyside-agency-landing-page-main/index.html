@@ -26,9 +26,7 @@
         --Darkdesaturatedcyan: hsl(167, 40%, 24%);
         --Darkblue: hsl(198, 62%, 26%);
         --Darkmoderatecyan: hsl(168, 34%, 41%);
-        /* (graphic design text)
-      (photography text
-      (footer) */
+
         --Verydarkdesaturatedblue: hsl(212, 27%, 19%);
         --Verydarkgrayishblue: hsl(213, 9%, 39%);
         --Darkgrayishblue: hsl(232, 10%, 55%);
@@ -62,12 +60,10 @@
       .sunnysideLandingPage {
         width: 144rem;
         height: 75rem;
-        /* height: auto; */
-        /* background-color: yellowgreen; */
+
         background-image: url(./images/desktop/image-header.jpg);
         background-repeat: no-repeat;
         background-size: 100% 75rem;
-        /* position: relative; */
       }
 
       .sunnysideLandingPage h2 {
@@ -90,9 +86,6 @@
         padding: 2.5rem 3rem;
       }
 
-      .sunnysideLandingPage__navigationBar {
-      }
-
       .sunnysideLandingPage__navLists {
         display: flex;
         align-items: center;
@@ -102,7 +95,6 @@
         font-family: "Barlow", sans-serif;
         color: rgba(255, 255, 255, 0.7);
         cursor: pointer;
-        /* font-size: 1.8rem; */
       }
 
       .sunnysideLandingPage__navList:last-child {
@@ -135,15 +127,13 @@
       .grid1 {
         grid-column: 1 / 2;
         grid-row: 1/2;
-        /* background-color: yellowgreen; */
       }
       .grid2 {
         grid-column: 2 / 3;
         grid-row: 1/2;
 
         background-image: url(./images/desktop/image-transform.jpg);
-        /* background-repeat: no-repeat;
-        background-size: cover; */
+
         background-size: 100% 55.32rem;
       }
       .grid3 {
@@ -204,20 +194,16 @@
       }
 
       .sunnysideAboutPage__infoBox span {
-        /* display: block; */
-        /* display: inline-block; */
         width: 30.5%;
         font-family: "Fraunces", serif;
         font-weight: 900;
         font-size: 1.7rem;
         text-transform: uppercase;
-        /* margin-top: 1rem; */
-        /* margin-left: 0.9rem; */
+
         padding: 0 0.8rem;
-        /* text-decoration: underline; */
+
         box-shadow: inset 0px -7px 0px 0px rgba(255, 255, 0, 0.238);
         cursor: pointer;
-        /* letter-spacing: 0.1rem; */
       }
 
       .sunnysideAboutPage__infoBox span:hover {
@@ -269,7 +255,7 @@
       .sunnysideTestimonialPage {
         width: 144rem;
         height: auto;
-        /* background-color: yellowgreen; */
+
         text-align: center;
 
         padding: 14rem 14rem;
@@ -291,7 +277,6 @@
       .sunnysideTestimonialPage__testimonials {
         width: 100%;
         display: flex;
-        /* gap: 3rem; */
       }
       .sunnysideTestimonialPage__testimonial {
         width: 100%;
@@ -300,7 +285,6 @@
         flex-direction: column;
         gap: 6rem;
         font-family: "Barlow", sans-serif;
-        /*  */
       }
 
       .sunnysideTestimonialPage__imgBox {
@@ -332,7 +316,7 @@
       .sunnysideTestimonialPage__nameBox span:first-child {
         font-family: "Fraunces", serif;
         font-weight: 900;
-        /* font-size: 1.55rem; */
+
         color: var(--Verydarkdesaturatedblue);
       }
 
@@ -396,9 +380,7 @@
 
       .sunnysideFooterPage__footer h4 {
         width: 100%;
-        /* font-family: "Fraunces", serif; */
-        /* font-family: "Barlow", sans-serif; */
-        /* font-family: "Fraunces", serif; */
+
         font-size: 3.8rem;
         font-weight: bolder;
 
@@ -418,7 +400,7 @@
         gap: 5.4rem;
         list-style: none;
         font-size: 1.8rem;
-        /* color: var(--Darkmoderatecyan); */
+
         opacity: 0.8;
       }
 
@@ -444,6 +426,261 @@
 
       .sunnysideFooterPage__contactLogoBox svg:hover {
         fill: white;
+      }
+
+      @media only screen and (max-width: 23.45em) {
+        .layout {
+          display: block;
+          width: 37.5rem;
+          height: auto;
+          margin: 0 0;
+        }
+
+        .sunnysideLandingPage {
+          width: 100%;
+          height: 52rem;
+
+          background-image: url(./images/mobile/image-header.jpg);
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+        }
+
+        .sunnysideLandingPage h2 {
+          font-size: 3.2rem;
+
+          letter-spacing: 1rem;
+
+          margin-top: 7rem;
+        }
+
+        .sunnysideLandingPage__navigationBar {
+          display: none;
+        }
+
+        .sunnysideLandingPage__arrowImg {
+          display: block;
+          margin: 0 auto;
+          margin-top: 5rem;
+        }
+
+        .sunnysideAboutPage {
+          width: 100%;
+          height: auto;
+
+          display: grid;
+          grid-template-columns: 100%;
+
+          grid-template-rows: 30rem 40rem 30rem 40rem 55rem 55rem;
+        }
+        .grid1 {
+          grid-column: 1 / 2;
+          grid-row: 2/3;
+
+          width: 100%;
+          height: 100%;
+        }
+        .grid2 {
+          grid-column: 1 / 2;
+          grid-row: 1/2;
+
+          width: 100%;
+
+          height: 100%;
+          background-image: url(./images/mobile/image-transform.jpg);
+
+          background-size: 100% 100%;
+        }
+        .grid3 {
+          grid-column: 1 / 2;
+          grid-row: 3/4;
+          width: 100%;
+
+          height: 100%;
+          background-image: url(./images/mobile/image-stand-out.jpg);
+          background-size: 100% 100%;
+        }
+        .grid4 {
+          grid-column: 1 / 2;
+          grid-row: 4/5;
+        }
+        .grid5 {
+          grid-column: 1 / 2;
+          grid-row: 5/6;
+          width: 100%;
+
+          height: 100%;
+          background-image: url(./images/mobile/image-graphic-design.jpg);
+          background-size: 100% 100%;
+        }
+        .grid6 {
+          grid-column: 1 / 2;
+          grid-row: 6/7;
+          width: 100%;
+
+          height: 100%;
+          background-image: url(./images/mobile/image-photography.jpg);
+          background-size: 100% 100%;
+        }
+
+        .sunnysideAboutPage__infoBox {
+          padding: 6rem 3rem;
+
+          gap: 3rem;
+
+          text-align: center;
+        }
+
+        .sunnysideAboutPage__infoBox.grid1 {
+          padding-left: 3rem;
+          padding-right: 3rem;
+          width: 100%;
+          height: 40rem;
+        }
+
+        .sunnysideAboutPage__infoBox.grid4 {
+          padding-top: 6rem;
+          padding-left: 3rem;
+          padding-right: 3rem;
+          width: 100%;
+          height: 40rem;
+        }
+
+        .sunnysideAboutPage__infoBox h3 {
+          font-size: 3rem;
+        }
+
+        .sunnysideAboutPage__infoBox p {
+          font-size: 1.7rem;
+
+          line-height: 2.5rem;
+        }
+
+        .sunnysideAboutPage__infoBox span {
+          width: 42%;
+
+          font-size: 1.6rem;
+
+          padding: 0 0;
+
+          margin: 0 auto;
+          padding-right: 0.5rem;
+        }
+
+        .sunnysideAboutPage__imgWithInfoBox {
+          gap: 3rem;
+
+          padding: 0 0rem;
+          padding-top: 35.5rem;
+        }
+
+        .sunnysideAboutPage__imgWithInfoBox p {
+          font-size: 1.65rem;
+          line-height: 2.5rem;
+          padding: 0 1rem;
+        }
+
+        .sunnysideTestimonialPage {
+          width: 100%;
+
+          padding: 6rem 2.5rem;
+          padding-bottom: 9rem;
+
+          gap: 7rem;
+        }
+
+        .sunnysideTestimonialPage h3 {
+          font-size: 1.8rem;
+        }
+
+        .sunnysideTestimonialPage__testimonials {
+          flex-direction: column;
+          gap: 7rem;
+        }
+        .sunnysideTestimonialPage__testimonial {
+          padding: 0 0rem;
+
+          gap: 3rem;
+        }
+
+        .sunnysideTestimonialPage__imgBox {
+          width: 7.5rem;
+          height: 7.5rem;
+        }
+
+        .sunnysideTestimonialPage__testimonial p {
+          font-size: 1.76rem;
+          line-height: 2.8rem;
+        }
+
+        .sunnysideTestimonialPage__nameBox {
+          gap: 1rem;
+          margin-left: 0rem;
+        }
+
+        .sunnysideTestimonialPage__nameBox span:last-child {
+        }
+
+        .sunnysideProjectPage {
+          width: 100%;
+
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: repeat(2, 18rem);
+        }
+
+        .backgroundImg {
+          background-size: 100% 100%;
+        }
+
+        .sunnysideProjectPage__projectImgBox1 {
+          grid-column: 1/2;
+          grid-row: 1/2;
+
+          background-image: url(./images/mobile/image-gallery-milkbottles.jpg);
+        }
+        .sunnysideProjectPage__projectImgBox2 {
+          grid-column: 2/3;
+          grid-row: 1/2;
+          background-image: url(./images/mobile/image-gallery-orange.jpg);
+        }
+        .sunnysideProjectPage__projectImgBox3 {
+          grid-column: 1/2;
+          grid-row: 2/3;
+          background-image: url(./images/mobile/image-gallery-cone.jpg);
+        }
+        .sunnysideProjectPage__projectImgBox4 {
+          grid-column: 2/3;
+          grid-row: 2/3;
+          background-image: url(./images/mobile/image-gallery-sugar-cubes.jpg);
+        }
+
+        .sunnysideFooterPage {
+          width: 100%;
+        }
+
+        .sunnysideFooterPage__footer {
+          gap: 3.5rem;
+
+          padding: 5rem;
+        }
+
+        .sunnysideFooterPage__footer h4 {
+          width: 100%;
+
+          font-size: 3.8rem;
+          font-weight: bolder;
+
+          text-decoration: solid;
+        }
+
+        .sunnysideFooterPage__footer nav ul {
+          gap: 5.4rem;
+
+          opacity: 0.6;
+        }
+
+        .sunnysideFooterPage__contactLogoBox {
+          margin-bottom: 2.5rem;
+        }
       }
     </style>
   </head>
