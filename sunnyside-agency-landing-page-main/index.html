@@ -110,6 +110,14 @@
         background-color: rgb(150, 216, 242);
       }
 
+      .sunnysideLandingPage__mobileNavigationBtn {
+        display: none;
+      }
+
+      .sunnysideLandingPage__mobileNav {
+        display: none;
+      }
+
       .sunnysideLandingPage__arrowImg {
         display: block;
         margin: 0 auto;
@@ -443,6 +451,8 @@
           background-image: url(./images/mobile/image-header.jpg);
           background-repeat: no-repeat;
           background-size: 100% 100%;
+
+          position: relative;
         }
 
         .sunnysideLandingPage h2 {
@@ -453,8 +463,95 @@
           margin-top: 7rem;
         }
 
+        .sunnysideLandingPage__upperNavBar {
+          /* width: 100%; */
+          /* height: auto; */
+          /* display: flex; */
+          /* align-items: center; */
+          /* justify-content: space-between; */
+          padding: 2.5rem 1.5rem;
+        }
+
         .sunnysideLandingPage__navigationBar {
           display: none;
+        }
+
+        .sunnysideLandingPage__mobileNavigationBtn {
+          display: block;
+          width: 3rem;
+          height: 2.5rem;
+
+          filter: invert(1);
+          cursor: pointer;
+          margin-top: -0.5rem;
+        }
+
+        .sunnysideLandingPage__mobileNavigationBtn:hover {
+          opacity: 0.6;
+        }
+
+        .sunnysideLandingPage__mobileNav {
+          display: block;
+          width: 90%;
+          height: auto;
+
+          position: absolute;
+          top: 85px;
+          left: 5%;
+
+          background-color: white;
+          display: none;
+        }
+
+        .sunnysideLandingPage__mobileNav.--active {
+          display: block;
+        }
+
+        .sunnysideLandingPage__mobileNav::after {
+          content: "";
+          width: 2rem;
+          height: 2rem;
+          background-color: white;
+          position: absolute;
+          top: -6.4%;
+          left: 100%;
+          transform: translate(-100%, 0);
+          clip-path: polygon(100% 0, 100% 100%, 0% 100%);
+        }
+
+        .sunnysideLandingPage__mobileNavigationBar {
+          width: 100%;
+          padding: 4rem 0;
+          font-size: 2.2rem;
+        }
+
+        .sunnysideLandingPage__mobileNavLists {
+          width: 100%;
+          list-style: none;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 3rem;
+          font-family: "Barlow", sans-serif;
+        }
+
+        .sunnysideLandingPage__mobileNavList {
+          /* width: 100%; */
+          color: var(--Grayishblue);
+          cursor: pointer;
+        }
+
+        .sunnysideLandingPage__mobileNavList:last-child {
+          background-color: var(--Yellow);
+          padding: 1.8rem 3.6rem;
+          border-radius: 30px;
+          color: black;
+          text-transform: uppercase;
+        }
+
+        .sunnysideLandingPage__mobileNavList:last-child:hover {
+          /* background-color: hsl(51, 100%, 49%, 0.4); */
+          opacity: 0.4;
         }
 
         .sunnysideLandingPage__arrowImg {
@@ -685,7 +782,7 @@
     </style>
   </head>
   <body>
-    <dib class="layout">
+    <div class="layout">
       <section class="sunnysideLandingPage">
         <!-- <header class="sunnysideLandingPage__headerPage"> -->
         <div class="sunnysideLandingPage__upperNavBar">
@@ -698,6 +795,27 @@
               <li class="sunnysideLandingPage__navList"><a>Services</a></li>
               <li class="sunnysideLandingPage__navList"><a>Projects</a></li>
               <li class="sunnysideLandingPage__navList"><a>Contact</a></li>
+            </ul>
+          </nav>
+          <img
+            class="sunnysideLandingPage__mobileNavigationBtn"
+            src="./images/mobile/bars-solid.svg"
+            alt="a menu icon"
+          />
+        </div>
+        <div class="sunnysideLandingPage__mobileNav">
+          <nav class="sunnysideLandingPage__mobileNavigationBar">
+            <ul class="sunnysideLandingPage__mobileNavLists">
+              <li class="sunnysideLandingPage__mobileNavList"><a>About</a></li>
+              <li class="sunnysideLandingPage__mobileNavList">
+                <a>Services</a>
+              </li>
+              <li class="sunnysideLandingPage__mobileNavList">
+                <a>Projects</a>
+              </li>
+              <li class="sunnysideLandingPage__mobileNavList">
+                <a>Contact</a>
+              </li>
             </ul>
           </nav>
         </div>
@@ -836,6 +954,18 @@
           </div>
         </div>
       </section>
-    </dib>
+    </div>
+    <script>
+      const mobileMenuBtn = document.querySelector(
+        ".sunnysideLandingPage__mobileNavigationBtn"
+      );
+      const mobileMenu = document.querySelector(
+        ".sunnysideLandingPage__mobileNav"
+      );
+
+      mobileMenuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("--active");
+      });
+    </script>
   </body>
 </html>
