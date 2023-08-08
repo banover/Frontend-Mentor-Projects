@@ -1,99 +1,393 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | [Blogr]</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Frontend Mentor | [Blogr]</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-  Product
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      :root {
+        --Lightred: hsl(356, 100%, 66%);
+        --Verylightred: hsl(355, 100%, 74%);
+        --Verydarkblue: hsl(208, 49%, 24%);
 
-  Overview
-  Pricing
-  Marketplace
-  Features
-  Integrations
+        /* ### Neutral */
 
-  Company
+        --White: hsl(0, 0%, 100%);
+        --Grayishblue: hsl(240, 2%, 79%);
+        --Verydarkgrayishblue: hsl(207, 13%, 34%);
+        --verydarkblackblue: hsl(240, 10%, 16%);
 
-  About
-  Team
-  Blog
-  Careers
+        /* Background gradient - Intro/CTA mobile nav: */
+        --veryLightRed: hsl(13, 100%, 72%);
+        --lightRed: hsl(353, 100%, 62%);
 
-  Connect
+        /* Background gradient - body: */
 
-  Contact
-  Newsletter
-  LinkedIn
-  
-  Login
-  Sign Up
+        --verydarkGrayBlue: hsl(237, 17%, 21%);
+        --verydarkDesaturatedBlue: hsl(237, 23%, 32%);
+      }
 
-  A modern publishing platform
-  Grow your audience and build your online brand
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-  Start for Free
-  Learn More
+      html {
+        font-size: 62.5%;
+      }
+      body {
+        font-family: "Overpass", sans-serif;
+        font-family: "Ubuntu", sans-serif;
+        font-size: 1.6rem;
+      }
 
-  Designed for the future
+      .blogrHeader {
+        width: 144rem;
+        height: auto;
+        /* height: 55.4rem; */
+        /* height: 100rem; */
+        /* background-color: yellowgreen; */
+        /* background-image: url(./images/bg-pattern-intro-desktop.svg); */
+        /* background-repeat: no-repeat; */
+        /* background-position: 10% 0%; */
+        /* background-size: 100% 100%; */
+        /* background-origin: border-box; */
 
-  Introducing an extensible editor
-  Blogr features an exceedingly intuitive interface which lets you focus on one thing: creating content. 
-  The editor supports management of multiple blogs and allows easy manipulation of embeds such as images, 
-  videos, and Markdown. Extensibility with plugins and themes provide easy ways to add functionality or 
-  change the looks of a blog.
+        background-image: url(./images/bg-pattern-intro-desktop.svg),
+          linear-gradient(to right, var(--veryLightRed), var(--lightRed));
 
-  Robust content management
-  Flexible content management enables users to easily move through posts. Increase the usability of your blog 
-  by adding customized categories, sections, format, or flow. With this functionality, you’re in full control.
+        /* background-repeat: no-repeat, no-repeat; */
+        background-size: 220% auto, 100%;
+        background-position: 25.5% 52.5%;
 
-  State of the Art Infrastructure
-  With reliability and speed in mind, worldwide data centers provide the backbone for ultra-fast connectivity. 
-  This ensures your site will load instantly, no matter where your readers are, keeping your site competitive.
+        border-radius: 0 0 0 100px;
+      }
 
-  Free, open, simple
-  Blogr is a free and open source application backed by a large community of helpful developers. It supports 
-  features such as code syntax highlighting, RSS feeds, social media integration, third-party commenting tools, 
-  and works seamlessly with Google Analytics. The architecture is clean and is relatively easy to learn.
+      .blogrlandingPage {
+        width: 100%;
+        padding-bottom: 15rem;
+        /* display: flex;
+        flex-direction: column; */
+      }
 
-  Powerful tooling
-  Batteries included. We built a simple and straightforward CLI tool that makes customization and deployment a breeze, but
-  capable of producing even the most complicated sites.
+      .blogrlandingPage__header {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 4.5rem 17rem;
+      }
 
-  Product
+      .blogrlandingPage__leftHeader {
+        display: flex;
+        align-items: center;
+        gap: 4rem;
+      }
 
-  Overview
-  Pricing
-  Marketplace
-  Features
-  Integrations
+      .blogrlandingPage__navLists {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+        color: white;
+      }
 
-  Company
+      .blogrlandingPage__navList {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        cursor: pointer;
+      }
 
-  About
-  Team
-  Blog
-  Careers
+      .blogrlandingPage__rightHeader {
+        display: flex;
+        align-items: center;
+        gap: 2.8rem;
+        color: white;
+        background-color: none;
+      }
 
-  Connect
-  
-  Contact
-  Newsletter
-  LinkedIn
+      .blogrlandingPage__loginBtn {
+        cursor: pointer;
+      }
 
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+      .blogrlandingPage__signBtn {
+        background-color: white;
+        /* color: transparent; */
+        color: black;
+        padding: 1.5rem 4rem;
+        border-radius: 40px;
+        cursor: pointer;
+        color: var(--Lightred);
+        font-weight: 700;
+        font-size: 1.7rem;
+      }
+
+      .blogrlandingPage__signBtn:hover {
+        background-color: var(--Verylightred);
+        color: white;
+      }
+
+      .blogrlandingPage__infoBox {
+        width: 100%;
+        /* text-align: center; */
+        color: white;
+        margin-top: 7rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+      }
+
+      .blogrlandingPage__infoBox h2 {
+        /* width: 100%; */
+        font-family: "Overpass", sans-serif;
+        font-size: 6.2rem;
+        font-weight: 400;
+        margin-left: -3.6rem;
+      }
+
+      .blogrlandingPage__infoBox p {
+        font-family: "Overpass", sans-serif;
+        font-size: 2.05rem;
+        margin-left: -3rem;
+      }
+
+      .blogrlandingPage__btnBox {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+
+        font-size: 1.7rem;
+        margin-top: 4rem;
+        margin-left: -1.7rem;
+      }
+
+      .blogrlandingPage__startBtn {
+        padding: 1.5rem 1.5rem;
+        background-color: white;
+        border-radius: 30px;
+        cursor: pointer;
+        color: var(--Lightred);
+        font-weight: 700;
+        /* opacity: 0; */
+        /* color: transparent; */
+      }
+
+      .blogrlandingPage__startBtn:hover {
+        background-color: var(--Verylightred);
+        color: white;
+      }
+
+      .blogrlandingPage__learnBtn {
+        padding: 1.4rem 1.8rem;
+        border: 1.5px solid white;
+        border-radius: 30px;
+        color: white;
+        font-size: 1.9rem;
+        cursor: pointer;
+      }
+
+      .blogrlandingPage__learnBtn:hover {
+        background-color: white;
+        color: var(--Verylightred);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="blogrHeader">
+      <section class="blogrlandingPage">
+        <div class="blogrlandingPage__header">
+          <div class="blogrlandingPage__leftHeader">
+            <img
+              class="blogrlandingPage__logo"
+              src="./images/logo.svg"
+              alt="a Blogr logo"
+            />
+            <nav class="blogrlandingPage__nav">
+              <ul class="blogrlandingPage__navLists">
+                <li class="blogrlandingPage__navList">
+                  <a>Product</a
+                  ><img
+                    src="./images/icon-arrow-light.svg"
+                    alt="a down arrow icon"
+                  />
+                </li>
+                <li class="blogrlandingPage__navList">
+                  <a>Company</a
+                  ><img
+                    src="./images/icon-arrow-light.svg"
+                    alt="a down arrow icon"
+                  />
+                </li>
+                <li class="blogrlandingPage__navList">
+                  <a>Connect</a
+                  ><img
+                    src="./images/icon-arrow-light.svg"
+                    alt="a down arrow icon"
+                  />
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="blogrlandingPage__rightHeader">
+            <a class="blogrlandingPage__loginBtn">Login</a>
+            <a class="blogrlandingPage__signBtn">Sign Up</a>
+          </div>
+        </div>
+        <div class="blogrlandingPage__infoBox">
+          <h2>A modern publishing platform</h2>
+          <p>Grow your audience and build your online brand</p>
+        </div>
+        <div class="blogrlandingPage__btnBox">
+          <a class="blogrlandingPage__startBtn">Start for Free</a>
+          <a class="blogrlandingPage__learnBtn">Learn More</a>
+        </div>
+      </section>
+    </header>
+    <main class="blogrMain">
+      <section class="blogrsecondPage">
+        <h3>Designed for the future</h3>
+        <div class="blogrsecondPage__InfoBox">
+          <div class="blogrsecondPage__upperInfoBox">
+            <h4>Introducing an extensible editor</h4>
+            <p>
+              Blogr features an exceedingly intuitive interface which lets you
+              focus on one thing: creating content. The editor supports
+              management of multiple blogs and allows easy manipulation of
+              embeds such as images, videos, and Markdown. Extensibility with
+              plugins and themes provide easy ways to add functionality or
+              change the looks of a blog.
+            </p>
+          </div>
+          <div class="blogrsecondPage__bottomInfoBox">
+            <h4>Robust content management</h4>
+            <p>
+              Flexible content management enables users to easily move through
+              posts. Increase the usability of your blog by adding customized
+              categories, sections, format, or flow. With this functionality,
+              you’re in full control.
+            </p>
+          </div>
+        </div>
+        <picture class="blogrsecondPage__imgBox">
+          <source
+            media="(max-width:23.45em)"
+            srcset="./images/illustration-editor-mobile.svg"
+          />
+          <source
+            media="(max-width:90em)"
+            srcset="./images/illustration-editor-desktop.svg"
+          />
+          <img src="./images/illustration-editor-desktop.svg" />
+        </picture>
+      </section>
+      <section class="blogrthirdPage">
+        <img
+          src="./images/illustration-phones.svg"
+          alt="a two phones picture"
+        />
+        <!-- <img src="./images/bg-pattern-circles.svg" alt="a two phones picture" /> -->
+        <div class="blogrthirdPage__infoBox">
+          <h3>State of the Art Infrastructure</h3>
+          <p>
+            With reliability and speed in mind, worldwide data centers provide
+            the backbone for ultra-fast connectivity. This ensures your site
+            will load instantly, no matter where your readers are, keeping your
+            site competitive.
+          </p>
+        </div>
+      </section>
+      <section class="blogrforthPage">
+        <picture class="blogrforthPage__imgBox">
+          <source
+            media="(max-width:23.45em)"
+            srcset="./images/illustration-laptop-mobile.svg"
+          />
+          <source
+            media="(max-width:90em)"
+            srcset="./images/illustration-laptop-desktop.svg"
+          />
+          <img src="./images/illustration-laptop-desktop.svg" />
+        </picture>
+        <div class="blogrforthPage__infoBox">
+          <div class="blogrforthPage__upperInfoBox">
+            <h4>Free, open, simple</h4>
+            <p>
+              Blogr is a free and open source application backed by a large
+              community of helpful developers. It supports features such as code
+              syntax highlighting, RSS feeds, social media integration,
+              third-party commenting tools, and works seamlessly with Google
+              Analytics. The architecture is clean and is relatively easy to
+              learn.
+            </p>
+          </div>
+          <div class="blogrforthPage__bottonInfoBox">
+            <h4>Powerful tooling</h4>
+            <p>
+              Batteries included. We built a simple and straightforward CLI tool
+              that makes customization and deployment a breeze, but capable of
+              producing even the most complicated sites.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="blogrFooter">
+      <section class="blogrFooterPage">
+        <img
+          class="blogrFooterPage__logo"
+          src="./images/logo.svg"
+          alt="a Blogr logo"
+        />
+        <nav class="blogrFooterPage__nav">
+          <ul class="blogrFooterPage__firstColumnNavLists">
+            <li class="blogrFooterPage__firstColumnNavList">Product</li>
+            <li class="blogrFooterPage__firstColumnNavList">Overview</li>
+            <li class="blogrFooterPage__firstColumnNavList">Pricing</li>
+            <li class="blogrFooterPage__firstColumnNavList">Marketplace</li>
+            <li class="blogrFooterPage__firstColumnNavList">Features</li>
+            <li class="blogrFooterPage__firstColumnNavList">Integrations</li>
+          </ul>
+          <ul class="blogrFooterPage__secondColumnNavLists">
+            <li class="blogrFooterPage__secondColumnNavList">Company</li>
+            <li class="blogrFooterPage__secondColumnNavList">About</li>
+            <li class="blogrFooterPage__secondColumnNavList">Team</li>
+            <li class="blogrFooterPage__secondColumnNavList">Blog</li>
+            <li class="blogrFooterPage__secondColumnNavList">Careers</li>
+          </ul>
+          <ul class="blogrFooterPage__thirdColumnNavLists">
+            <li class="blogrFooterPage__thirdColumnNavList">Connect</li>
+            <li class="blogrFooterPage__thirdColumnNavList">Contact</li>
+            <li class="blogrFooterPage__thirdColumnNavList">Newsletter</li>
+            <li class="blogrFooterPage__thirdColumnNavList">LinkedIn</li>
+          </ul>
+        </nav>
+      </section>
+    </footer>
+    <!--        
+           Login Sign Up Product
+    Overview Pricing Marketplace Features Integrations Company About Team Blog
+    Careers Connect Contact Newsletter LinkedIn -->
+  </body>
 </html>
