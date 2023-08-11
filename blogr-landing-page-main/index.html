@@ -123,7 +123,6 @@
       }
 
       .blogrlandingPage__navList:hover img {
-        /* content: url(./images/icon-arrow-dark.svg); */
         transform: rotate(180deg);
       }
 
@@ -246,6 +245,104 @@
         background-color: white;
         color: var(--Verylightred);
       }
+
+      .blogrMain {
+        width: 144rem;
+        height: auto;
+        overflow: hidden;
+
+        padding-top: 13rem;
+      }
+
+      .blogrsecondPage {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8rem;
+        /* justify-content: center; */
+      }
+
+      .blogrsecondPage h3 {
+        font-family: "Overpass", sans-serif;
+        font-size: 3.8rem;
+
+        /* margin: 0 auto; */
+        text-align: center;
+        margin-left: -1.7rem;
+
+        color: var(--Verydarkblue);
+      }
+
+      .blogrsecondPage__container {
+        width: 100%;
+        display: flex;
+        /* gap: 7rem; */
+      }
+
+      .blogrsecondPage__InfoBox {
+        width: 50%;
+        padding-left: 17rem;
+        padding-right: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 6rem;
+      }
+
+      .blogrsecondPage__upperInfoBox {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      .blogrsecondPage__upperInfoBox h4 {
+        width: 100%;
+        font-size: 2.5rem;
+        color: var(--Verydarkblue);
+      }
+      .blogrsecondPage__upperInfoBox p {
+        width: 100%;
+        font-size: 1.62rem;
+        line-height: 2.6rem;
+        color: var(--Verydarkgrayishblue);
+      }
+
+      .blogrsecondPage__bottomInfoBox {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      .blogrsecondPage__bottomInfoBox h4 {
+        width: 100%;
+        font-size: 2.5rem;
+        color: var(--Verydarkblue);
+      }
+
+      .blogrsecondPage__bottomInfoBox p {
+        width: 100%;
+        font-size: 1.62rem;
+        line-height: 2.6rem;
+        color: var(--Verydarkgrayishblue);
+      }
+
+      .blogrsecondPage__imgBox {
+        width: 50%;
+      }
+
+      .blogrsecondPage__imgBox img {
+        display: block;
+
+        width: 128%;
+        height: 76rem;
+
+        position: relative;
+        top: -20rem;
+        left: 7rem;
+      }
     </style>
   </head>
   <body>
@@ -307,39 +404,41 @@
     <main class="blogrMain">
       <section class="blogrsecondPage">
         <h3>Designed for the future</h3>
-        <div class="blogrsecondPage__InfoBox">
-          <div class="blogrsecondPage__upperInfoBox">
-            <h4>Introducing an extensible editor</h4>
-            <p>
-              Blogr features an exceedingly intuitive interface which lets you
-              focus on one thing: creating content. The editor supports
-              management of multiple blogs and allows easy manipulation of
-              embeds such as images, videos, and Markdown. Extensibility with
-              plugins and themes provide easy ways to add functionality or
-              change the looks of a blog.
-            </p>
+        <div class="blogrsecondPage__container">
+          <div class="blogrsecondPage__InfoBox">
+            <div class="blogrsecondPage__upperInfoBox">
+              <h4>Introducing an extensible editor</h4>
+              <p>
+                Blogr features an exceedingly intuitive interface which lets you
+                focus on one thing: creating content. The editor supports
+                management of multiple blogs and allows easy manipulation of
+                embeds such as images, videos, and Markdown. Extensibility with
+                plugins and themes provide easy ways to add functionality or
+                change the looks of a blog.
+              </p>
+            </div>
+            <div class="blogrsecondPage__bottomInfoBox">
+              <h4>Robust content management</h4>
+              <p>
+                Flexible content management enables users to easily move through
+                posts. Increase the usability of your blog by adding customized
+                categories, sections, format, or flow. With this functionality,
+                you’re in full control.
+              </p>
+            </div>
           </div>
-          <div class="blogrsecondPage__bottomInfoBox">
-            <h4>Robust content management</h4>
-            <p>
-              Flexible content management enables users to easily move through
-              posts. Increase the usability of your blog by adding customized
-              categories, sections, format, or flow. With this functionality,
-              you’re in full control.
-            </p>
-          </div>
+          <picture class="blogrsecondPage__imgBox">
+            <source
+              media="(max-width:23.45em)"
+              srcset="./images/illustration-editor-mobile.svg"
+            />
+            <source
+              media="(max-width:90em)"
+              srcset="./images/illustration-editor-desktop.svg"
+            />
+            <img src="./images/illustration-editor-desktop.svg" />
+          </picture>
         </div>
-        <picture class="blogrsecondPage__imgBox">
-          <source
-            media="(max-width:23.45em)"
-            srcset="./images/illustration-editor-mobile.svg"
-          />
-          <source
-            media="(max-width:90em)"
-            srcset="./images/illustration-editor-desktop.svg"
-          />
-          <img src="./images/illustration-editor-desktop.svg" />
-        </picture>
       </section>
       <section class="blogrthirdPage">
         <img
