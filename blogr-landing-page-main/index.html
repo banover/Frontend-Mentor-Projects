@@ -101,6 +101,7 @@
         display: flex;
         align-items: center;
         gap: 4rem;
+        position: relative;
       }
 
       .blogrlandingPage__navLists {
@@ -115,6 +116,39 @@
         align-items: center;
         gap: 0.8rem;
         cursor: pointer;
+      }
+
+      .blogrlandingPage__navList:hover a {
+        text-decoration: underline;
+      }
+
+      .blogrlandingPage__navList:hover img {
+        /* content: url(./images/icon-arrow-dark.svg); */
+        transform: rotate(180deg);
+      }
+
+      .blogrlandingPage__navConnectMenu {
+        position: absolute;
+        top: 5.5rem;
+        left: 33rem;
+        width: 17rem;
+        height: 13.5rem;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1.5rem;
+        color: var(--verydarkGrayBlue);
+        padding-left: 2rem;
+        display: none;
+      }
+
+      .blogrlandingPage__navConnectMenu span {
+        cursor: pointer;
+      }
+      .blogrlandingPage__navConnectMenu span:hover {
+        color: black;
+        font-weight: 700;
       }
 
       .blogrlandingPage__rightHeader {
@@ -249,6 +283,11 @@
                 </li>
               </ul>
             </nav>
+            <div class="blogrlandingPage__navConnectMenu">
+              <span>Contact</span>
+              <span>Newsletter</span>
+              <span>Linkedin</span>
+            </div>
           </div>
           <div class="blogrlandingPage__rightHeader">
             <a class="blogrlandingPage__loginBtn">Login</a>
@@ -389,5 +428,21 @@
            Login Sign Up Product
     Overview Pricing Marketplace Features Integrations Company About Team Blog
     Careers Connect Contact Newsletter LinkedIn -->
+    <script>
+      const connectNavBtn = document.querySelector(
+        ".blogrlandingPage__navList:last-child"
+      );
+      const connectNavMenu = document.querySelector(
+        ".blogrlandingPage__navConnectMenu"
+      );
+
+      connectNavBtn.addEventListener("mouseover", () => {
+        connectNavMenu.style.display = "flex";
+      });
+
+      window.addEventListener("click", () => {
+        connectNavMenu.style.display = "none";
+      });
+    </script>
   </body>
 </html>
