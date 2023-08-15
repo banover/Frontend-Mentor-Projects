@@ -66,12 +66,6 @@
               <div class="Crowdfunding__bookmarkBtn">
                 <div class="Crowdfunding__bookmarkImgBox">
                   <img src="./images/icon-bookmark.svg" alt="a bookmark icon" />
-                  <!-- <svg width="56" height="50" xmlns="http://www.w3.org/2000/svg">
-                  <g fill="none" fill-rule="evenodd">
-                    <circle fill="#2F2F2F" cx="28" cy="25" r="25" />
-                    <path fill="#B1B1B1" d="M23 19v18l5-5.058L33 37V19z" />
-                  </g>
-                </svg> -->
                 </div>
                 <button>Bookmark</button>
               </div>
@@ -86,16 +80,21 @@
                 >
               </div>
               <div class="Crowdfunding__TotalSupportersBox">
-                <span class="Crowdfunding__supportingMoney">5,007</span>
-                <span class="Crowdfunding__targetAmout">total backers</span>
+                <span class="Crowdfunding__supportingBackers">5,007</span>
+                <span class="Crowdfunding__totalBackers">total backers</span>
               </div>
               <div class="Crowdfunding__LeftedDaysBox">
-                <span class="Crowdfunding__supportingMoney">56</span>
-                <span class="Crowdfunding__targetAmout">days left</span>
+                <span class="Crowdfunding__leftDayNumber">56</span>
+                <span class="Crowdfunding__leftDayWord">days left</span>
               </div>
             </div>
             <div class="Crowdfunding__targetBarBox">
-              <div class="Crowdfunding__targetBar"></div>
+              <progress
+                class="Crowdfunding__targetBar"
+                max="100"
+                value="78.5"
+              ></progress>
+              <!-- <div class="Crowdfunding__targetBar"></div> -->
             </div>
           </div>
           <div class="Crowdfunding__ItemInfo">
@@ -113,7 +112,7 @@
               USB sticks to be stored under the stand.
             </p>
             <div class="Crowdfunding__SupportCards">
-              <div class="Crowdfunding__SupportCards">
+              <div class="Crowdfunding__SupportCard">
                 <div class="Crowdfunding__cardHeaderBox">
                   <span class="Crowdfunding__cardName">Bamboo Stand</span>
                   <span class="Crowdfunding__cardPrice">
@@ -132,7 +131,7 @@
                   <button class="Crowdfunding__selectBtn">Select Reward</button>
                 </div>
               </div>
-              <div class="Crowdfunding__SupportCards">
+              <div class="Crowdfunding__SupportCard">
                 <div class="Crowdfunding__cardHeaderBox">
                   <span class="Crowdfunding__cardName"
                     >Black Edition Stand</span
@@ -153,7 +152,7 @@
                   <button class="Crowdfunding__selectBtn">Select Reward</button>
                 </div>
               </div>
-              <div class="Crowdfunding__SupportCards">
+              <div class="Crowdfunding__SupportCard --unactive">
                 <div class="Crowdfunding__cardHeaderBox">
                   <span class="Crowdfunding__cardName"
                     >Mahogany Special Edition</span

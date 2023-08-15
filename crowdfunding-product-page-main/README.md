@@ -4,6 +4,13 @@
 
 ## 피드백
 
+- progress element의 경우
+  style하기 위해서는 selector를 progress[value]로 설정한 후
+  appearance:none 으로 default styling은 reset하고
+  progress[value]::-webkit-progress-bar (전체 bar) or
+  progress[value]::-webkit-progress-value (value bar)
+  의 selector를 활용해서 styling한다.
+
 ## The challenge
 
 Your challenge is to build out this crowdfunding product page and get it looking as close to the design as possible.

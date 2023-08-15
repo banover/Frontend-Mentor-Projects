@@ -30,6 +30,7 @@ body {
 .Crowdfunding {
   width: 144rem;
   height: auto;
+  margin: 0 auto;
 }
 
 .Crowdfunding__header {
@@ -194,7 +195,215 @@ body {
 }
 
 .Crowdfunding__itemSupportState {
+  width: 100%;
+
+  box-shadow: 0px 0px 1px rgb(0, 0, 0, 0.4);
+  border-radius: 6px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.Crowdfunding__numberBox {
+  width: 100%;
+  display: flex;
+  padding: 3rem 0 2.5rem 0;
+}
+
+.Crowdfunding__SupportMoneyBox {
+  padding: 0rem 4rem 0rem 4rem;
+  border-right: 1px solid rgb(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 0.8;
+}
+
+.Crowdfunding__supportingMoney {
+  font-size: 3.2rem;
+  font-weight: 700;
+}
+
+.Crowdfunding__targetAmout {
+  display: block;
+  font-size: 1.5rem;
+  color: var(--Darkgray);
+}
+
+.Crowdfunding__TotalSupportersBox {
+  padding: 0rem 4rem 0rem 4rem;
+  border-right: 1px solid rgb(0, 0, 0, 0.2);
+  flex: 0.9;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.Crowdfunding__supportingBackers {
+  font-size: 3.2rem;
+  font-weight: 700;
+}
+
+.Crowdfunding__totalBackers {
+  display: block;
+  font-size: 1.5rem;
+  color: var(--Darkgray);
+}
+
+.Crowdfunding__LeftedDaysBox {
+  padding: 0rem 4rem 0rem 4rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.Crowdfunding__leftDayNumber {
+  font-size: 3.2rem;
+  font-weight: 700;
+}
+
+.Crowdfunding__leftDayWord {
+  display: block;
+  font-size: 1.5rem;
+  color: var(--Darkgray);
+}
+
+.Crowdfunding__targetBarBox {
+  width: 100%;
+  padding: 0 4rem 3rem 4rem;
+}
+
+progress[value] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+}
+progress[value]::-webkit-progress-bar {
+  background-color: #eee;
+  height: 1rem;
+  border-radius: 50px;
+}
+progress[value]::-webkit-progress-value {
+  background-color: var(--Moderatecyan);
+
+  border-radius: 50px;
 }
 
 .Crowdfunding__ItemInfo {
+  width: 100%;
+  box-shadow: 0px 0px 1px rgb(0, 0, 0, 0.4);
+  border-radius: 6px;
+  padding: 4rem;
+}
+.Crowdfunding__ItemInfo h3 {
+  font-size: 2.08rem;
+  font-weight: 700;
+  margin-bottom: 3.5rem;
+}
+.Crowdfunding__ItemInfo h3 + p {
+  /* color: red; */
+  font-size: 1.65rem;
+  margin-bottom: 3.5rem;
+  color: var(--Darkgray);
+}
+.Crowdfunding__ItemInfo p:nth-child(3) {
+  /* color: blue; */
+  font-size: 1.65rem;
+  margin-bottom: 4rem;
+  color: var(--Darkgray);
+}
+
+.Crowdfunding__SupportCards {
+  width: 100%;
+  /* padding: 4rem; */
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.Crowdfunding__SupportCard {
+  width: 100%;
+  box-shadow: 0px 0px 1.5px rgb(0, 0, 0, 1);
+  border-radius: 6px;
+
+  padding: 3rem 3.1rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.Crowdfunding__cardHeaderBox {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Crowdfunding__cardName {
+  font-size: 1.9rem;
+  font-weight: 700;
+}
+
+.Crowdfunding__cardPrice {
+  color: var(--Moderatecyan);
+  font-weight: 500;
+}
+
+.Crowdfunding__cardDescription {
+  color: var(--Darkgray);
+  font-size: 1.67rem;
+  line-height: 2.7rem;
+}
+
+.Crowdfunding__cardFooterBox {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Crowdfunding__remainQuote {
+  font-size: 3.3rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.Crowdfunding__remainQuote span {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--Darkgray);
+  margin-top: 0.3rem;
+}
+
+.Crowdfunding__selectBtn {
+  display: inline-block;
+  background-color: var(--Moderatecyan);
+  color: white;
+  border: none;
+  border-radius: 50px;
+
+  padding: 1.5rem 3.3rem;
+  font-family: "Commissioner", sans-serif;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.Crowdfunding__selectBtn:hover {
+  background-color: var(--Darkcyan);
+}
+
+.--unactive {
+  opacity: 0.4;
+}
+.--unactive button {
+  /* opacity: 0.5; */
+  background-color: var(--Darkgray);
+  cursor: auto;
+}
+.--unactive button:hover {
+  /* opacity: 0.5; */
+  background-color: var(--Darkgray);
 }
