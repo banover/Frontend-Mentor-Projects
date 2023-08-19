@@ -11,6 +11,10 @@
   progress[value]::-webkit-progress-value (value bar)
   의 selector를 활용해서 styling한다.
 
+-setAttribute를 통해 radio input의 checked attribute를 설정하고
+removeAttribute를 통해 checked attribute를 제거한다.
+단순히 checked를 true/false하는 것으로는 의도한데로 작동하지 않는다.
+
 ## The challenge
 
 Your challenge is to build out this crowdfunding product page and get it looking as close to the design as possible.

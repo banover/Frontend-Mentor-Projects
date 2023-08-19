@@ -400,6 +400,10 @@ progress[value]::-webkit-progress-value {
 .--unactive {
   opacity: 0.4;
 }
+.--unactive {
+  pointer-events: none;
+}
+
 .--unactive button {
   /* opacity: 0.5; */
   background-color: var(--Darkgray);

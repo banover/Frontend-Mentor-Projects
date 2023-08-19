@@ -19,6 +19,7 @@
     />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="modal.css" />
+    <link rel="stylesheet" href="completed-modal.css" />
     <script defer src="index.js"></script>
     <title>Frontend Mentor | Crowdfunding product page</title>
 
@@ -189,11 +190,14 @@
           </p>
         </header>
         <main class="Crowdfunding__modalCards">
-          <div class="Crowdfunding__modalCard">
+          <div class="Crowdfunding__modalCard card1">
             <div class="Crowdfunding__modalCardContent">
               <div class="Crowdfunding__modalCardHeader">
-                <label class="Crowdfunding__cardBtn" for="modalCardBtn"></label>
-                <input type="radio" id="modalCardBtn" name="modalCardBtn" />
+                <input type="radio" id="modalCardBtn1" name="modalCardBtn" />
+                <label
+                  class="Crowdfunding__cardBtn"
+                  for="modalCardBtn1"
+                ></label>
                 <span class="Crowdfunding__modalCardName"
                   >Pledge with no reward</span
                 >
@@ -215,11 +219,14 @@
             <button type="submit">Continue</button>
           </div> -->
           <!-- <div class="Crowdfunding__extendedModalCard"> -->
-          <div class="Crowdfunding__modalCard">
+          <div class="Crowdfunding__modalCard card2">
             <div class="Crowdfunding__modalCardContent">
               <div class="Crowdfunding__modalCardHeader">
-                <label class="Crowdfunding__cardBtn" for="modalCardBtn"></label>
-                <input type="radio" id="modalCardBtn" name="modalCardBtn" />
+                <input type="radio" id="modalCardBtn2" name="modalCardBtn" />
+                <label
+                  class="Crowdfunding__cardBtn"
+                  for="modalCardBtn2"
+                ></label>
                 <span class="Crowdfunding__modalCardName">Bamboo stand</span>
                 <span class="Crowdfunding__modalCardPrice"
                   >Pledge $25 or more</span
@@ -238,18 +245,22 @@
             <div class="Crowdfunding__modalHiddenCard">
               <p>Enter your pledge</p>
               <div class="Crowdfunding__modalHiddenBtnBox">
-                <input type="text" placeholder="$" required />
+                <span>$</span>
+                <input type="text" value="25" required />
                 <button type="submit">Continue</button>
               </div>
             </div>
           </div>
           <!-- </div> -->
           <!-- <div class="Crowdfunding__extendedModalCard"> -->
-          <div class="Crowdfunding__modalCard">
+          <div class="Crowdfunding__modalCard card3">
             <div class="Crowdfunding__modalCardContent">
               <div class="Crowdfunding__modalCardHeader">
-                <label class="Crowdfunding__cardBtn" for="modalCardBtn"></label>
-                <input type="radio" id="modalCardBtn" name="modalCardBtn" />
+                <input type="radio" id="modalCardBtn3" name="modalCardBtn" />
+                <label
+                  class="Crowdfunding__cardBtn"
+                  for="modalCardBtn3"
+                ></label>
                 <span class="Crowdfunding__modalCardName"
                   >Black Edition Stand</span
                 >
@@ -270,7 +281,8 @@
             <div class="Crowdfunding__modalHiddenCard">
               <p>Enter your pledge</p>
               <div class="Crowdfunding__modalHiddenBtnBox">
-                <input type="text" placeholder="$" required />
+                <span>$</span>
+                <input type="text" value="75" required />
                 <button type="submit">Continue</button>
               </div>
             </div>
@@ -278,9 +290,12 @@
           <!-- </div> -->
           <div class="Crowdfunding__modalCard --unactive">
             <div class="Crowdfunding__modalCardContent">
-              <div class="Crowdfunding__modalCardHeader">
-                <label class="Crowdfunding__cardBtn" for="modalCardBtn"></label>
-                <input type="radio" id="modalCardBtn" name="modalCardBtn" />
+              <div class="Crowdfunding__modalCardHeader card4">
+                <input type="radio" id="modalCardBtn4" name="modalCardBtn" />
+                <label
+                  class="Crowdfunding__cardBtn"
+                  for="modalCardBtn4"
+                ></label>
                 <span class="Crowdfunding__modalCardName"
                   >Mahogany Special Edition</span
                 >
@@ -305,36 +320,18 @@
           </div> -->
         </main>
       </div>
+      <div class="Crowdfunding__completedModalCard">
+        <img src="./images/icon-check.svg" alt="a check icon" />
+        <div class="Crowdfunding__completedModalCardInfoBox">
+          <h3>Thanks for your support!</h3>
+          <p>
+            Your pledge brings us one step closer to sharing Mastercraft Bamboo
+            Monitor Riser worldwide. You will get an email once our campaign is
+            completed.
+          </p>
+        </div>
+        <button>Got it!</button>
+      </div>
     </section>
-
-    <!-- Selection modal start -->
-
-    101 left
-
-    <!-- Selected pledge start -->
-    $25
-    <!-- Selected pledge end -->
-
-    64 left
-
-    <!-- Selected pledge start -->
-    $75 Continue
-    <!-- Selected pledge end -->
-
-    0 left
-
-    <!-- Selected pledge  start -->
-    Enter your pledge $200 Continue
-    <!-- Selected pledge end -->
-
-    <!-- Selection modal end -->
-
-    <!-- Success modal start -->
-
-    Thanks for your support! Your pledge brings us one step closer to sharing
-    Mastercraft Bamboo Monitor Riser worldwide. You will get an email once our
-    campaign is completed. Got it!
-
-    <!-- Success modal end -->
   </body>
 </html>
