@@ -67,7 +67,18 @@
               </button>
               <div class="Crowdfunding__bookmarkBtn">
                 <div class="Crowdfunding__bookmarkImgBox">
-                  <img src="./images/icon-bookmark.svg" alt="a bookmark icon" />
+                  <!-- <img src="./images/icon-bookmark.svg" alt="a bookmark icon" /> -->
+                  <svg
+                    class="Crowdfunding__bookmarkBtnImg"
+                    width="56"
+                    height="56"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g fill="none" fill-rule="evenodd">
+                      <circle fill="#2F2F2F" cx="28" cy="28" r="28" />
+                      <path fill="#B1B1B1" d="M23 19v18l5-5.058L33 37V19z" />
+                    </g>
+                  </svg>
                 </div>
                 <button>Bookmark</button>
               </div>
@@ -212,12 +223,15 @@
                 product updates via email.
               </p>
             </div>
+            <div class="Crowdfunding__modalHiddenCard">
+              <p>Enter your pledge</p>
+              <div class="Crowdfunding__modalHiddenBtnBox">
+                <input type="text" hidden />
+                <button type="submit">Continue</button>
+              </div>
+            </div>
           </div>
-          <!-- <div class="Crowdfunding__modalHiddenCard">
-            <p></p>
-            <input type="text" required />
-            <button type="submit">Continue</button>
-          </div> -->
+
           <!-- <div class="Crowdfunding__extendedModalCard"> -->
           <div class="Crowdfunding__modalCard card2">
             <div class="Crowdfunding__modalCardContent">

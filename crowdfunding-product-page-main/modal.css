@@ -15,7 +15,7 @@
   /* background-color: yellowgreen; */
   background-color: white;
   position: absolute;
-  top: 9.8%;
+  top: 10.1%;
   left: 50%;
   transform: translate(-50%, 0);
 
@@ -220,6 +220,11 @@
   text-align: center;
 
   /* cursor: pointer; */
+}
+
+.card1 .Crowdfunding__modalHiddenCard input {
+  visibility: hidden;
+  /* opacity: 0; */
 }
 
 /* .Crowdfunding__modalHiddenCard input::after {
