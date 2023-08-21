@@ -321,11 +321,13 @@ progress[value]::-webkit-progress-value {
   font-weight: 700;
   margin-bottom: 3.5rem;
 }
-.Crowdfunding__ItemInfo h3 + p {
+.Crowdfunding__ItemInfo h3 + p,
+.Crowdfunding__ItemInfo h3 + p + p {
   /* color: red; */
   font-size: 1.65rem;
   margin-bottom: 3.5rem;
   color: var(--Darkgray);
+  line-height: 2.6rem;
 }
 .Crowdfunding__ItemInfo p:nth-child(3) {
   /* color: blue; */

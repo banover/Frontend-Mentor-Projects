@@ -187,9 +187,9 @@
 }
 .Crowdfunding__modalHiddenBtnBox {
   width: auto;
-  display: flex;
+  /* display: flex;
   justify-content: end;
-  gap: 1.5rem;
+  gap: 1.5rem; */
   /* margin-left: auto; */
   position: relative;
 }
@@ -206,6 +206,15 @@
   opacity: 0.4;
 }
 
+.Crowdfunding__modalHiddenBtnBox form {
+  width: 100%;
+  display: flex;
+  gap: 1.3rem;
+}
+
+/* .Crowdfunding__modalHiddenBtnBox input::placeholder {
+} */
+
 .Crowdfunding__modalHiddenCard input {
   display: block;
   font-family: "Commissioner", sans-serif;
@@ -220,6 +229,13 @@
   text-align: center;
 
   /* cursor: pointer; */
+}
+
+.Crowdfunding__modalHiddenCard input::placeholder {
+  font-family: "Commissioner", sans-serif;
+  font-weight: 700;
+  font-size: 1.33333rem;
+  color: black;
 }
 
 .card1 .Crowdfunding__modalHiddenCard input {

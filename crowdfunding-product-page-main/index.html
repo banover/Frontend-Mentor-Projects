@@ -226,8 +226,10 @@
             <div class="Crowdfunding__modalHiddenCard">
               <p>Enter your pledge</p>
               <div class="Crowdfunding__modalHiddenBtnBox">
-                <input type="text" hidden />
-                <button type="submit">Continue</button>
+                <form>
+                  <input type="text" name="noReward" hidden />
+                  <button type="submit">Continue</button>
+                </form>
               </div>
             </div>
           </div>
@@ -260,8 +262,11 @@
               <p>Enter your pledge</p>
               <div class="Crowdfunding__modalHiddenBtnBox">
                 <span>$</span>
-                <input type="text" value="25" required />
-                <button type="submit">Continue</button>
+                <form>
+                  <!-- <input type="text" value="25" required /> -->
+                  <input type="text" placeholder="25" name="bambooStand" />
+                  <button type="submit">Continue</button>
+                </form>
               </div>
             </div>
           </div>
@@ -296,8 +301,11 @@
               <p>Enter your pledge</p>
               <div class="Crowdfunding__modalHiddenBtnBox">
                 <span>$</span>
-                <input type="text" value="75" required />
-                <button type="submit">Continue</button>
+                <form>
+                  <!-- <input type="text" value="75" required /> -->
+                  <input type="text" placeholder="75" name="blackEdition" />
+                  <button type="submit">Continue</button>
+                </form>
               </div>
             </div>
           </div>
