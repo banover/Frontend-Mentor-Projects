@@ -73,6 +73,10 @@ body {
   cursor: pointer;
 }
 
+.Crowdfunding__mobileNavBar {
+  display: none;
+}
+
 .Crowdfunding__main {
   width: 100%;
 }
@@ -212,6 +216,14 @@ body {
   background-color: rgb(0, 0, 0, 0.04);
   color: var(--Darkcyan);
   /* font-weight: 700; */
+}
+
+.Crowdfunding__mobileBookmarkBtn {
+  display: none;
+}
+
+.Crowdfunding__mobileBtnBox {
+  display: none;
 }
 
 .Crowdfunding__itemSupportState {

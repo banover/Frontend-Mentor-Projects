@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="modal.css" />
     <link rel="stylesheet" href="completed-modal.css" />
+    <link rel="stylesheet" href="media.css" />
+    <link rel="stylesheet" href="media_modal.css" />
     <script defer src="index.js"></script>
     <title>Frontend Mentor | Crowdfunding product page</title>
 
@@ -43,6 +45,18 @@
             </ul>
           </nav>
         </div>
+        <div class="Crowdfunding__mobileNavBar">
+          <img
+            class="Crowdfunding__logo"
+            src="./images/logo.svg"
+            alt="a crowdfund logo"
+          />
+          <img
+            class="Crowdfunding__mobileMenu"
+            src="./images/icon-hamburger.svg"
+            alt="a menu icon"
+          />
+        </div>
       </header>
       <main class="Crowdfunding__main">
         <div class="Crowdfunding__aboutItem">
@@ -60,8 +74,32 @@
                 A beautiful & handcrafted monitor stand to reduce neck and eye
                 strain.
               </p>
+              <!-- mobile일용  Crowdfunding__itemDescription 만들어야함-->
             </div>
             <div class="Crowdfunding__btnBox">
+              <button class="Crowdfunding__supportBtn">
+                Back this project
+              </button>
+              <div class="Crowdfunding__bookmarkBtn">
+                <!-- mobile용  Crowdfunding__bookmarkBtn만들어야함-->
+                <div class="Crowdfunding__bookmarkImgBox">
+                  <!-- <img src="./images/icon-bookmark.svg" alt="a bookmark icon" /> -->
+                  <svg
+                    class="Crowdfunding__bookmarkBtnImg"
+                    width="56"
+                    height="56"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g fill="none" fill-rule="evenodd">
+                      <circle fill="#2F2F2F" cx="28" cy="28" r="28" />
+                      <path fill="#B1B1B1" d="M23 19v18l5-5.058L33 37V19z" />
+                    </g>
+                  </svg>
+                </div>
+                <button>Bookmark</button>
+              </div>
+            </div>
+            <div class="Crowdfunding__mobileBtnBox">
               <button class="Crowdfunding__supportBtn">
                 Back this project
               </button>
@@ -80,7 +118,6 @@
                     </g>
                   </svg>
                 </div>
-                <button>Bookmark</button>
               </div>
             </div>
           </div>
@@ -236,18 +273,21 @@
 
           <!-- <div class="Crowdfunding__extendedModalCard"> -->
           <div class="Crowdfunding__modalCard card2">
-            <div class="Crowdfunding__modalCardContent">
+            <div class="Crowdfunding__modalCardContent cashoffer">
               <div class="Crowdfunding__modalCardHeader">
                 <input type="radio" id="modalCardBtn2" name="modalCardBtn" />
                 <label
                   class="Crowdfunding__cardBtn"
                   for="modalCardBtn2"
                 ></label>
-                <span class="Crowdfunding__modalCardName">Bamboo stand</span>
-                <span class="Crowdfunding__modalCardPrice"
+                <span class="Crowdfunding__modalCardName mobileModalCardName"
+                  >Bamboo stand</span
+                >
+                <span class="Crowdfunding__modalCardPrice mobileModalCardPrice"
                   >Pledge $25 or more</span
                 >
-                <span class="Crowdfunding__modalCardRestNumber"
+                <span
+                  class="Crowdfunding__modalCardRestNumber mobileModalCardRestNumber"
                   >101<span>left</span>
                 </span>
               </div>
@@ -273,20 +313,21 @@
           <!-- </div> -->
           <!-- <div class="Crowdfunding__extendedModalCard"> -->
           <div class="Crowdfunding__modalCard card3">
-            <div class="Crowdfunding__modalCardContent">
+            <div class="Crowdfunding__modalCardContent cashoffer">
               <div class="Crowdfunding__modalCardHeader">
                 <input type="radio" id="modalCardBtn3" name="modalCardBtn" />
                 <label
                   class="Crowdfunding__cardBtn"
                   for="modalCardBtn3"
                 ></label>
-                <span class="Crowdfunding__modalCardName"
+                <span class="Crowdfunding__modalCardName mobileModalCardName"
                   >Black Edition Stand</span
                 >
-                <span class="Crowdfunding__modalCardPrice"
+                <span class="Crowdfunding__modalCardPrice mobileModalCardPrice"
                   >Pledge $75 or more</span
                 >
-                <span class="Crowdfunding__modalCardRestNumber"
+                <span
+                  class="Crowdfunding__modalCardRestNumber mobileModalCardRestNumber"
                   >64<span>left</span>
                 </span>
               </div>
@@ -311,20 +352,21 @@
           </div>
           <!-- </div> -->
           <div class="Crowdfunding__modalCard --unactive">
-            <div class="Crowdfunding__modalCardContent">
+            <div class="Crowdfunding__modalCardContent cashoffer">
               <div class="Crowdfunding__modalCardHeader card4">
                 <input type="radio" id="modalCardBtn4" name="modalCardBtn" />
                 <label
                   class="Crowdfunding__cardBtn"
                   for="modalCardBtn4"
                 ></label>
-                <span class="Crowdfunding__modalCardName"
+                <span class="Crowdfunding__modalCardName mobileModalCardName"
                   >Mahogany Special Edition</span
                 >
-                <span class="Crowdfunding__modalCardPrice"
+                <span class="Crowdfunding__modalCardPrice mobileModalCardPrice"
                   >Pledge $200 or more</span
                 >
-                <span class="Crowdfunding__modalCardRestNumber"
+                <span
+                  class="Crowdfunding__modalCardRestNumber mobileModalCardRestNumber"
                   >0<span>left</span>
                 </span>
               </div>

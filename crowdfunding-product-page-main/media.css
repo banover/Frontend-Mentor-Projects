@@ -1,0 +1,488 @@
+@media only screen and (max-width: 23.45em) {
+  .Crowdfunding {
+    width: 37.5rem;
+    /* height: auto; */
+    margin: 0 0;
+
+    /* position: relative; */
+  }
+
+  .Crowdfunding__header {
+    /* width: 100%; */
+    /* height: 40rem; */
+    /* height: 60rem; */
+    height: 30rem;
+
+    background-image: url(./images/image-hero-mobile.jpg);
+    /* background-repeat: no-repeat; */
+    /* background-size: contain; */
+    background-size: 100% 100%;
+  }
+  .Crowdfunding__mobileNavBar {
+    display: block;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3.1rem 2.3rem;
+  }
+
+  .Crowdfunding__navBar {
+    /* width: 100%; */
+    /* display: flex; */
+    /* justify-content: space-between; */
+    /* align-items: center; */
+    padding: 2rem 2.3rem;
+    display: none;
+  }
+
+  .Crowdfunding__logo {
+    /* display: block; */
+    /* width: 12.8rem; */
+    /* height: 2rem; */
+  }
+
+  .Crowdfunding__nav {
+  }
+
+  .Crowdfunding__navLists {
+    /* list-style: none;
+    display: flex;
+    gap: 2rem;
+    font-weight: 500;
+    color: white; */
+  }
+
+  .Crowdfunding__navList {
+    /* cursor: pointer; */
+  }
+
+  .Crowdfunding__main {
+    width: 100%;
+  }
+
+  .Crowdfunding__aboutItem {
+    width: 86%;
+    /* background-color: white; */
+    /* margin: 0 auto; */
+    margin-top: -5.6rem;
+
+    /* display: flex; */
+    /* flex-direction: column; */
+    gap: 3rem;
+
+    /* border-radius: 6px; */
+  }
+
+  .Crowdfunding__itemHeader {
+    /* width: 100%; */
+    /* position: relative; */
+    /* text-align: center; */
+    padding: 5.5rem 0 4rem 0;
+
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* gap: 3rem; */
+
+    box-shadow: 0px 0px 1px rgb(0, 0, 0, 0.4);
+    /* border-radius: 6px; */
+  }
+
+  .Crowdfunding__mastercraftLogo {
+    /* display: block; */
+    /* position: absolute; */
+    /* top: 0; */
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%); */
+  }
+
+  .Crowdfunding__itemInfoBox {
+    /* width: 100%; */
+    /* display: flex; */
+    /* flex-direction: column; */
+    gap: 2rem;
+  }
+
+  .Crowdfunding__itemName {
+    font-size: 2.1rem;
+    padding: 0 3rem;
+  }
+
+  .Crowdfunding__itemDescription {
+    font-size: 1.45rem;
+    /* color: var(--Darkgray); */
+    padding: 0 2rem;
+    line-height: 2.4rem;
+  }
+
+  .Crowdfunding__btnBox {
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    display: none;
+  }
+
+  .Crowdfunding__bookmarkBtn {
+    display: flex;
+    /* display: none; */
+    /* cursor: pointer; */
+  }
+
+  .Crowdfunding__bookmarkBtn:hover .Crowdfunding__bookmarkImgBox img {
+    /* filter: opacity(75%); */
+    opacity: 0.7;
+  }
+  .Crowdfunding__bookmarkBtn:hover .Crowdfunding__bookmarkImgBox svg {
+    /* filter: opacity(75%); */
+    opacity: 0.7;
+  }
+
+  .Crowdfunding__bookmarkImgBox {
+    height: 5.6rem;
+    margin-right: 0rem;
+    cursor: pointer;
+  }
+
+  .Crowdfunding__bookmarkBtnImg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .Crowdfunding__bookmarkBtnImg.--bookmarkActive circle {
+    fill: var(--Darkcyan);
+  }
+  .Crowdfunding__bookmarkBtnImg.--bookmarkActive path {
+    fill: white;
+  }
+
+  .Crowdfunding__bookmarkBtn button {
+    height: 5.6rem;
+    background-color: rgb(0, 0, 0, 0.07);
+    color: var(--Darkgray);
+    border: none;
+    border-radius: 30px;
+    font-size: 1.8rem;
+    font-weight: 500;
+    /* padding: 0.5rem 3.9rem;
+  padding-left: 5rem; */
+    padding-left: 6rem;
+    padding-right: 2.8rem;
+    /* text-align: right; */
+    cursor: pointer;
+    /* line-height: 0.8rem; */
+  }
+
+  .Crowdfunding__bookmarkBtn button.--bookmarkActive {
+    /* font-size: 7rem; */
+
+    background-color: rgb(0, 0, 0, 0.04);
+    color: var(--Darkcyan);
+    /* font-weight: 700; */
+  }
+
+  .Crowdfunding__mobileBtnBox {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* gap: 1rem; */
+    padding: 0 2rem;
+    margin-top: -0.6rem;
+  }
+
+  .Crowdfunding__supportBtn {
+    width: 77%;
+    /* display: inline; */
+    /* display: block; */
+    /* width: auto;
+  height: auto; */
+    /* align-self: center; */
+    height: 5.6rem;
+    background-color: var(--Moderatecyan);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.8rem;
+    font-weight: 500;
+    padding: 0.5rem 3.9rem;
+    cursor: pointer;
+    /* 추후에 수정 */
+  }
+
+  .Crowdfunding__supportBtn:hover {
+    background-color: var(--Darkcyan);
+  }
+
+  .Crowdfunding__mobileBookmarkBtn {
+    display: block;
+    margin-left: auto;
+  }
+
+  .Crowdfunding__mobileBookmarkBtn:hover .Crowdfunding__bookmarkImgBox svg {
+    /* filter: opacity(75%); */
+    opacity: 0.7;
+  }
+
+  .Crowdfunding__itemSupportState {
+    /* width: 100%; */
+
+    box-shadow: 0px 0px 1px rgb(0, 0, 0, 0.4);
+    /* border-radius: 6px; */
+
+    /* display: flex; */
+    /* flex-direction: column; */
+  }
+
+  .Crowdfunding__numberBox {
+    /* width: 100%; */
+    /* display: flex; */
+    flex-direction: column;
+    padding: 3rem 0 2.5rem 0;
+    text-align: center;
+  }
+
+  .Crowdfunding__SupportMoneyBox {
+    padding: 0 0;
+    border-right: none;
+    /* border-bottom: 1px solid rgb(0, 0, 0, 0.12); */
+    padding-bottom: 2rem;
+    /* display: flex; */
+    /* flex-direction: column; */
+    gap: 0.8rem;
+    flex: none;
+  }
+
+  .Crowdfunding__supportingMoney {
+    font-size: 3.2rem;
+    /* font-weight: 700; */
+  }
+
+  .Crowdfunding__targetAmout {
+    /* display: block; */
+    font-size: 1.4rem;
+    /* font-weight: 500; */
+    /* color: var(--Darkgray); */
+  }
+
+  .Crowdfunding__TotalSupportersBox {
+    padding: 0 0;
+    border-right: none;
+    /* border-bottom: 1px solid rgb(0, 0, 0, 0.2); */
+    padding: 3rem 0 2rem 0;
+    flex: none;
+    /* display: flex; */
+    /* flex-direction: column; */
+    gap: 0.8rem;
+    position: relative;
+  }
+
+  .Crowdfunding__TotalSupportersBox::before {
+    content: "";
+    width: 7.8rem;
+    height: 0.1rem;
+    background-color: rgb(0, 0, 0, 0.2);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+
+  .Crowdfunding__supportingBackers {
+    font-size: 3.2rem;
+    font-weight: 700;
+  }
+
+  .Crowdfunding__totalBackers {
+    /* display: block; */
+    font-size: 1.4rem;
+    /* color: var(--Darkgray); */
+  }
+
+  .Crowdfunding__LeftedDaysBox {
+    /* padding: 0 0; */
+    padding: 3rem 0 0rem 0;
+    flex: none;
+    /* display: flex; */
+    /* flex-direction: column; */
+    gap: 0.8rem;
+    position: relative;
+  }
+
+  .Crowdfunding__LeftedDaysBox::before {
+    content: "";
+    width: 7.8rem;
+    height: 0.1rem;
+    background-color: rgb(0, 0, 0, 0.2);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+
+  .Crowdfunding__leftDayNumber {
+    font-size: 3.2rem;
+    font-weight: 700;
+  }
+
+  .Crowdfunding__leftDayWord {
+    /* display: block; */
+    font-size: 1.4rem;
+    /* color: var(--Darkgray); */
+  }
+
+  .Crowdfunding__targetBarBox {
+    /* width: 100%; */
+    padding: 0 2rem 3rem 2rem;
+  }
+
+  progress[value] {
+    /* -webkit-appearance: none; */
+    /* appearance: none; */
+    /* width: 100%; */
+  }
+  progress[value]::-webkit-progress-bar {
+    /* background-color: #eee; */
+    height: 1.2rem;
+    /* border-radius: 50px; */
+  }
+  progress[value]::-webkit-progress-value {
+    /* background-color: var(--Moderatecyan); */
+
+    /* border-radius: 50px; */
+  }
+
+  .Crowdfunding__ItemInfo {
+    /* width: 100%; */
+    /* box-shadow: 0px 0px 1px rgb(0, 0, 0, 0.4); */
+    /* border-radius: 6px; */
+    padding: 4rem 2rem;
+  }
+  .Crowdfunding__ItemInfo h3 {
+    font-size: 1.82rem;
+    font-weight: 700;
+    margin-bottom: 2.5rem;
+  }
+
+  .Crowdfunding__ItemInfo h3 + p,
+  .Crowdfunding__ItemInfo h3 + p + p {
+    /* color: red; */
+    font-size: 1.43rem;
+    margin-bottom: 2.3rem;
+    color: var(--Darkgray);
+    line-height: 2.4rem;
+  }
+
+  .Crowdfunding__ItemInfo p:nth-child(3) {
+    /* color: blue; */
+    font-size: 1.42rem;
+    margin-bottom: 3.3rem;
+    line-height: 2.4rem;
+  }
+
+  .Crowdfunding__SupportCards {
+    width: 100%;
+    /* padding: 4rem; */
+    display: flex;
+    flex-direction: column;
+    gap: 2.6rem;
+  }
+
+  .Crowdfunding__SupportCard {
+    width: 100%;
+    box-shadow: 0px 0px 1.5px rgb(0, 0, 0, 1);
+    border-radius: 6px;
+
+    padding: 2.4rem 2.3rem;
+
+    /* display: flex; */
+    /* flex-direction: column; */
+    gap: 2.5rem;
+  }
+
+  .Crowdfunding__cardHeaderBox {
+    /* width: 100%; */
+    /* display: flex; */
+    flex-direction: column;
+    gap: 0.6rem;
+    justify-content: initial;
+    align-items: initial;
+  }
+
+  .Crowdfunding__cardName {
+    font-size: 1.44rem;
+    /* font-weight: 700; */
+  }
+
+  .Crowdfunding__cardPrice {
+    font-size: 1.44rem;
+    /* color: var(--Moderatecyan); */
+    /* font-weight: 500; */
+  }
+
+  .Crowdfunding__cardDescription {
+    /* color: var(--Darkgray); */
+    font-size: 1.45rem;
+    line-height: 2.4rem;
+  }
+
+  .Crowdfunding__cardFooterBox {
+    /* width: 100%; */
+    /* display: flex; */
+    flex-direction: column;
+    gap: 2.8rem;
+    justify-content: initial;
+    align-items: initial;
+  }
+
+  .Crowdfunding__remainQuote {
+    /* font-size: 3.3rem; */
+    /* font-weight: 700; */
+    /* display: flex; */
+    /* align-items: center; */
+    gap: 1.05rem;
+  }
+  .Crowdfunding__remainQuote span {
+    font-size: 1.55rem;
+    /* font-weight: 400; */
+    /* color: var(--Darkgray); */
+    /* margin-top: 0.3rem; */
+  }
+
+  .Crowdfunding__selectBtn {
+    width: 68%;
+    /* display: inline-block; */
+    /* background-color: var(--Moderatecyan); */
+    /* color: white; */
+    /* border: none; */
+    /* border-radius: 50px; */
+
+    /* padding: 1.5rem 3.3rem; */
+    /* font-family: "Commissioner", sans-serif; */
+    font-size: 1.45rem;
+    font-weight: 500;
+    /* cursor: pointer; */
+  }
+
+  .Crowdfunding__selectBtn:hover {
+    /* background-color: var(--Darkcyan); */
+  }
+
+  .--unactive {
+    /* opacity: 0.4; */
+  }
+  .--unactive {
+    /* pointer-events: none; */
+  }
+
+  .--unactive button {
+    /* opacity: 0.5; */
+    /* background-color: var(--Darkgray); */
+    /* cursor: auto; */
+  }
+  .--unactive button:hover {
+    /* opacity: 0.5; */
+    /* background-color: var(--Darkgray); */
+  }
+}

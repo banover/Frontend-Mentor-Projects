@@ -27,7 +27,7 @@ const hiddenBlackEditionCard = document.querySelector(
 const modalRemoveBtn = document.querySelector(".Crowdfunding__modal img");
 const modalBackground = document.querySelector(".opacity-background");
 const modal = document.querySelector(".Crowdfunding__modal");
-const openModalBtn = document.querySelector(".Crowdfunding__supportBtn");
+const AllopenModalBtn = document.querySelectorAll(".Crowdfunding__supportBtn");
 const allModalContinueBtn = document.querySelectorAll(
   ".Crowdfunding__modalHiddenCard button"
 );
@@ -37,7 +37,7 @@ const completeModalCheckBtn = document.querySelector(
 const completeModal = document.querySelector(
   ".Crowdfunding__completedModalCard"
 );
-const bookmarkBtn = document.querySelector(".Crowdfunding__bookmarkBtn");
+const AllbookmarkBtn = document.querySelectorAll(".Crowdfunding__bookmarkBtn");
 
 const bookmarkBtnElement = document.querySelector(
   ".Crowdfunding__bookmarkBtn button"
@@ -51,7 +51,9 @@ const bookmarkBackgroundImg = document.querySelector(
 const bookmarkFlagImg = document.querySelector(
   ".Crowdfunding__bookmarkImgBox svg path"
 );
-const bookmarksvg = document.querySelector(".Crowdfunding__bookmarkImgBox svg");
+const Allbookmarksvg = document.querySelectorAll(
+  ".Crowdfunding__bookmarkImgBox svg"
+);
 
 const allBackedInput = document.querySelectorAll(
   ".Crowdfunding__modalHiddenCard input"
@@ -117,20 +119,22 @@ modalRemoveBtn.addEventListener("click", () => {
   modal.style.display = "none";
 });
 
-openModalBtn.addEventListener("click", () => {
-  BambooCard.style.border = "1.8px solid rgb(0, 0, 0, 0.1)";
-  noRewardCard.style.border = "1.8px solid rgb(0, 0, 0, 0.1)";
-  BlackEditionCard.style.border = "1.8px solid rgb(0, 0, 0, 0.1)";
-  BambooCardRadioInput.removeAttribute("checked");
-  noRewardCardRadioInput.removeAttribute("checked");
-  BlackEditionCardRadioInput.removeAttribute("checked");
-  allBackedInput.forEach((input) => (input.value = null));
-  hiddenBambooCard.style.display = "none";
-  hiddenBlackEditionCard.style.display = "none";
-  hiddenNoRewardCard.style.display = "none";
-  modalBackground.style.display = "block";
-  modal.style.display = "block";
-});
+AllopenModalBtn.forEach((btn) =>
+  btn.addEventListener("click", () => {
+    BambooCard.style.border = "1.8px solid rgb(0, 0, 0, 0.1)";
+    noRewardCard.style.border = "1.8px solid rgb(0, 0, 0, 0.1)";
+    BlackEditionCard.style.border = "1.8px solid rgb(0, 0, 0, 0.1)";
+    BambooCardRadioInput.removeAttribute("checked");
+    noRewardCardRadioInput.removeAttribute("checked");
+    BlackEditionCardRadioInput.removeAttribute("checked");
+    allBackedInput.forEach((input) => (input.value = null));
+    hiddenBambooCard.style.display = "none";
+    hiddenBlackEditionCard.style.display = "none";
+    hiddenNoRewardCard.style.display = "none";
+    modalBackground.style.display = "block";
+    modal.style.display = "block";
+  })
+);
 
 allModalForm.forEach((form) =>
   form.addEventListener("submit", (e) => {
@@ -171,9 +175,11 @@ completeModalCheckBtn.addEventListener("click", () => {
   completeModal.style.display = "none";
 });
 
-bookmarkBtn.addEventListener("click", () => {
-  bookmarkBtnElement.textContent =
-    bookmarkBtnElement.textContent === "Bookmark" ? "Bookmarked" : "Bookmark";
-  bookmarksvg.classList.toggle("--bookmarkActive");
-  bookmarkBtnElement.classList.toggle("--bookmarkActive");
-});
+AllbookmarkBtn.forEach((btn) =>
+  btn.addEventListener("click", () => {
+    bookmarkBtnElement.textContent =
+      bookmarkBtnElement.textContent === "Bookmark" ? "Bookmarked" : "Bookmark";
+    Allbookmarksvg.forEach((svg) => svg.classList.toggle("--bookmarkActive"));
+    bookmarkBtnElement.classList.toggle("--bookmarkActive");
+  })
+);
