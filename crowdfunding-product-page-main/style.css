@@ -77,6 +77,10 @@ body {
   display: none;
 }
 
+.Crowdfunding__mobileMenuBar {
+  display: none;
+}
+
 .Crowdfunding__main {
   width: 100%;
 }

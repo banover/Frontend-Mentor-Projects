@@ -73,6 +73,9 @@ const targetBarElement = document.querySelector(
   ".Crowdfunding__targetBarBox progress"
 );
 
+const mobileMenuBtn = document.querySelector(".Crowdfunding__mobileMenu");
+const mobileMenuList = document.querySelector(".Crowdfunding__mobileMenuBar");
+
 targetBarElement.value = (TOTAL_BACKED_MOUNT / 100000) * 100;
 
 noRewardCard.addEventListener("click", () => {
@@ -139,16 +142,14 @@ AllopenModalBtn.forEach((btn) =>
 allModalForm.forEach((form) =>
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-    console.log(e.target[0].value);
 
     const inputBackedMount = e.target[0].value
       ? e.target[0].value
       : e.target[0].placeholder;
-    console.log(inputBackedMount);
 
     TOTAL_BACKED_MOUNT += inputBackedMount ? Number(inputBackedMount) : 0;
     TOTAL_BACKED_PERSON++;
-    console.log(TOTAL_BACKED_MOUNT);
+
     supportingBackedMount.textContent = `$${TOTAL_BACKED_MOUNT.toLocaleString(
       "en-US"
     )}`;
@@ -159,16 +160,9 @@ allModalForm.forEach((form) =>
 
     modal.style.display = "none";
     completeModal.style.display = "flex";
+    completeModal.scrollIntoView({ behavior: "smooth", block: "center" });
   })
 );
-
-// 이벤트 위임으로 코드수정할 수 있다.
-// allModalContinueBtn.forEach((btn) =>
-//   btn.addEventListener("click", () => {
-//     modal.style.display = "none";
-//     completeModal.style.display = "flex";
-//   })
-// );
 
 completeModalCheckBtn.addEventListener("click", () => {
   modalBackground.style.display = "none";
@@ -183,3 +177,19 @@ AllbookmarkBtn.forEach((btn) =>
     bookmarkBtnElement.classList.toggle("--bookmarkActive");
   })
 );
+
+let mobileMenuOpened = false;
+mobileMenuBtn.addEventListener("click", () => {
+  if (mobileMenuOpened) {
+    mobileMenuOpened = false;
+    mobileMenuBtn.setAttribute("src", "./images/icon-hamburger.svg");
+    modalBackground.style.display = "none";
+    mobileMenuList.style.display = "none";
+  } else {
+    mobileMenuOpened = true;
+    mobileMenuBtn.setAttribute("src", "./images/icon-close-menu.svg");
+    mobileMenuBtn.style.zIndex = "99";
+    modalBackground.style.display = "block";
+    mobileMenuList.style.display = "block";
+  }
+});
