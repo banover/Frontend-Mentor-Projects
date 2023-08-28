@@ -1,39 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Interactive pricing component</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | Interactive pricing component</title>
 
-  Simple, traffic-based pricing
-  Sign-up for our 30-day trial. No credit card required. 
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  </head>
+  <body>
+    <section class="pricing">
+      <div class="pricing__header">
+        <h1>Simple, traffic-based pricing</h1>
+        <p>Sign-up for our 30-day trial. No credit card required.</p>
+      </div>
+      <div class="pricing__main">
+        <div class="pricing__resultBox">
+          <p><span>100k</span> Pageviews</p>
+          <p><span>$16.00</span> / month</p>
+        </div>
+        <div class="pricing__progress">
+          <input type="range" min="0" max="100" value="50" step="25" />
+        </div>
+        <div class="pricing__conditions">
+          <span>Monthly Billing</span>
+          <!-- button 추가해야함 -->
 
-  Pageviews
-  $ /month
+          <span>Yearly Billing</span>
+          <span>25% discount</span>
+        </div>
 
-  Monthly Billing
-  Yearly Billing 25% discount
-
-  Unlimited websites
-  100% data ownership
-  Email reports
-
-  Start my trial
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+        <div class="pricing__details">
+          <div class="pricing__detailBox">
+            <span
+              ><img src="./images/icon-check.svg" alt="a check icon" />Unlimited
+              websites</span
+            >
+            <span
+              ><img src="./images/icon-check.svg" alt="a check icon" />100% data
+              ownership</span
+            >
+            <span
+              ><img src="./images/icon-check.svg" alt="a check icon" />Email
+              reports</span
+            >
+          </div>
+          <button class="pricing__startBtn">Start my trial</button>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>
