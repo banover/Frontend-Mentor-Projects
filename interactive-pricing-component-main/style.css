@@ -14,6 +14,14 @@
   --GrayishBlue: hsl(225, 20%, 60%);
   --DarkDesaturatedBlue: hsl(227, 35%, 25%);
 }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 html {
   font-size: 62.5%;
 }
@@ -24,24 +32,24 @@ body {
 
 .pricing {
   width: 144rem;
-  height: 90rem;
+  height: 70rem;
   background-image: url(./images/pattern-circles.svg),
     url(./images/bg-pattern.svg);
 
   background-repeat: no-repeat, no-repeat;
-  background-position: top 4.6% center, top;
-  /* background-size: initial, 100% 100%; */
+  background-position: top 7.9% center, top;
+  /* background-size: initial, 40% 60%; */
   margin: 0 auto;
-  margin-top: -0.8rem;
-  /* padding: 4rem 0; */
 }
 
 .pricing__header {
   text-align: center;
   display: flex;
   flex-direction: column;
-  padding: 5rem 0;
-  /* gap: -3rem; */
+  padding: 10rem 0 8rem 0;
+  gap: 2.2rem;
+
+  /* margin-top: 2rem; */
 }
 .pricing__header h1 {
   font-size: 2.83rem;
@@ -52,18 +60,28 @@ body {
 }
 
 .pricing__main {
-  width: 32%;
+  width: 38%;
   height: auto;
   background-color: white;
   margin: 0 auto;
+  /* margin-top: 3rem; */
 
   border-radius: 8px;
-  box-shadow: 1px 1px 3px rgb(0, 0, 0, 0.1);
-  padding: 0 5rem;
+  /* box-shadow: 1px 1px 30px rgb(0, 0, 0, 0.1); */
+  box-shadow: 0px 6px 30px hsl(225, 20%, 60%, 0.3);
+  margin-top: 2rem;
+}
+
+.pricing__upperMain {
+  width: 100%;
+  height: auto;
+  /* padding: 0 5rem; */
 
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 3rem;
+
+  padding: 4rem 5rem;
 }
 
 .pricing__resultBox {
@@ -72,7 +90,7 @@ body {
   justify-content: space-between;
   align-items: center;
 
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   color: var(--GrayishBlue);
 }
 
@@ -87,7 +105,7 @@ body {
   gap: 0.6rem;
 }
 .pricing__resultBox p:nth-child(2) span {
-  font-size: 4rem;
+  font-size: 4.2rem;
   font-weight: 800;
   color: var(--DarkDesaturatedBlue);
 }
@@ -202,6 +220,16 @@ body {
   margin-top: 0.5rem;
 }
 
+.pricing__progress input[type="range"]::-webkit-slider-thumb:hover {
+  box-shadow: 3px 15px 18px var(--SoftCyan),
+    inset 0px -45px 18px hsl(174, 77%, 80%, 0.7);
+}
+
+.pricing__progress input[type="range"]::-webkit-slider-thumb:active {
+  background-color: hsl(174, 54%, 42%);
+  box-shadow: 3px 15px 18px var(--SoftCyan);
+}
+
 /* All the same stuff for Firefox */
 .pricing__progress input[type="range"]::-moz-range-thumb {
   box-shadow: 3px 15px 18px var(--SoftCyan);
@@ -231,4 +259,130 @@ body {
 }
 
 .pricing__conditions {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  padding-right: 1.7rem;
+  margin-top: 1.8rem;
+
+  /* border-bottom: 1px solid rgb(0, 0, 0, 0.1); */
+}
+.pricing__conditions span {
+  display: block;
+  font-size: 1.12rem;
+  font-weight: 800;
+  color: var(--GrayishBlue);
+  /* letter-spacing: -0.04rem; */
+}
+
+.pricing__conditions span:nth-child(1) {
+  margin-left: auto;
+  margin-right: 1rem;
+}
+
+.pricing__montlyBillingInput {
+  display: none;
+}
+
+.pricing__montlyBillingLabel {
+  display: block;
+  width: 4.3rem;
+  height: 2.1rem;
+  background-color: var(--LightGrayishBlue);
+  border-radius: 50px;
+  margin-right: 0.8rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.pricing__montlyBillingLabel:hover {
+  background-color: var(--StrongCyan);
+}
+
+.pricing__montlyBillingLabel::after {
+  content: "";
+  width: 1.45rem;
+  height: 1.45rem;
+  background-color: var(--LightGrayishBlueSlide);
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 8%;
+  transform: translate(0, -50%);
+}
+
+.pricing__montlyBillingInput:checked ~ label::after {
+  left: 58%;
+}
+
+.pricing__conditions span:last-child {
+  /* background-color: hsl(15, 100%, 70%, 0.2); */
+  background-color: var(--LightGrayishRed);
+  color: var(--LightRed);
+  border-radius: 50px;
+  padding: 0.2rem 0.4rem;
+  font-size: 1.07rem;
+}
+
+.horizontal-line {
+  width: 100%;
+  height: 0.05rem;
+  background-color: rgb(0, 0, 0, 0.05);
+}
+
+.pricing__details {
+  width: 100%;
+  height: auto;
+  padding: 3rem 5rem;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.pricing__detailBox {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  gap: 1rem;
+}
+
+.pricing__detailBox span {
+  display: block;
+
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.pricing__detailBox span img {
+  display: block;
+  width: 0.9rem;
+  height: 0.8rem;
+}
+
+.pricing__detailBox span span {
+  display: block;
+  font-size: 1.18rem;
+  color: var(--GrayishBlue);
+}
+
+.pricing__details button {
+  display: inline-block;
+  width: 37%;
+  height: 4rem;
+  background-color: var(--DarkDesaturatedBlue);
+  font-family: "Manrope", sans-serif;
+  color: var(--PaleBlue);
+  font-weight: 800;
+  border-radius: 30px;
+  align-self: center;
+  cursor: pointer;
+}
+
+.pricing__details button:hover {
+  color: white;
 }

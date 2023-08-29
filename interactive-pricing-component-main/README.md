@@ -14,6 +14,9 @@
   번접하면 그냥 input을 다 appearance를 none으로 해서 기본 styliing을 다 지우고
   새로운 styling을 덮어쓰는 방식으로 사용하자. (조사 더 필요함)
 
+- range의 thumb이 drag할 때 styling하고 싶으면
+  :active를 활용해서 css로 styling할 수 있다.
+
 ## The challenge
 
 Your challenge is to build out this interactive pricing component and get it looking as close to the design as possible.

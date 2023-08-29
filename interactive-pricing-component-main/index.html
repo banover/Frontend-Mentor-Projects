@@ -31,34 +31,51 @@
         <p>Sign-up for our 30-day trial. No credit card required.</p>
       </div>
       <div class="pricing__main">
-        <div class="pricing__resultBox">
-          <p><span>100k</span> Pageviews</p>
-          <p><span>$16.00</span> / month</p>
-        </div>
-        <div class="pricing__progress">
-          <input type="range" min="0" max="100" value="50" step="25" />
-        </div>
-        <div class="pricing__conditions">
-          <span>Monthly Billing</span>
-          <!-- button 추가해야함 -->
+        <div class="pricing__upperMain">
+          <div class="pricing__resultBox">
+            <p><span>100k</span> Pageviews</p>
+            <p><span>$16.00</span> / month</p>
+          </div>
+          <div class="pricing__progress">
+            <input type="range" min="0" max="100" value="50" step="25" />
+          </div>
+          <div class="pricing__conditions">
+            <span>Monthly Billing</span>
+            <!-- button 추가해야함 -->
+            <input
+              class="pricing__montlyBillingInput"
+              type="checkbox"
+              id="monthlyBilling"
+              name="monthlyBilling"
+            />
+            <label
+              class="pricing__montlyBillingLabel"
+              for="monthlyBilling"
+            ></label>
 
-          <span>Yearly Billing</span>
-          <span>25% discount</span>
+            <span>Yearly Billing</span>
+            <span>25% discount</span>
+          </div>
         </div>
+
+        <div class="horizontal-line"></div>
 
         <div class="pricing__details">
           <div class="pricing__detailBox">
             <span
-              ><img src="./images/icon-check.svg" alt="a check icon" />Unlimited
-              websites</span
+              ><img src="./images/icon-check.svg" alt="a check icon" /><span
+                >Unlimited websites</span
+              ></span
             >
             <span
-              ><img src="./images/icon-check.svg" alt="a check icon" />100% data
-              ownership</span
+              ><img src="./images/icon-check.svg" alt="a check icon" /><span
+                >100% data ownership</span
+              ></span
             >
             <span
-              ><img src="./images/icon-check.svg" alt="a check icon" />Email
-              reports</span
+              ><img src="./images/icon-check.svg" alt="a check icon" /><span
+                >Email reports</span
+              ></span
             >
           </div>
           <button class="pricing__startBtn">Start my trial</button>
