@@ -58,6 +58,7 @@ rangeInput.addEventListener("input", (e) => {
 let regularPrice;
 monthlyBillingInput.addEventListener("click", (e) => {
   if (e.target.checked) {
+    regularPrice = Number(monthChargeSpan.textContent.slice(1));
     monthChargeSpan.textContent = `$${(
       (Math.trunc(Number(monthChargeSpan.textContent.slice(1))) * 75) /
       100

@@ -1,0 +1,390 @@
+@media only screen and (max-width: 23.45em) {
+  .pricing {
+    width: 37.5rem;
+    height: 80rem;
+    /* background-image: url(./images/pattern-circles.svg),
+      url(./images/bg-pattern.svg); */
+
+    /* background-repeat: no-repeat, no-repeat; */
+    background-position: top 9.5% center, top -8% left 0%;
+    /* background-size: initial, 40% 60%; */
+    margin: 0 0;
+  }
+
+  .pricing__header {
+    /* text-align: center; */
+    /* display: flex; */
+    /* flex-direction: column; */
+    padding: 10rem 0 5rem 0;
+    gap: 1rem;
+
+    /* margin-top: 2rem; */
+  }
+  .pricing__header h1 {
+    font-size: 2rem;
+    /* color: var(--DarkDesaturatedBlue); */
+  }
+  .pricing__header p {
+    margin-top: 0rem;
+    font-size: 1.3rem;
+    padding: 0 10rem;
+    line-height: 2.4rem;
+    color: var(--GrayishBlue);
+  }
+
+  .pricing__main {
+    width: 85%;
+    /* height: auto; */
+    /* background-color: white; */
+    /* margin: 0 auto; */
+
+    border-radius: 8px;
+    /* box-shadow: 1px 1px 30px rgb(0, 0, 0, 0.1); */
+    box-shadow: 0px 1px 10px hsl(225, 20%, 60%, 0.3);
+    margin-top: 1.5rem;
+  }
+
+  .pricing__upperMain {
+    /* width: 100%; */
+    /* height: auto; */
+    /* padding: 0 5rem; */
+
+    /* display: flex; */
+    /* flex-direction: column; */
+    gap: 3rem;
+
+    padding: 4rem 2.5rem;
+    position: relative;
+  }
+
+  .pricing__resultBox {
+    width: 100%;
+    display: block;
+    justify-content: initial;
+    align-items: initial;
+    text-align: center;
+
+    font-size: 1.2rem;
+    /* color: var(--GrayishBlue); */
+  }
+
+  .pricing__resultBox p:first-child {
+    /* text-transform: uppercase; */
+    /* letter-spacing: 0.2rem; */
+  }
+
+  .pricing__resultBox p:nth-child(2) {
+    /* display: flex; */
+
+    /* align-items: initial; */
+    gap: 0.9rem;
+    font-size: 1.3rem;
+
+    position: absolute;
+    top: 50%;
+    /* left: 50%; */
+    left: -0.2rem;
+    /* transform: translate(-50%, 0); */
+    /* width: auto; */
+    width: 100%;
+    justify-content: center;
+  }
+  .pricing__resultBox p:nth-child(2) span {
+    font-size: 3.1rem;
+    letter-spacing: -0.12rem;
+    /* font-weight: 800; */
+    /* color: var(--DarkDesaturatedBlue); */
+  }
+
+  .pricing__progress {
+    /* overflow: hidden; */
+  }
+
+  .pricing__progress input[type="range"] {
+    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+    appearance: none;
+    width: 100%; /* Specific width is required for Firefox. */
+
+    background: transparent; /* Otherwise white in Chrome */
+    /* background: var(--SoftCyan); */
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+
+    background: var(--LightGrayishBlueSlide);
+    border-radius: 8px;
+
+    border: none;
+  }
+
+  .pricing__progress input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+  }
+
+  .pricing__progress input[type="range"]:focus {
+    outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+  }
+
+  .pricing__progress input[type="range"]::-ms-track {
+    width: 100%;
+    cursor: pointer;
+
+    /* Hides the slider so custom styles can be added */
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
+  /* 
+.pricing__progress input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+
+  background: var(--LightGrayishBlueSlide);
+  border-radius: 4px;
+
+  border: none;
+}
+
+.pricing__progress input[type="range"]:focus::-webkit-slider-runnable-track {
+ 
+  background: var(--LightGrayishBlueSlide);
+}
+
+.pricing__progress input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+ 
+  background: var(--LightGrayishBlueSlide);
+  border-radius: 4px;
+  border: none;
+}
+
+.pricing__progress input[type="range"]::-ms-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+
+  color: transparent;
+}
+.pricing__progress input[type="range"]::-ms-fill-lower {
+  background: var(--SoftCyan);
+  border: none;
+  border-radius: 4px;
+}
+.pricing__progress input[type="range"]:focus::-ms-fill-lower {
+  background: var(--SoftCyan);
+}
+.pricing__progress input[type="range"]::-ms-fill-upper {
+  background: var(--GrayishBlue);
+  border: none;
+  border-radius: 4px;
+}
+.pricing__progress input[type="range"]:focus::-ms-fill-upper {
+  background: var(--GrayishBlue);
+} */
+
+  .pricing__progress input[type="range"]::-webkit-slider-thumb {
+    /* -webkit-appearance: none;
+    appearance: none; */
+    /* 
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background: var(--StrongCyan); */
+
+    /* cursor: pointer; */
+    /* margin-top: -14px; */
+    box-shadow: 0px 18px 19px var(--SoftCyan);
+    /* background-image: url(./images/icon-slider.svg); */
+    /* background-repeat: no-repeat; */
+    /* background-position: center; */
+    /* margin-top: 0.5rem; */
+  }
+
+  /* All the same stuff for Firefox */
+  .pricing__progress input[type="range"]::-moz-range-thumb {
+    box-shadow: 0px 18px 19px var(--SoftCyan);
+
+    /* height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    background: var(--StrongCyan);
+    cursor: pointer;
+    background-image: url(./images/icon-slider.svg);
+    background-repeat: no-repeat;
+    background-position: center; */
+  }
+
+  /* All the same stuff for IE */
+  .pricing__progress input[type="range"]::-ms-thumb {
+    box-shadow: 0px 18px 19px var(--SoftCyan);
+    /* border: 1px solid #000000; */
+    /* height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    background: var(--StrongCyan);
+    cursor: pointer;
+    background-image: url(./images/icon-slider.svg);
+    background-repeat: no-repeat;
+    background-position: center; */
+  }
+
+  .pricing__conditions {
+    /* width: 100%; */
+    /* height: auto;
+    display: flex;
+    align-items: center; */
+    gap: 1rem;
+
+    padding-right: 0rem;
+    margin-top: 7rem;
+    margin-left: 1.1rem;
+    /* border-bottom: 1px solid rgb(0, 0, 0, 0.1); */
+  }
+  .pricing__conditions span {
+    /* display: block; */
+    font-size: 1.14rem;
+    font-weight: 600;
+    /* color: var(--GrayishBlue); */
+    /* letter-spacing: -0.04rem; */
+  }
+
+  .pricing__conditions span:nth-child(1) {
+    margin-left: auto;
+    margin-right: 0.2rem;
+  }
+
+  .pricing__montlyBillingInput {
+    display: none;
+  }
+
+  .pricing__montlyBillingLabel {
+    /* display: block;
+    width: 4.3rem;
+    height: 2.1rem;
+    background-color: var(--LightGrayishBlue);
+    border-radius: 50px; */
+    margin-right: 0rem;
+    /* position: relative;
+    cursor: pointer; */
+  }
+
+  .pricing__montlyBillingLabel:hover {
+    background-color: var(--LightGrayishBlue);
+  }
+
+  .pricing__montlyBillingInput:checked ~ .pricing__montlyBillingLabel {
+    background-color: var(--StrongCyan);
+  }
+
+  .pricing__montlyBillingLabel::after {
+    /* content: "";
+    width: 1.45rem;
+    height: 1.45rem;
+    background-color: var(--LightGrayishBlueSlide);
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    transform: translate(0, -50%); */
+  }
+
+  .pricing__montlyBillingInput:checked ~ label::after {
+    /* left: 58%; */
+  }
+
+  .pricing__conditions .pricing__desktopDiscount {
+    /* background-color: var(--LightGrayishRed);
+    color: var(--LightRed);
+    border-radius: 50px;
+    padding: 0.2rem 0.4rem;
+    font-size: 1.07rem; */
+    /* visibility: hidden; */
+    display: none;
+  }
+
+  .pricing__conditions .pricing__mobileDiscount {
+    display: block;
+    width: 4rem;
+    height: 2rem;
+    background-color: var(--LightGrayishRed);
+    color: var(--LightRed);
+    border-radius: 50px;
+    padding: 0.2rem 0.4rem;
+    font-size: 1.07rem;
+    font-weight: 800;
+    align-self: flex-end;
+    text-align: center;
+    margin-left: -0.5rem;
+  }
+
+  .horizontal-line {
+    width: 100%;
+    height: 0.05rem;
+    background-color: rgb(0, 0, 0, 0.05);
+  }
+
+  .pricing__details {
+    width: 100%;
+    height: auto;
+    padding: 3rem 5rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: initial;
+    gap: 3.5rem;
+    /* text-align: center; */
+  }
+
+  .pricing__detailBox {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    gap: 1rem;
+  }
+
+  .pricing__detailBox span {
+    display: block;
+
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    margin: 0 auto;
+  }
+
+  .pricing__detailBox span img {
+    display: block;
+    width: 0.9rem;
+    height: 0.8rem;
+  }
+
+  .pricing__detailBox span span {
+    display: block;
+    font-size: 1.22rem;
+    color: var(--GrayishBlue);
+  }
+
+  .pricing__details button {
+    /* display: inline-block; */
+    width: 77%;
+    height: 4.5rem;
+    /* background-color: var(--DarkDesaturatedBlue); */
+    /* font-family: "Manrope", sans-serif; */
+    /* color: var(--PaleBlue); */
+    /* font-weight: 800; */
+    font-size: 1.28rem;
+    border-radius: 50px;
+    /* align-self: center; */
+    /* cursor: pointer; */
+  }
+
+  .pricing__details button:hover {
+    color: white;
+  }
+}

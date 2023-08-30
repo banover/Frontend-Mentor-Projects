@@ -319,13 +319,18 @@ body {
   left: 58%;
 }
 
-.pricing__conditions span:last-child {
+.pricing__conditions .pricing__desktopDiscount {
   /* background-color: hsl(15, 100%, 70%, 0.2); */
   background-color: var(--LightGrayishRed);
   color: var(--LightRed);
   border-radius: 50px;
   padding: 0.2rem 0.4rem;
   font-size: 1.07rem;
+  align-self: flex-end;
+}
+
+.pricing__conditions .pricing__mobileDiscount {
+  display: none;
 }
 
 .horizontal-line {
