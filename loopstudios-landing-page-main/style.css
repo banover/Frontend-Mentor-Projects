@@ -22,3 +22,77 @@ body {
   font-family: "Alata", sans-serif;
   font-family: "Josefin Sans", sans-serif;
 }
+
+.Loopstudios__headerPage {
+  width: 144rem;
+  height: 65rem;
+  background-image: linear-gradient(rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0.4)),
+    url(./images/desktop/image-hero.jpg);
+  background-repeat: no-repeat;
+
+  margin: 0 auto;
+  padding: 6.3rem 16.5rem 0 16.5rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12.7rem;
+}
+
+.Loopstudios__navBar {
+  height: 3.2rem;
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+
+.Loopstudios__navBar img {
+  width: 19.2rem;
+  height: 3.2rem;
+}
+
+.Loopstudios__nav {
+  /* align-self: center; */
+}
+
+.Loopstudios__navLists {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2.8rem;
+  color: white;
+  font-size: 1.72rem;
+}
+
+.Loopstudios__navList {
+  padding-top: 1.05rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.Loopstudios__navList::before {
+  content: "";
+  display: block;
+  width: 2.5rem;
+  height: 0.15rem;
+  background-color: white;
+  position: absolute;
+  top: 130%;
+  left: 34%;
+  display: none;
+}
+
+.Loopstudios__navList:hover::before {
+  display: block;
+}
+
+.Loopstudios__headerPageHeading {
+  width: 58.7%;
+  height: auto;
+  border: 2.5px solid white;
+  color: white;
+  font-size: 7.2rem;
+
+  text-transform: uppercase;
+  padding: 4rem 3.8rem 2.2rem 3.8rem;
+  /* font-weight: ; */
+}

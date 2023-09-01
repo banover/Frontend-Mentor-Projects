@@ -4,6 +4,9 @@
 
 ## 피드백
 
+background-image활용할 때,
+맨 처음 입력한 코드부터 앞에서 생성되고 뒤에 쓴 것들은 해당 stacking content layer보다 뒤에 생성된다.
+
 ## The challenge
 
 Your challenge is to build out this landing page and get it looking as close to the design as possible.
