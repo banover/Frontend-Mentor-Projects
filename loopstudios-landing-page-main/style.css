@@ -86,6 +86,10 @@ body {
   display: block;
 }
 
+.Loopstudios__mobileNavIcon {
+  display: none;
+}
+
 .Loopstudios__headerPageHeading {
   width: 58.7%;
   height: auto;
