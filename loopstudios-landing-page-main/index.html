@@ -43,10 +43,26 @@
           alt="a mobile nav icon"
         />
       </header>
+      <div class="Loopstudios__mobileNavPage">
+        <div class="Loopstudios__mobileNavHeader">
+          <img src="images/logo.svg" alt="a Loopstudios logo" />
+          <img src="./images/icon-close.svg" alt="a close icon" />
+        </div>
+        <nav class="Loopstudios__mobileNav">
+          <ul class="Loopstudios__mobileNavLists">
+            <li class="Loopstudios__mobileNavList"><a>About</a></li>
+            <li class="Loopstudios__mobileNavList"><a>Careers</a></li>
+            <li class="Loopstudios__mobileNavList"><a>Events</a></li>
+            <li class="Loopstudios__mobileNavList"><a>Products</a></li>
+            <li class="Loopstudios__mobileNavList"><a>Support</a></li>
+          </ul>
+        </nav>
+      </div>
       <h1 class="Loopstudios__headerPageHeading">
         Immersive experiences that deliver
       </h1>
     </section>
+
     <section class="Loopstudios__introducePage">
       <picture class="Loopstudios__mainImgContainer">
         <source
@@ -226,5 +242,22 @@
         <p>© 2021 Loopstudios. All rights reserved.</p>
       </div>
     </footer>
+    <script>
+      const mobileNavOpenBtn = document.querySelector(
+        ".Loopstudios__mobileNavIcon"
+      );
+      const mobileNavCloseBtn = document.querySelector(
+        ".Loopstudios__mobileNavHeader img:last-child"
+      );
+      const mobileNavPage = document.querySelector(
+        ".Loopstudios__mobileNavPage"
+      );
+      mobileNavOpenBtn.addEventListener("click", () => {
+        mobileNavPage.style.display = "flex";
+      });
+      mobileNavCloseBtn.addEventListener("click", () => {
+        mobileNavPage.style.display = "none";
+      });
+    </script>
   </body>
 </html>
