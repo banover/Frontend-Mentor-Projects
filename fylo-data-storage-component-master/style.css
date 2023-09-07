@@ -1,0 +1,168 @@
+:root {
+  /* --Gradient: hsl(6, 100%, 80%) to hsl(335, 100%, 65%); */
+
+  --PaleBlue: hsl(243, 100%, 93%);
+  --GrayishBlue: hsl(229, 7%, 55%);
+  --DarkBlue: hsl(228, 56%, 26%);
+  --VeryDarkBlue: hsl(229, 57%, 11%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.4rem;
+  /* background-color: black; */
+}
+
+.fyloDataStorage {
+  width: 144rem;
+  height: 73rem;
+  background-color: var(--VeryDarkBlue);
+  background-image: url(./images/bg-desktop.png);
+  background-repeat: no-repeat;
+  background-position: 0% 100%;
+  background-size: 1440px 395px;
+
+  margin: 0 auto;
+
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.fyloDataStorage__header {
+  width: 34rem;
+  background-color: var(--DarkBlue);
+  padding: 3rem 3rem 3.5rem 3rem;
+
+  border-radius: 7px 90px 7px 7px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.fyloDataStorage__header img {
+  display: block;
+  width: 13.5rem;
+  height: 4rem;
+}
+
+.fyloDataStorage__btnBox {
+  display: flex;
+  gap: 1.7rem;
+}
+
+.fyloDataStorage__btn {
+  border: none;
+  outline: none;
+  width: 4.7rem;
+  height: 4.8rem;
+  background-color: var(--VeryDarkBlue);
+  border-radius: 7px;
+  position: relative;
+  cursor: pointer;
+}
+
+.fyloDataStorage__btn svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.fyloDataStorage__main {
+  width: 58rem;
+  background-color: var(--DarkBlue);
+}
+
+.fyloDataStorage__rangeDescription {
+  color: hsl(246, 42%, 82%);
+}
+
+.fyloDataStorage__rangeDescription span {
+  color: hsl(244, 94%, 93%);
+}
+
+.fyloDataStorage__main input {
+  -webkit-appearance: none;
+  width: 100%;
+  background: transparent;
+}
+
+.fyloDataStorage__main input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 50%;
+  background-color: white;
+  margin-top: 0.3rem;
+}
+
+.fyloDataStorage__main input::-moz-range-thumb {
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 50%;
+  background-color: white;
+  margin-top: 0.3rem;
+}
+
+.fyloDataStorage__main input::-ms-thumb {
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 50%;
+  background-color: white;
+  margin-top: 0.3rem;
+}
+
+.fyloDataStorage__main input:focus {
+  outline: none;
+}
+
+.fyloDataStorage__main input::-ms-track {
+  width: 100%;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+.fyloDataStorage__main input::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 1.4em;
+  background-color: var(--VeryDarkBlue);
+  border-radius: 20px;
+}
+
+.fyloDataStorage__main input::-moz-range-track {
+  width: 100%;
+  height: 1.4em;
+  background-color: var(--VeryDarkBlue);
+  border-radius: 20px;
+}
+.fyloDataStorage__main input::-ms-track {
+  width: 100%;
+  height: 1.4em;
+  background-color: var(--VeryDarkBlue);
+  border-radius: 20px;
+}
+
+/* range bar의 경우는 js를 통해서 styling하자 linear-gradient를 활용하자 */
+
+.fyloDataStorage__rangeValueBox {
+}
+
+.fyloDataStorage__restStorageMessage {
+}
