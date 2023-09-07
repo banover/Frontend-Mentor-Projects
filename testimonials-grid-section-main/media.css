@@ -1,0 +1,64 @@
+@media only screen and (max-width: 23.45em) {
+  .testimonialsPage {
+    width: 37.5rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    padding: 6rem 2rem;
+    margin: 0;
+  }
+
+  .testimonialsPage__testimonial {
+    gap: 1.8rem;
+    padding: 2rem 3rem 3rem 3rem;
+  }
+
+  .testimonialsPage__testimonial.review1 {
+    background-position: 89% 0%;
+    background-size: 104px 107px;
+  }
+
+  .testimonialsPage__testimonial.review2 .testimonialsPage__detailreview {
+    font-size: 1.37rem;
+  }
+
+  .testimonialsPage__testimonial.review4 .testimonialsPage__detailreview {
+    font-size: 1.36rem;
+  }
+
+  .testimonialsPage__testimonial.review5 .testimonialsPage__detailreview {
+    font-size: 1.37rem;
+  }
+
+  .testimonialsPage__testimonialHeader {
+    gap: 1.3rem;
+  }
+
+  .testimonialsPage__testimonialHeader .testimonialsPage__faceImgBox {
+    width: 3.4rem;
+    height: 3.4rem;
+  }
+
+  .testimonialsPage__testimonialHeader .testimonialsPage__faceImgBox img {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .testimonialsPage__testimonialHeader p {
+    font-size: 1.35rem;
+  }
+
+  .testimonialsPage__testimonialHeader p span {
+    font-size: 1.15rem;
+  }
+
+  .testimonialsPage__heading {
+    font-size: 2.12rem;
+  }
+
+  .testimonialsPage__detailreview {
+    font-size: 1.45rem;
+  }
+}
