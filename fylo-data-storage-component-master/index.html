@@ -18,6 +18,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="media.css" />
 
     <title>Frontend Mentor | Fylo data storage component</title>
   </head>
@@ -56,17 +57,18 @@
         <p class="fyloDataStorage__rangeDescription">
           You’ve used <span>815 GB</span> of your storage
         </p>
-        <input type="range" min="0" max="1000" />
+        <div class="fyloDataStorage__rangeBox">
+          <div class="fyloDataStorage__rangeTrack">
+            <div class="fyloDataStorage__rangeBar"></div>
+          </div>
+        </div>
         <div class="fyloDataStorage__rangeValueBox">
           <span>0 GB</span>
           <span>1000 GB</span>
         </div>
         <div class="fyloDataStorage__restStorageMessage">
-          <p>
-            <span>185</span>
-
-            GB Left
-          </p>
+          <span>185</span>
+          <span>GB Left</span>
         </div>
       </main>
     </section>
