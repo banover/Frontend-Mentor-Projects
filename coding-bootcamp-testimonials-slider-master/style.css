@@ -23,8 +23,16 @@ body {
 .testimonials {
   width: 144rem;
   margin: 0 auto;
+
+  /* position: relative; */
+
+  overflow: hidden;
 }
 
+.test {
+  display: flex;
+  transition: transform 3s ease-in-out;
+}
 .testimonials__slide {
   width: 100%;
   display: flex;
@@ -38,12 +46,22 @@ body {
 
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: 90.5% 33%, 0% 100.7%, 19.9% 29.9%;
+  /* transition: display 3s ease-in-out; */
 }
 
-.slide1 {
+.testimonials__slide.slide1 {
+  flex: 1 0 100%;
+  /* transition: all 4s ease-in-out; */
+  /* transition: display 3s ease-in-out; */
 }
 
-.slide2 {
+.testimonials__slide.slide2 {
+  flex: 1 0 100%;
+  /* position: absolute;
+  top: 0;
+  left: 100%; */
+
+  /* display: none; */
 }
 
 .testimonials__textBox {
@@ -61,7 +79,7 @@ body {
   font-weight: 300;
 
   line-height: 4.5rem;
-  background-image: ;
+  /* background-image: ; */
   background-repeat: no-repeat;
   background-position: 18.5% -30%;
 }
@@ -109,6 +127,7 @@ body {
 }
 
 .testimonials__btnBox img:first-child {
+  /* display: none; */
 }
 
 .testimonials__btnBox img:last-child {
