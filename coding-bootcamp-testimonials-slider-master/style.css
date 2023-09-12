@@ -29,12 +29,15 @@ body {
   overflow: hidden;
 }
 
-.test {
+.testimonials__testimonial {
+  width: 100%;
   display: flex;
   transition: transform 3s ease-in-out;
 }
+
 .testimonials__slide {
   width: 100%;
+  flex: 1 0 100%;
   display: flex;
   align-items: center;
 
@@ -50,18 +53,11 @@ body {
 }
 
 .testimonials__slide.slide1 {
-  flex: 1 0 100%;
-  /* transition: all 4s ease-in-out; */
-  /* transition: display 3s ease-in-out; */
+  /* flex: 1 0 100%; */
 }
 
 .testimonials__slide.slide2 {
-  flex: 1 0 100%;
-  /* position: absolute;
-  top: 0;
-  left: 100%; */
-
-  /* display: none; */
+  /* flex: 1 0 100%; */
 }
 
 .testimonials__textBox {

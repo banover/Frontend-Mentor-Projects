@@ -1,7 +1,7 @@
 "use strict";
 
 // const testimonial = document.querySelector(".testimonials");
-const testimonial = document.querySelector(".test");
+const testimonial = document.querySelector(".testimonials__testimonial");
 const slide1 = document.querySelector(".slide1");
 const slide2 = document.querySelector(".slide2");
 const prevBtn = document.querySelectorAll(
@@ -12,53 +12,45 @@ const nextBtn = document.querySelectorAll(
 );
 
 const btnBox = document.querySelectorAll(".testimonials__btnBox");
-console.log(btnBox);
 
+let currentSlideNumber = 0;
+const startSlideNumber = 0;
+const endSlideNumber = 1;
 btnBox.forEach((btnbox) => {
   btnbox.addEventListener("click", (e) => {
-    if (e.target.classList.contains("nextBtn")) {
-      const currentSlide = document.querySelector(".--active");
-      if (currentSlide.classList.contains("slide2")) {
+    if (isNextBtnClicked(e)) {
+      if (isRightEndSlider()) {
         return;
       }
-      testimonial.style.transform = "translate(-100%, 0%)";
-      currentSlide.classList.remove("--active");
-      // slide2.style.display = "flex";
-      slide2.classList.add("--active");
-      // currentSlide.style.display = "none";
+      testimonial.style.transform = `translate(${
+        (currentSlideNumber + 1) * -100
+      }%, 0%)`;
+      currentSlideNumber++;
     }
-    if (e.target.classList.contains("prevBtn")) {
-      const currentSlide = document.querySelector(".--active");
-      if (currentSlide.classList.contains("slide1")) {
+    if (isPrevBtnClicked(e)) {
+      if (isLeftEndSlider()) {
         return;
       }
-      // slide1.style.display = "flex";
-      testimonial.style.transform = "translate(0%, 0%)";
-      currentSlide.classList.remove("--active");
-      slide1.classList.add("--active");
-      // currentSlide.style.display = "none";
+      testimonial.style.transform = `translate(${
+        (currentSlideNumber - 1) * -100
+      }%, 0%)`;
+      currentSlideNumber--;
     }
   });
 });
 
-// nextBtn.addEventListener("click", () => {
-//   const currentSlide = document.querySelector(".--active");
-//   if (currentSlide.classList.contains("slide2")) {
-//     return;
-//   }
+function isNextBtnClicked(e) {
+  return e.target.classList.contains("nextBtn");
+}
 
-//   testimonial.style.transform = "translate(-100%, 0%)";
+function isPrevBtnClicked(e) {
+  return e.target.classList.contains("prevBtn");
+}
 
-//   slide2.style.display = "flex";
-// });
+function isRightEndSlider() {
+  return currentSlideNumber === endSlideNumber;
+}
 
-// prevBtn.addEventListener("click", () => {
-//   const currentSlide = document.querySelector(".--active");
-//   if (currentSlide.classList.contains("slide1")) {
-//     return;
-//   }
-
-//   testimonial.style.transform = "translate(100%, 0%)";
-
-//   // slide2.style.display = "flex";
-// });
+function isLeftEndSlider() {
+  return currentSlideNumber === startSlideNumber;
+}
