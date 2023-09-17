@@ -38,4 +38,157 @@ html {
 
 body {
   font-family: "Inter", sans-serif;
+  font-size: 1.4rem;
+}
+
+.dashBoard {
+  width: 144rem;
+  margin: 0 auto;
+  padding: 3rem 17rem;
+  background-color: yellowgreen;
+}
+
+.dashBoard__headerBox {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.dashBoard__header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.dashBoard__header h2 {
+  font-size: 2.62rem;
+}
+
+.dashBoard__header p {
+}
+
+.dashBoard__colorModeBox {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.dashBoard__colorModeBox p {
+}
+
+.dashBoard__btn input:checked ~ label {
+}
+.dashBoard__btn input:checked ~ label::before {
+  left: 41%;
+}
+
+.dashBoard__btn label {
+  display: block;
+  width: 5rem;
+  height: 2.4rem;
+  background-color: var(--DarkGrayishBlue);
+  border-radius: 20px;
+  position: relative;
+}
+
+.dashBoard__btn label::before {
+  content: "";
+  width: 1.8rem;
+  height: 1.8rem;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 95%;
+  transform: translate(-100%, -50%);
+}
+
+.dashBoard__totalOverview {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 2.5rem;
+}
+
+.dashBoard__item {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.7rem;
+  padding: 3rem 0 2.5rem 0;
+  border-radius: 6px;
+
+  background-color: white;
+  overflow: hidden;
+}
+
+.item1 {
+  grid-column: 1/2;
+  border-top: 4px solid var(--Facebook);
+}
+.item2 {
+  grid-column: 2/3;
+  border-top: 4px solid var(--Twitter);
+}
+.item3 {
+  grid-column: 3/4;
+  border-top: 4px solid transparent;
+  background-image: linear-gradient(white, white),
+    linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+.item4 {
+  grid-column: 4/5;
+  border-top: 4px solid var(--YouTube);
+}
+
+.item4 .dashBoard__itemFooter span {
+  color: var(--BrightRed);
+}
+
+.dashBoard__itemHeader {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  justify-content: center;
+}
+.dashBoard__itemHeader svg {
+}
+.dashBoard__itemHeader span {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--DarkGrayishBlue);
+}
+
+.dashBoard__followerBox {
+}
+
+.dashBoard__followerNumber {
+  display: block;
+  font-size: 5.3rem;
+  font-weight: 700;
+  letter-spacing: -0.2rem;
+}
+.dashBoard__followerText {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  margin-top: -0.2rem;
+  color: var(--DarkGrayishBlue);
+}
+
+.dashBoard__itemFooter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.dashBoard__itemFooter svg {
+}
+.dashBoard__itemFooter span {
+  color: var(--LimeGreen);
+  font-size: 1.17rem;
+  font-weight: 700;
 }

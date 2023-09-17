@@ -4,6 +4,14 @@
 
 ## 피드백
 
+- border로 linear-gradient 사용하고 싶을 때,
+  background-image로 linear-gradient를 사용하고
+  background-origin과 background-clip을 사용해서
+  padding-box, border-box를 조절한다.
+  이 스킬로 border-radius도 적용가능해진다.
+  border-image-slice를 활용하는 방법도 있지만,
+  border-radius적용이 힘들다.
+
 ## The challenge
 
 Your challenge is to build out this Social Media Dashboard and get it looking as close to the design as possible.
