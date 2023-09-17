@@ -22,6 +22,7 @@
   --LightGrayishBlue: hsl(227, 47%, 96%);
   --DarkGrayishBlue: hsl(228, 12%, 44%);
   --VeryDarkBlueForText: hsl(230, 17%, 14%);
+  --cardHoverBgColor: hsl(228, 21%, 86%);
 }
 
 *,
@@ -98,6 +99,10 @@ body {
   position: relative;
 }
 
+.dashBoard__btn label:hover {
+  background: linear-gradient(45deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+}
+
 .dashBoard__btn label::before {
   content: "";
   width: 1.8rem;
@@ -127,6 +132,11 @@ body {
 
   background-color: var(--LightGrayishBlue);
   overflow: hidden;
+  cursor: pointer;
+}
+
+.dashBoard__item:hover {
+  background-color: var(--cardHoverBgColor);
 }
 
 .item1 {
@@ -142,10 +152,17 @@ body {
 .item3 {
   grid-column: 3/4;
   border-top: 4px solid transparent;
-  background-image: linear-gradient(
-      var(--LightGrayishBlue),
-      var(--LightGrayishBlue)
-    ),
+
+  background: linear-gradient(var(--LightGrayishBlue), var(--LightGrayishBlue)),
+    linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.item3:hover {
+  border-top: 4px solid transparent;
+
+  background: linear-gradient(var(--cardHoverBgColor), var(--cardHoverBgColor)),
     linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
   background-origin: border-box;
   background-clip: padding-box, border-box;
@@ -226,6 +243,7 @@ body {
   column-gap: 2.5rem;
   row-gap: 1.5rem;
   margin-top: -2rem;
+  cursor: pointer;
 }
 
 .todayItem1 {
@@ -288,6 +306,10 @@ body {
   background-color: white;
   background-color: var(--LightGrayishBlue);
   border-radius: 6px;
+}
+
+.dashBoard__todayItem:hover {
+  background-color: var(--cardHoverBgColor);
 }
 
 .dashBoard__todayItemHeder {
