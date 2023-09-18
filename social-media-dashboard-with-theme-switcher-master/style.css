@@ -1,28 +1,40 @@
 :root {
   --LimeGreen: hsl(163, 72%, 41%);
   --BrightRed: hsl(356, 69%, 56%);
-
   --Facebook: hsl(208, 92%, 53%);
   --Twitter: hsl(203, 89%, 53%);
-  /* --Instagram: linear gradient hsl(37, 97%, 70%) to hsl(329, 70%, 58%); */
   --YouTube: hsl(348, 97%, 39%);
 
-  /* --Toggle: linear gradient hsl(210, 78%, 56%) to hsl(146, 68%, 55%) */
+  --instagramTopBorderColor: linear-gradient(
+    to right,
+    hsl(37, 97%, 70%),
+    hsl(329, 70%, 58%)
+  );
+  --darkModeLabelBg: linear-gradient(
+    45deg,
+    hsl(210, 78%, 56%),
+    hsl(146, 68%, 55%)
+  );
 
   --Toggle: hsl(230, 22%, 74%);
 
-  --VeryDarkBlue: hsl(230, 17%, 14%);
-  --VeryDarkBlue: hsl(232, 19%, 15%);
-  --DarkDesaturatedBlue: hsl(228, 28%, 20%);
-  --DesaturatedBlue: hsl(228, 34%, 66%);
-  --White: hsl(0, 0%, 100%);
-
-  --White: hsl(0, 0%, 100%);
-  --VeryPaleBlue: hsl(225, 100%, 98%);
-  --LightGrayishBlue: hsl(227, 47%, 96%);
-  --DarkGrayishBlue: hsl(228, 12%, 44%);
-  --VeryDarkBlueForText: hsl(230, 17%, 14%);
+  --bgColor: hsl(0, 0%, 100%);
+  --topBgPattern: hsl(225, 100%, 98%);
+  --itemBgColor: hsl(227, 47%, 96%);
+  --primaryTextColor: black;
+  --subTextColor: hsl(228, 12%, 44%);
+  --todayOverviewItemHeaderColor: hsl(230, 17%, 14%);
   --cardHoverBgColor: hsl(228, 21%, 86%);
+}
+
+[data-theme="dark"] {
+  --bgColor: hsl(230, 17%, 14%);
+  --topBgPattern: hsl(232, 19%, 15%);
+  --itemBgColor: hsl(228, 28%, 20%);
+  --primaryTextColor: white;
+  --subTextColor: hsl(228, 34%, 66%);
+  --todayOverviewItemHeaderColor: hsl(228, 34%, 66%);
+  --cardHoverBgColor: hsl(230, 28%, 30%);
 }
 
 *,
@@ -45,12 +57,38 @@ body {
 .dashBoard {
   width: 144rem;
   margin: 0 auto;
-  padding: 2.5rem 17rem;
+  padding: 2.5rem 17rem 6rem 17rem;
 
   display: flex;
   flex-direction: column;
   gap: 4rem;
+  position: relative;
+  /* background-color: white; */
   /* background-color: var(--VeryPaleBlue); */
+}
+
+.dashBoard::before {
+  content: "";
+  width: 100%;
+  height: 33%;
+  background-color: var(--topBgPattern);
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  z-index: -1;
+}
+.dashBoard::after {
+  content: "";
+  width: 100%;
+  height: 67%;
+  background-color: var(--bgColor);
+  position: absolute;
+  top: 33%;
+  left: 0;
+  bottom: 0;
+
+  z-index: -1;
 }
 
 .dashBoard__headerBox {
@@ -66,12 +104,13 @@ body {
 }
 
 .dashBoard__header h2 {
+  color: var(--primaryTextColor);
   font-size: 2.78rem;
   font-weight: 700;
 }
 
 .dashBoard__header p {
-  color: var(--DarkGrayishBlue);
+  color: var(--subTextColor);
   font-size: 1.43rem;
   font-weight: 700;
 }
@@ -82,12 +121,17 @@ body {
   gap: 1rem;
 }
 .dashBoard__colorModeBox p {
+  color: var(--subTextColor);
+  font-weight: 700;
 }
 
 .dashBoard__btn input:checked ~ label {
+  background: var(--darkModeLabelBg);
 }
+
 .dashBoard__btn input:checked ~ label::before {
   left: 41%;
+  background-color: hsl(228, 28%, 20%);
 }
 
 .dashBoard__btn label {
@@ -97,10 +141,11 @@ body {
   background-color: var(--Toggle);
   border-radius: 20px;
   position: relative;
+  cursor: pointer;
 }
 
 .dashBoard__btn label:hover {
-  background: linear-gradient(45deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+  background: var(--darkModeLabelBg);
 }
 
 .dashBoard__btn label::before {
@@ -130,7 +175,7 @@ body {
   padding: 3rem 0 2.5rem 0;
   border-radius: 6px;
 
-  background-color: var(--LightGrayishBlue);
+  background-color: var(--itemBgColor);
   overflow: hidden;
   cursor: pointer;
 }
@@ -153,8 +198,9 @@ body {
   grid-column: 3/4;
   border-top: 4px solid transparent;
 
-  background: linear-gradient(var(--LightGrayishBlue), var(--LightGrayishBlue)),
-    linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+  background: linear-gradient(var(--itemBgColor), var(--itemBgColor)),
+    var(--instagramTopBorderColor);
+
   background-origin: border-box;
   background-clip: padding-box, border-box;
 }
@@ -163,7 +209,7 @@ body {
   border-top: 4px solid transparent;
 
   background: linear-gradient(var(--cardHoverBgColor), var(--cardHoverBgColor)),
-    linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+    var(--instagramTopBorderColor);
   background-origin: border-box;
   background-clip: padding-box, border-box;
 }
@@ -190,7 +236,7 @@ body {
 .dashBoard__itemHeader span {
   font-size: 1.2rem;
   font-weight: 700;
-  color: var(--DarkGrayishBlue);
+  color: var(--subTextColor);
 }
 
 .dashBoard__followerBox {
@@ -198,6 +244,7 @@ body {
 
 .dashBoard__followerNumber {
   display: block;
+  color: var(--primaryTextColor);
   font-size: 5.3rem;
   font-weight: 700;
   letter-spacing: -0.2rem;
@@ -208,7 +255,7 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.3rem;
   margin-top: -0.2rem;
-  color: var(--DarkGrayishBlue);
+  color: var(--subTextColor);
 }
 
 .dashBoard__itemFooter {
@@ -231,7 +278,7 @@ body {
 .dashBoard__todayOverviewHeader {
   font-size: 2.4rem;
   font-weight: 700;
-  color: var(--DarkGrayishBlue);
+  color: var(--subTextColor);
   letter-spacing: 0.03rem;
 }
 
@@ -304,7 +351,7 @@ body {
   gap: 2rem;
   padding: 2rem 3rem;
   background-color: white;
-  background-color: var(--LightGrayishBlue);
+  background-color: var(--itemBgColor);
   border-radius: 6px;
 }
 
@@ -321,7 +368,7 @@ body {
 .dashBoard__todayItemHeder span {
   font-size: 1.35rem;
   font-weight: 700;
-  color: var(--VeryDarkBlueForText);
+  color: var(--todayOverviewItemHeaderColor);
 }
 
 .dashBoard__values {
@@ -332,6 +379,7 @@ body {
 .dashBoard__values span:first-child {
   font-size: 3rem;
   font-weight: 700;
+  color: var(--primaryTextColor);
 }
 
 .dashBoard__percentageValue {
