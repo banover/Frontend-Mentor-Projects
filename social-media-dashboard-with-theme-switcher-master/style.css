@@ -25,6 +25,7 @@
   --subTextColor: hsl(228, 12%, 44%);
   --todayOverviewItemHeaderColor: hsl(230, 17%, 14%);
   --cardHoverBgColor: hsl(228, 21%, 86%);
+  --headerBottomBorderColor: rgb(0, 0, 0, 0.5);
 }
 
 [data-theme="dark"] {
@@ -35,6 +36,7 @@
   --subTextColor: hsl(228, 34%, 66%);
   --todayOverviewItemHeaderColor: hsl(228, 34%, 66%);
   --cardHoverBgColor: hsl(230, 28%, 30%);
+  --headerBottomBorderColor: hsl(228, 34%, 66%, 0.4);
 }
 
 *,
@@ -63,8 +65,6 @@ body {
   flex-direction: column;
   gap: 4rem;
   position: relative;
-  /* background-color: white; */
-  /* background-color: var(--VeryPaleBlue); */
 }
 
 .dashBoard::before {
