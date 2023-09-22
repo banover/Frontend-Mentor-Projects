@@ -28,3 +28,162 @@ body {
   font-family: "Karla", sans-serif;
   font-size: 1.6rem;
 }
+
+.insure__entirePage {
+  width: 144rem;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.insure__landingPage {
+  width: 100%;
+  position: relative;
+}
+
+.insure__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1.3rem 16rem;
+  /* position: relative;
+  z-index: 99; */
+}
+
+.insure__logo {
+}
+
+.insure__nav {
+}
+
+.insure__navLists {
+  list-style: none;
+
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  text-transform: uppercase;
+}
+
+.insure__navList {
+}
+
+.insure__navList a {
+  text-decoration: none;
+  color: var(--DarkGrayishViolet);
+  letter-spacing: 0.1rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.insure__navList a:hover {
+  color: var(--VeryDarkViolet);
+}
+
+.insure__navList:last-child a {
+  display: block;
+
+  color: black;
+  border: 2px solid black;
+  padding: 0.8rem 2.5rem;
+}
+
+.insure__navList:last-child a:hover {
+  background-color: var(--VeryDarkViolet);
+
+  color: var(--VeryLightGray);
+}
+
+.insure__main {
+  width: 100%;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.insure__leftBgPattern img {
+  display: block;
+
+  position: absolute;
+  top: 72.6%;
+  left: -0.5%;
+  z-index: 9;
+}
+
+.insure__rightBgPattern img {
+  display: block;
+  position: absolute;
+  top: -13.7%;
+  left: 70%;
+  z-index: 9;
+}
+
+.insure__mainImg img {
+  display: block;
+  position: absolute;
+  top: 23.9%;
+  left: 50.8%;
+
+  z-index: 5;
+}
+
+.insure__intro {
+  width: 100%;
+  background-color: var(--DarkViolet);
+  padding: 16rem 16rem 14rem 16rem;
+}
+
+.insure__textBox {
+  width: 49%;
+  display: flex;
+  flex-direction: column;
+  gap: 2.8rem;
+  color: white;
+  position: relative;
+}
+
+.insure__textBox::before {
+  content: "";
+  width: 26.5%;
+  height: 1px;
+  background-color: white;
+  position: absolute;
+  top: -21%;
+  left: 0;
+}
+
+.insure__textBox h2 {
+  font-size: 6.8rem;
+  font-family: "DM Serif Display", serif;
+  padding-right: 3.5rem;
+  line-height: 6rem;
+
+  font-weight: 400;
+}
+
+.insure__textBox p {
+  line-height: 2.6rem;
+}
+.insure__textBox button {
+  display: inline-block;
+  width: 26.7%;
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.18rem;
+  padding: 1.2rem 2.3rem 1rem 2.3rem;
+  margin-top: 0.6rem;
+  font-size: 1.18rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.insure__textBox button:hover {
+  background-color: white;
+  color: black;
+}
+
+.insure__aboutPage {
+  padding: 35rem 0 0 0;
+}
