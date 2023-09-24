@@ -144,7 +144,7 @@ body {
 
 .insure__textBox::before {
   content: "";
-  width: 26.5%;
+  width: 26.9%;
   height: 1px;
   background-color: white;
   position: absolute;
@@ -153,7 +153,7 @@ body {
 }
 
 .insure__textBox h2 {
-  font-size: 6.8rem;
+  font-size: 6.95rem;
   font-family: "DM Serif Display", serif;
   padding-right: 3.5rem;
   line-height: 6rem;
@@ -185,5 +185,117 @@ body {
 }
 
 .insure__aboutPage {
-  padding: 35rem 0 0 0;
+  padding: 33rem 16rem 20rem 16rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
+
+.insure__aboutPage h3 {
+  font-family: "DM Serif Display", serif;
+  font-size: 6.8rem;
+  font-weight: 400;
+  position: relative;
+}
+
+.insure__aboutPage h3::before {
+  content: "";
+  width: 13.1%;
+  height: 1px;
+  background-color: black;
+  position: absolute;
+  top: -3.5rem;
+  left: 0;
+}
+
+.insure__advantagesBox {
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  /* gap: 0rem; */
+}
+
+.insure__advantage {
+  /* width: 32.965rem; */
+  flex: 1;
+  /* display: inline-block; */
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.insure__advantage:nth-child(3) {
+  margin-left: 1rem;
+}
+
+.insure__advantage:nth-child(1) p {
+  padding-right: 0.3rem;
+}
+.insure__advantage:nth-child(2) p {
+  padding-right: 2.5rem;
+}
+.insure__advantage:nth-child(3) p {
+  padding-right: 3rem;
+}
+
+.insure__advantage img {
+  display: block;
+  width: 8.6rem;
+  height: 8.6rem;
+}
+
+.insure__advantage h4 {
+  font-family: "DM Serif Display", serif;
+  font-size: 2.8rem;
+  font-weight: 400;
+}
+
+.insure__advantage p {
+  font-size: 1.57rem;
+
+  line-height: 2.6rem;
+  margin-top: -2rem;
+  color: var(--DarkGrayishViolet);
+}
+
+.insure__banner {
+  width: 100%;
+  background-color: var(--DarkViolet);
+  background-image: url(./images/bg-pattern-how-we-work-desktop.svg);
+  background-repeat: no-repeat;
+  background-position: 100% 0%;
+  display: flex;
+  align-items: center;
+  padding: 6.5rem 7.5rem;
+  margin-top: 9rem;
+}
+.insure__banner p {
+  font-family: "DM Serif Display", serif;
+  width: 52%;
+  font-size: 5.4rem;
+  padding-right: 3rem;
+  line-height: 5.4rem;
+
+  color: white;
+}
+.insure__banner button {
+  display: inline-block;
+  background-color: transparent;
+  border: 2px solid white;
+  padding: 1.3rem 2rem 1rem 2rem;
+  width: 16.5%;
+  font-size: 1.38rem;
+  font-weight: 400;
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
+  margin-left: 31%;
+  color: white;
+  margin-top: 1.15rem;
+  cursor: pointer;
+}
+
+.insure__banner button:hover {
+  background-color: white;
+  color: black;
 }
