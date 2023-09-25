@@ -299,3 +299,82 @@ body {
   background-color: white;
   color: black;
 }
+
+.insure__footerPage {
+  width: 100%;
+  padding: 6.5rem 16rem;
+  background-color: var(--VeryLightGray);
+  background-image: url(./images/bg-pattern-footer-desktop.svg);
+  background-repeat: no-repeat;
+  /* background-position: ; */
+}
+
+.insure__footerHeader {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+  padding: 0 0 3.3rem 0;
+}
+
+.insure__footerHeader img {
+  display: block;
+  width: 11.2rem;
+  height: 1.8rem;
+}
+
+.insure__snsBox {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.insure__snsBox svg {
+  cursor: pointer;
+}
+
+.insure__snsBox svg:hover path {
+  fill: black;
+}
+
+.insure__footerNavigations {
+  width: 100%;
+  display: flex;
+
+  gap: 18.5rem;
+  padding: 4.5rem 0 0 0;
+}
+
+.insure__columnNav {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3.5rem;
+  text-transform: uppercase;
+  font-size: 1.38rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+}
+
+.insure__columnNav p {
+  color: var(--DarkGrayishViolet);
+}
+
+.insure__footerNav {
+}
+
+.insure__footerNavLists {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.insure__footerNavList {
+  cursor: pointer;
+}
+
+.insure__footerNavList:hover {
+  text-decoration: underline;
+}
